@@ -297,7 +297,7 @@ const MenuMainPage = () => {
       <MenuHeader />
       
       {/* Additional Menu Components */}
-      <MenuHighlights />
+      {/* <MenuHighlights /> */}
       <DietaryInfo />
       <SeasonalSpecials />
 
