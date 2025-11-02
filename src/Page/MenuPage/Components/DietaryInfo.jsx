@@ -27,13 +27,13 @@ const DietaryInfo = () => {
       color: "text-amber-600",
       bgColor: "bg-amber-100"
     },
-    {
-      icon: FiAlertCircle,
-      label: "Allergen Info",
-      description: "Ask staff for allergen details",
-      color: "text-blue-600",
-      bgColor: "bg-blue-100"
-    }
+    // {
+    //   icon: FiAlertCircle,
+    //   label: "Allergen Info",
+    //   description: "Ask staff for allergen details",
+    //   color: "text-blue-600",
+    //   bgColor: "bg-blue-100"
+    // }
   ];
 
   const dietaryOptions = [
