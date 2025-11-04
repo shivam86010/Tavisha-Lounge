@@ -32,7 +32,7 @@ const DietaryInfo = () => {
       label: "Allergen Info",
       description: "Ask staff for allergen details",
       color: "text-blue-600",
-      bgColor: "bg-blue-100"
+      bgColor : "bg-blue-100"
     }
   ];
 
