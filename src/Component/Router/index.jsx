@@ -5,6 +5,7 @@ import MenuPage from '../../Page/MenuPage/MenuMainPage'
 import Layout from '../Layout/Main'
 import HomePage from '../../Page/HomePage/index'
 import AboutPage from '../../Page/About'
+import Gallery from '../../Page/Gallery/GalleryPage'
 
 function index() {
   return (
@@ -14,7 +15,7 @@ function index() {
           <Route index element={<HomePage />} />
           <Route path='/menu' element={<MenuPage />} />
           <Route path='/about' element={<AboutPage />} />
-  
+          <Route path='/gallery' element={<Gallery/>} />
         </Route>
       </Routes>
     </div>
