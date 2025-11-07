@@ -112,19 +112,19 @@ const ChefSpecialCreations = () => {
       difficulty: "Advanced",
       awards: ["Tandoor Excellence Award", "Customer Favorite"]
     },
-    {
-      id: 3,
-      name: "Monsoon Magic Platter",
-      image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80",
-      description: "Seasonal specialties that capture the essence of monsoon with warm, comforting flavors",
-      preparation: "Traditional monsoon recipes with contemporary presentation",
-      ingredients: ["Seasonal produce", "Warming spices", "Fresh greens", "Artisanal breads"],
-      story: "Created during the rainy season of 2021, this platter brings comfort and warmth to gloomy days",
-      chefTip: "Perfect with a cup of our signature masala chai",
-      cookingTime: "35 minutes",
-      difficulty: "Intermediate",
-      awards: ["Seasonal Innovation Award"]
-    }
+    // {
+    //   id: 3,
+    //   name: "Monsoon Magic Platter",
+    //   image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80",
+    //   description: "Seasonal specialties that capture the essence of monsoon with warm, comforting flavors",
+    //   preparation: "Traditional monsoon recipes with contemporary presentation",
+    //   ingredients: ["Seasonal produce", "Warming spices", "Fresh greens", "Artisanal breads"],
+    //   story: "Created during the rainy season of 2021, this platter brings comfort and warmth to gloomy days",
+    //   chefTip: "Perfect with a cup of our signature masala chai",
+    //   cookingTime: "35 minutes",
+    //   difficulty: "Intermediate",
+    //   awards: ["Seasonal Innovation Award"]
+    // }
   ];
 
   const nextDish = () => {
