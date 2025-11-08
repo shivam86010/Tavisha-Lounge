@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import HeroSection from './Components/HeroSection';
 import MoodFilter from './Components/MoodFilter';
 import CinematicScrollStory from './Components/CinematicScrollStory';
-// import AmbianceGallery from './components/AmbianceGallery';
+import AmbianceGallery from './Components/AmbianceGallery';
 // import CulinaryArt from './components/CulinaryArt';
 // import ChefTeam from './components/ChefTeam';
 // import GuestMemories from './components/GuestMemories';
@@ -45,13 +45,13 @@ const GalleryPage = () => {
         <SoundAmbiance />
         
         <CinematicScrollStory />
-        {/* <AmbianceGallery 
+        <AmbianceGallery 
           selectedMood={selectedMood}
           onImageClick={setSelectedImage}
           onImageLike={handleImageLike}
           likedImages={likedImages}
         />
-        <CulinaryArt 
+        {/* <CulinaryArt 
           selectedMood={selectedMood}
           onImageClick={setSelectedImage}
         /> */}
