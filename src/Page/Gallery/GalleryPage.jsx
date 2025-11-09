@@ -1,7 +1,7 @@
 // GalleryPage.jsx
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import HeroSection from './Components/HeroSection';
+import HeroSection  from './Components/HeroSection';
 import MoodFilter from './Components/MoodFilter';
 import CinematicScrollStory from './Components/CinematicScrollStory';
 import AmbianceGallery from './Components/AmbianceGallery';

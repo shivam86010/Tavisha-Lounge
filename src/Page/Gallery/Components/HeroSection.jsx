@@ -44,3 +44,4 @@ const HeroSection = ({ isNightMode }) => {
 };
 
 export default HeroSection;
+
