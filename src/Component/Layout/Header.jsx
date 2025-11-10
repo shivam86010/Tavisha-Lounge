@@ -155,10 +155,11 @@
 // export default Header;
 
 
-// src/components/Header.js
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -179,12 +180,12 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Menu', href: '#menu' },
-    { name: 'About', href: '#about' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Reservations', href: '#reservations' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'Menu', href: '/menu' },
+    { name: 'About', href: '/about' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Reservations', href: '/reservations' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   // Determine header styles based on scroll position and section
@@ -264,9 +265,8 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item, index) => (
-                <motion.a
+                <motion.Link
                   key={item.name}
-                  href={item.href}
                   className={`font-medium transition-colors text-red-400 duration-300 ${styles.textColor} ${styles.hoverColor}`}
                   whileHover={{ y: -2 }}
                   initial={{ opacity: 0, y: -20 }}
@@ -274,7 +274,7 @@ const Header = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   {item.name}
-                </motion.a>
+                </motion.Link>
               ))}
               <motion.button
                 className={`${styles.buttonStyle} px-6 py-2 rounded-lg font-semibold hover:bg-royal-maroon-dark transition-colors duration-300`}
