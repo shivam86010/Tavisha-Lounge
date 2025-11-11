@@ -5,8 +5,8 @@ import HeroSection  from './Components/HeroSection';
 import MoodFilter from './Components/MoodFilter';
 import CinematicScrollStory from './Components/CinematicScrollStory';
 import AmbianceGallery from './Components/AmbianceGallery';
-// import CulinaryArt from './components/CulinaryArt';
-// import ChefTeam from './components/ChefTeam';
+import CulinaryArt from './components/CulinaryArt';
+import ChefTeam from './components/ChefTeam';
 // import GuestMemories from './components/GuestMemories';
 // import SignatureShots from './components/SignatureShots';
 // import GalleryCTA from './components/GalleryCTA';
@@ -51,14 +51,14 @@ const GalleryPage = () => {
           onImageLike={handleImageLike}
           likedImages={likedImages}
         />
-        {/* <CulinaryArt 
+        <CulinaryArt 
           selectedMood={selectedMood}
           onImageClick={setSelectedImage}
-        /> */}
-        {/* <ChefTeam 
+        />
+        <ChefTeam 
           onImageClick={setSelectedImage}
         />
-        <GuestMemories 
+        {/* <GuestMemories 
           selectedMood={selectedMood}
           onImageClick={setSelectedImage}
         /> */}
