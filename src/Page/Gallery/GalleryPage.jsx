@@ -16,6 +16,10 @@ import ParticleBackground from './Components/ParticleBackground';
 import ImageModal from './Components/ImageModel';
 import MemoryWall from './Components/MemoryWall';
 import BehindKitchen from './Components/BehindKitchen';
+import AwardsRecognition from '../../Page/Gallery/Components/AwardsRecognition'
+import CulturalHeritage from './Components/CulturalHeritage';
+import ChefSpecialCreations from './Components/CinematicScrollStory';
+import VirtualTour from './Components/VirtualTour';
 
 const GalleryPage = () => {
   const [selectedMood, setSelectedMood] = useState('all');
@@ -77,6 +81,10 @@ const GalleryPage = () => {
         image={selectedImage}
         onClose={() => setSelectedImage(null)}
       />
+      <AwardsRecognition/>
+      <CulturalHeritage/>
+      <ChefSpecialCreations/>
+      <VirtualTour/>
 
     </div>
   );
