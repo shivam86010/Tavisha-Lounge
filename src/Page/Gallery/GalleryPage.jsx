@@ -5,17 +5,17 @@ import HeroSection  from './Components/HeroSection';
 import MoodFilter from './Components/MoodFilter';
 import CinematicScrollStory from './Components/CinematicScrollStory';
 import AmbianceGallery from './Components/AmbianceGallery';
-import CulinaryArt from './components/CulinaryArt';
-import ChefTeam from './components/ChefTeam';
-// import GuestMemories from './components/GuestMemories';
-// import SignatureShots from './components/SignatureShots';
-// import GalleryCTA from './components/GalleryCTA';
+import CulinaryArt from './Components/CulinaryArt';
+import ChefTeam from './Components/ChefTeam';
+import GuestMemories from './Components/GuestMemories';
+import SignatureShots from './Components/SignatureShots';
+import GalleryCTA from './Components/GalleryCTA';
 import DayNightToggle from './Components/DayNightToggle';
 import SoundAmbiance from './Components/SoundAmbiance';
 import ParticleBackground from './Components/ParticleBackground';
-// import ImageModal from './components/ImageModal';
-// import MemoryWall from './components/MemoryWall';
-// import BehindKitchen from './components/BehindKitchen';
+import ImageModal from './Components/ImageModel';
+import MemoryWall from './Components/MemoryWall';
+import BehindKitchen from './Components/BehindKitchen';
 
 const GalleryPage = () => {
   const [selectedMood, setSelectedMood] = useState('all');
@@ -58,25 +58,25 @@ const GalleryPage = () => {
         <ChefTeam 
           onImageClick={setSelectedImage}
         />
-        {/* <GuestMemories 
+        <GuestMemories 
           selectedMood={selectedMood}
           onImageClick={setSelectedImage}
-        /> */}
-        {/* <SignatureShots 
+        />
+        <SignatureShots 
           onImageClick={setSelectedImage}
           onImageLike={handleImageLike}
           likedImages={likedImages}
         />
         <MemoryWall />
-        <BehindKitchen /> */}
+        <BehindKitchen />
       </div>
       
-      {/* <GalleryCTA isNightMode={isNightMode} />
+      <GalleryCTA isNightMode={isNightMode} />
       
       <ImageModal 
         image={selectedImage}
         onClose={() => setSelectedImage(null)}
-      /> */}
+      />
 
     </div>
   );
