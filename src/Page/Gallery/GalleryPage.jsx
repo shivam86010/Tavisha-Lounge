@@ -20,6 +20,9 @@ import AwardsRecognition from '../../Page/Gallery/Components/AwardsRecognition'
 import CulturalHeritage from './Components/CulturalHeritage';
 import ChefSpecialCreations from './Components/CinematicScrollStory';
 import VirtualTour from './Components/VirtualTour';
+import InteractiveTimeline from './Components/InteractiveTimeline';
+import SeasonalTransitions from './Components/SeasonalTransitions';
+import SignatureAesthetic from './Components/SignatureAesthetic';
 
 const GalleryPage = () => {
   const [selectedMood, setSelectedMood] = useState('all');
@@ -62,10 +65,10 @@ const GalleryPage = () => {
         <ChefTeam 
           onImageClick={setSelectedImage}
         />
-        <GuestMemories 
+        {/* <GuestMemories 
           selectedMood={selectedMood}
           onImageClick={setSelectedImage}
-        />
+        /> */}
         <SignatureShots 
           onImageClick={setSelectedImage}
           onImageLike={handleImageLike}
@@ -85,6 +88,10 @@ const GalleryPage = () => {
       <CulturalHeritage/>
       <ChefSpecialCreations/>
       <VirtualTour/>
+      <InteractiveTimeline/>
+      <SeasonalTransitions/>
+      <SignatureAesthetic/>
+      <GuestMemories/>
 
     </div>
   );
