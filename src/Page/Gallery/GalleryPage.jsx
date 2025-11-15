@@ -87,7 +87,7 @@ const GalleryPage = () => {
       <AwardsRecognition/>
       <CulturalHeritage/>
       <ChefSpecialCreations/>
-      <VirtualTour/>
+      {/* <VirtualTour/> */}
       <InteractiveTimeline/>
       <SeasonalTransitions/>
       <SignatureAesthetic/>
