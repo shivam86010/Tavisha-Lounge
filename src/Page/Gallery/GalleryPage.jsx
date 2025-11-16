@@ -65,10 +65,10 @@ const GalleryPage = () => {
         <ChefTeam 
           onImageClick={setSelectedImage}
         />
-        {/* <GuestMemories 
+        <GuestMemories 
           selectedMood={selectedMood}
           onImageClick={setSelectedImage}
-        /> */}
+        />
         <SignatureShots 
           onImageClick={setSelectedImage}
           onImageLike={handleImageLike}
@@ -87,7 +87,7 @@ const GalleryPage = () => {
       <AwardsRecognition/>
       <CulturalHeritage/>
       <ChefSpecialCreations/>
-      {/* <VirtualTour/> */}
+      <VirtualTour/>
       <InteractiveTimeline/>
       <SeasonalTransitions/>
       <SignatureAesthetic/>
