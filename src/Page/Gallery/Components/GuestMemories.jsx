@@ -99,7 +99,7 @@ const GuestMemories = ({ selectedMood, onImageClick }) => {
 
 export default GuestMemories;
 
-src/components/gallery/GuestMemories.js
+// src/components/gallery/GuestMemories.js
 // import React, { useState } from 'react';
 // import { motion, AnimatePresence } from 'framer-motion';
 // import { FaBirthdayCake, FaGlassCheers, FaMusic, FaHeart } from 'react-icons/fa';

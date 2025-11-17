@@ -185,7 +185,7 @@ const Header = () => {
     { name: 'About', href: '/about' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Reservations', href: '/reservations' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact', href: '/contacts' }
   ];
 
   // Determine header styles based on scroll position and section
@@ -265,7 +265,7 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item, index) => (
-                <motion.Link
+                <motion.a
                   key={item.name}
                   className={`font-medium transition-colors text-red-400 duration-300 ${styles.textColor} ${styles.hoverColor}`}
                   whileHover={{ y: -2 }}
@@ -274,7 +274,7 @@ const Header = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   {item.name}
-                </motion.Link>
+                </motion.a>
               ))}
               <motion.button
                 className={`${styles.buttonStyle} px-6 py-2 rounded-lg font-semibold hover:bg-royal-maroon-dark transition-colors duration-300`}
