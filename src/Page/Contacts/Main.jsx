@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ElegantHero from './Components/ElegantHero';
-// import ContactIntro from './components/ContactIntro';
-// import LuxuryContactGrid from './components/LuxuryContactGrid';
-// import MinimalContactForm from './components/MinimalContactForm';
-// import ReservationWizard from './components/ReservationWizard';
+import ContactIntro from './Components/ContactIntro';
+import LuxuryContactGrid from './Components/LuxuryContactGrid';
+import MinimalContactForm from './Components/MinimalContactForm';
+import ReservationWizard from './Components/ReservationWizard';
 import FloatingChat from './Components/FloatingChat';
 // import CelebrationSection from './components/CelebrationSection';
 // import InteractiveMap from './components/InteractiveMap';
@@ -24,15 +24,15 @@ const Main = () => {
       
       <div className="relative z-10">
         <ContactIntro />
-        {/* <LuxuryContactGrid /> */}
+        <LuxuryContactGrid />
         
         <div className="max-w-7xl mx-auto px-4 py-20">
           <div className="grid xl:grid-cols-2 gap-16 items-start">
-            {/* <MinimalContactForm /> */}
-            {/* <ReservationWizard 
+            <MinimalContactForm />
+            <ReservationWizard 
               isOpen={activeWizard}
               onClose={() => setActiveWizard(false)}
-            /> */}
+            />
           </div>
         </div>
         
