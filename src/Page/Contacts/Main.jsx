@@ -7,9 +7,9 @@ import LuxuryContactGrid from './Components/LuxuryContactGrid';
 import MinimalContactForm from './Components/MinimalContactForm';
 import ReservationWizard from './Components/ReservationWizard';
 import FloatingChat from './Components/FloatingChat';
-// import CelebrationSection from './components/CelebrationSection';
-// import InteractiveMap from './components/InteractiveMap';
-// import ContactFooter from './components/ContactFooter';
+import CelebrationSection from './Components/CelebrationSection';
+import InteractiveMap from './Components/InteractiveMap';
+import ContactFooter from './Components/ContactFooter';
 import GoldenParticles from './Components/GoldenParticles';
 
 const Main = () => {
@@ -36,9 +36,9 @@ const Main = () => {
           </div>
         </div>
         
-        {/* <CelebrationSection /> */}
-        {/* <InteractiveMap /> */}
-        {/* <ContactFooter /> */}
+        <CelebrationSection />
+        <InteractiveMap />
+        <ContactFooter />
       </div>
     </div>
   );
