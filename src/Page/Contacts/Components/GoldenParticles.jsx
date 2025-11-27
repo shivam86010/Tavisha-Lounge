@@ -1,4 +1,3 @@
-// GoldenParticles.jsx
 import React, { useEffect, useRef } from 'react';
 
 const GoldenParticles = () => {
