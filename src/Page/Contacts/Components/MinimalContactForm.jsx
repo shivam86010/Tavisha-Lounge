@@ -1,4 +1,3 @@
-// MinimalContactForm.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Mail, Phone, MessageCircle, Send } from 'lucide-react';

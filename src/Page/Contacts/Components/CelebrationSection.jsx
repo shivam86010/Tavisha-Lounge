@@ -1,14 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Cake, 
-  Heart, 
-  Users, 
-  Briefcase,
-  Sparkles,
-  Calendar,
-  ArrowRight
-} from 'lucide-react';
+import { Cake, Heart, Users, Briefcase,Sparkles,Calendar,ArrowRight } from 'lucide-react';
 import { Circle } from "lucide-react";
 
 

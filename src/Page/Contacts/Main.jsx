@@ -38,7 +38,7 @@ const Main = () => {
         
         <CelebrationSection />
         <InteractiveMap />
-        <ContactFooter />
+        {/* <ContactFooter /> */}
       </div>
     </div>
   );
