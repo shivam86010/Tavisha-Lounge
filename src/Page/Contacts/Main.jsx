@@ -1,4 +1,3 @@
-// ContactPage.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ElegantHero from './Components/ElegantHero';
