@@ -292,7 +292,7 @@
 // export default ContactLocation;
 
 
-// src/components/ContactLocation.js
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMapPin, FiPhone, FiMail, FiClock, FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';

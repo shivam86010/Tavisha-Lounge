@@ -1,4 +1,3 @@
-// src/components/ChefShowcase.js
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiAward, FiStar, FiUsers, FiClock } from 'react-icons/fi';
