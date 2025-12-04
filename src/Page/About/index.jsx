@@ -59,7 +59,7 @@ const AboutPage = () => {
       description: "Ensuring every guest experiences the warmth and luxury of true Indian hospitality."
     },
     {
-      name: "Arjun Kapoor",
+      name: "Shyam",
       role: "Master Mixologist",
       image: "https://images.unsplash.com/photo-1581299894007-9c115449a7b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       description: "Creating innovative beverages that complement our royal dining experience."
@@ -69,7 +69,7 @@ const AboutPage = () => {
   return (
     <section id="about" className="py-20 bg-soft-cream">
       <div className="container mx-auto px-4">
-        {/* Hero Section */}
+        
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
