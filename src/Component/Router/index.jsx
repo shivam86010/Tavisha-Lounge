@@ -7,6 +7,7 @@ import HomePage from '../../Page/HomePage/index'
 import AboutPage from '../../Page/About'
 import Gallery from '../../Page/Gallery/GalleryPage'
 import Contacts from '../../Page/Contacts/Main'
+import ReservationPage from '../../Page/Reservation/Main'
 
 function index() {
   return (
@@ -18,6 +19,7 @@ function index() {
           <Route path='/about' element={<AboutPage />} />
           <Route path='/gallery' element={<Gallery/>} />
           <Route path='/contacts' element={<Contacts/>} />
+          <Route path='/reservation' element={<ReservationPage/>} />
         </Route>
       </Routes>
     </div>
