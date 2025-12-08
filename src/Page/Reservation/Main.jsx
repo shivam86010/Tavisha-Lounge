@@ -144,7 +144,7 @@ const ReservationPage = () => {
   ];
 
   const benefits = [
-    { icon: '✓', title: 'Instant Confirmation', description: 'Get immediate table confirmation' },
+    // { icon: '✓', title: 'Instant Confirmation', description: 'Get immediate table confirmation' },
     { icon: '🎯', title: 'Special Seating', description: 'Request preferred seating arrangements' },
     { icon: '🎂', title: 'Celebration Setup', description: 'Birthday & anniversary arrangements' },
     { icon: '✨', title: 'Hassle-Free', description: 'Smooth, easy reservation process' },
