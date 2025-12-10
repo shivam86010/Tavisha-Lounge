@@ -98,14 +98,6 @@ const ReservationPage = () => {
       emoji: '💎',
       description: 'Elegant & Special'
     },
-    { 
-      id: 6, 
-      name: 'Casual Visit', 
-      icon: Coffee, 
-      color: 'from-emerald-500/30 via-teal-500/20 to-emerald-500/30',
-      emoji: '☕',
-      description: 'Relaxed & Cozy'
-    }
   ];
 
   const seatingOptions = [
@@ -149,16 +141,7 @@ const ReservationPage = () => {
       features: ['Large Table', 'Kid Friendly', 'Flexible Seating', 'Entertainment'],
       icon: Users
     },
-    { 
-      id: 5, 
-      name: 'Candlelight Table', 
-      description: 'Romantic Atmosphere',
-      image: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=2071&auto=format&fit=crop&w=1200&h=800',
-      capacity: '2 Guests',
-      price: 'Premium',
-      features: ['Candlelit', 'Rose Petals', 'Wine Pairing', 'Live Music'],
-      icon: Music
-    }
+
   ];
 
   const timeSlots = [
