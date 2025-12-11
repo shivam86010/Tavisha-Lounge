@@ -150,7 +150,8 @@ const ReservationPage = () => {
     { time: '19:00', label: 'Prime Time', available: false, icon: Star },
     { time: '20:00', label: 'Evening Elegance', available: true, icon: Moon },
     { time: '21:30', label: 'Night Serenity', available: true, icon: Moon },
-    { time: '22:00', label: 'Late Royalty', available: true, icon: Crown }
+    
+    
   ];
 
   const dates = Array.from({ length: 7 }, (_, i) => {
@@ -169,7 +170,6 @@ const ReservationPage = () => {
     { id: 2, name: 'Date & Time', icon: Calendar },
     { id: 3, name: 'Seating', icon: Crown },
     { id: 4, name: 'Details', icon: User },
-    { id: 5, name: 'Confirm', icon: Check }
   ];
 
   // Floating particles component
