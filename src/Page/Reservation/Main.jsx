@@ -147,11 +147,6 @@ const ReservationPage = () => {
   const timeSlots = [
     { time: '17:00', label: 'Golden Hour', available: true, icon: Sun },
     { time: '18:30', label: 'Sunset Views', available: true, icon: Sun },
-    { time: '19:00', label: 'Prime Time', available: false, icon: Star },
-    { time: '20:00', label: 'Evening Elegance', available: true, icon: Moon },
-    { time: '21:30', label: 'Night Serenity', available: true, icon: Moon },
-    
-    
   ];
 
   const dates = Array.from({ length: 7 }, (_, i) => {
