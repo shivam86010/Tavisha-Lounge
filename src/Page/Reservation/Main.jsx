@@ -131,16 +131,8 @@ const ReservationPage = () => {
       features: ['Garden Access', 'Fresh Air', 'Natural Light', 'Tranquil'],
       icon: Flower
     },
-    { 
-      id: 4, 
-      name: 'Family Lounge', 
-      description: 'Spacious & Comfortable',
-      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop&w=1200&h=800',
-      capacity: '4-10 Guests',
-      price: 'Standard',
-      features: ['Large Table', 'Kid Friendly', 'Flexible Seating', 'Entertainment'],
-      icon: Users
-    },
+
+    
 
   ];
 
