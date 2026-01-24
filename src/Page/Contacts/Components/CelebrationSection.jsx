@@ -34,13 +34,6 @@ const CelebrationSection = () => {
       description: 'Professional ambiance for business meetings and networking',
       color: 'from-indigo-500 to-purple-500'
     },
-    { 
-      type: 'Engagement Dinners', 
-      emoji: '💍',
-      icon: Circle,
-      description: 'Elegant settings for your promise of forever',
-      color: 'from-emerald-500 to-teal-500'
-    }
   ];
 
   return (
