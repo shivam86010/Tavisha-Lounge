@@ -188,7 +188,7 @@ const Header = () => {
     { name: 'Contact', href: '/contacts' }
   ];
 
-  // Determine header styles based on scroll position and section 
+  // Determine header styles based on scroll position and section  
   const getHeaderStyles = () => {
     if (isScrolled) {
       // When scrolled - solid background
