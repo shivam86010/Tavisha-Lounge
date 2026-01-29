@@ -1,4 +1,3 @@
-// // src/components/CookingProcessDetail.js
 // import React, { useEffect, useState } from 'react';
 // import { motion, AnimatePresence } from 'framer-motion';
 // import { FiClock, FiUsers, FiStar, FiArrowLeft, FiPlay, FiPause, FiSkipForward } from 'react-icons/fi';

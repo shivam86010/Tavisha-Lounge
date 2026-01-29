@@ -1,4 +1,3 @@
-// src/components/CookingProcess.js
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiClock, FiUsers, FiStar } from 'react-icons/fi';
