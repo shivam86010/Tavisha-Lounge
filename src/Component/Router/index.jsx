@@ -8,6 +8,8 @@ import AboutPage from '../../Page/About'
 import Gallery from '../../Page/Gallery/GalleryPage'
 import Contacts from '../../Page/Contacts/Main'
 import ReservationPage from '../../Page/Reservation/Main'
+import Login from '../../Page/Login/Login';
+import Signup from '../../Page/Login/Signup';
 
 function index() {
   return (
@@ -20,6 +22,8 @@ function index() {
           <Route path='/gallery' element={<Gallery/>} />
           <Route path='/contacts' element={<Contacts/>} />
           <Route path='/reservation' element={<ReservationPage/>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Route>
       </Routes>
     </div>
