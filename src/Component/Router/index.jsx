@@ -10,6 +10,7 @@ import Contacts from '../../Page/Contacts/Main'
 import ReservationPage from '../../Page/Reservation/Main'
 import Login from '../../Page/Login/Login';
 import Signup from '../../Page/Login/Signup';
+import ReservationTable from '../../Page/Reservations'
 
 function index() {
   return (
@@ -24,6 +25,7 @@ function index() {
           <Route path='/reservation' element={<ReservationPage/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path='/reservation-table' element={<ReservationTable/>} />
         </Route>
       </Routes>
     </div>
