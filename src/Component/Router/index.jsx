@@ -11,7 +11,7 @@ import ReservationPage from '../../Page/Reservation/Main'
 import Login from '../../Page/Login/Login';
 import Signup from '../../Page/Login/Signup';
 import ReservationTable from '../../Page/Reservations'
-
+import BlogPage from '../../Page/BlogPage'
 function index() {
   return (
  <div>
@@ -25,6 +25,7 @@ function index() {
           <Route path='/reservation' element={<ReservationPage/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+            <Route path="/blog" element={<BlogPage />} />
           <Route path='/reservation-table' element={<ReservationTable/>} />
         </Route>
       </Routes>
