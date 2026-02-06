@@ -1,10 +1,11 @@
 // src/components/BlogPage.js
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CalendarDays, Clock, User, ChevronLeft, ChevronRight, Search, Tag } from 'lucide-react';
+import { CalendarDays,CheckIcon , Bookmark, Clock, User, ChevronLeft, ChevronRight, Search, Tag, BookOpen, Star, Heart, Share2, ArrowRight } from 'lucide-react';
 
 const BlogPage = () => {
-  // Sample blog data
+  // Enhanced blog data with more details
+  const [savedPosts, setSavedPosts] = useState([]);
   const blogPosts = [
     {
       id: 1,
@@ -15,7 +16,10 @@ const BlogPage = () => {
       date: "2024-03-15",
       readTime: "5 min read",
       category: "Culinary Arts",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      featured: true,
+      likes: 124,
+      shares: 45
     },
     {
       id: 2,
@@ -26,7 +30,10 @@ const BlogPage = () => {
       date: "2024-03-10",
       readTime: "4 min read",
       category: "Wine & Beverages",
-      image: "https://images.unsplash.com/photo-1474722883778-792e7990302f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+      image: "https://images.unsplash.com/photo-1474722883778-792e7990302f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
+      featured: false,
+      likes: 89,
+      shares: 32
     },
     {
       id: 3,
@@ -37,7 +44,10 @@ const BlogPage = () => {
       date: "2024-03-05",
       readTime: "6 min read",
       category: "Signature Dishes",
-      image: "https://images.unsplash.com/photo-1585937421612-70ca003675ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80"
+      image: "https://images.unsplash.com/photo-1585937421612-70ca003675ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80",
+      featured: true,
+      likes: 156,
+      shares: 67
     },
     {
       id: 4,
@@ -48,80 +58,30 @@ const BlogPage = () => {
       date: "2024-02-28",
       readTime: "4 min read",
       category: "Sustainability",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      featured: false,
+      likes: 78,
+      shares: 28
     },
-    {
-      id: 5,
-      title: "The History of Royal Dining Traditions",
-      excerpt: "Explore how ancient royal dining customs influence modern luxury dining experiences at Tavisha Lounge.",
-      content: "From Mughal courts to Rajput palaces, Indian royal dining has a rich history. We honor these traditions while adapting them for contemporary discerning palates.",
-      author: "Cultural Historian Dr. Amit Desai",
-      date: "2024-02-20",
-      readTime: "7 min read",
-      category: "History & Culture",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-    },
-    {
-      id: 6,
-      title: "Mastering the Art of Indian Bread Making",
-      excerpt: "Learn about the diverse world of Indian breads and how our chefs perfect each variety in our clay oven.",
-      content: "From fluffy naan to crisp parathas, Indian bread making is an art form. Our master bakers share their techniques for creating the perfect accompaniment to every dish.",
-      author: "Master Baker Sanjay Verma",
-      date: "2024-02-15",
-      readTime: "5 min read",
-      category: "Culinary Techniques",
-      image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80"
-    },
-    {
-      id: 7,
-      title: "Seasonal Ingredients: Spring Menu Preview",
-      excerpt: "Get a first look at our upcoming spring menu featuring seasonal produce and fresh flavors.",
-      content: "As winter fades, we welcome spring with a menu that celebrates renewal. Fresh greens, tender vegetables, and light preparations take center stage.",
-      author: "Menu Development Chef Ananya Reddy",
-      date: "2024-02-10",
-      readTime: "4 min read",
-      category: "Seasonal Menus",
-      image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=2031&q=80"
-    },
-    {
-      id: 8,
-      title: "Creating the Perfect Dining Ambiance",
-      excerpt: "Discover how lighting, music, and decor work together to create Tavisha Lounge's signature atmosphere.",
-      content: "A great dining experience engages all senses. Our design team explains how every element contributes to an atmosphere of relaxed luxury.",
-      author: "Interior Designer Rohan Malhotra",
-      date: "2024-02-05",
-      readTime: "5 min read",
-      category: "Ambiance & Design",
-      image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80"
-    },
-    {
-      id: 9,
-      title: "The Health Benefits of Traditional Spices",
-      excerpt: "Explore how the spices used in our dishes offer more than just flavor—they're packed with health benefits.",
-      content: "Turmeric, cumin, cardamom—these aren't just flavor enhancers. Ayurvedic principles guide our use of spices for both taste and wellness.",
-      author: "Wellness Consultant Dr. Neha Gupta",
-      date: "2024-01-30",
-      readTime: "6 min read",
-      category: "Health & Wellness",
-      image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-    }
+
   ];
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [likedPosts, setLikedPosts] = useState([]);
   const postsPerPage = 6;
 
   // Categories
-  const categories = ['All', 'Culinary Arts', 'Wine & Beverages', 'Signature Dishes', 'Sustainability', 'History & Culture', 'Culinary Techniques', 'Seasonal Menus', 'Ambiance & Design', 'Health & Wellness'];
+//   const categories = ['All',];
 
-  // Filter posts based on search and category
+  // Filter posts
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.content.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'All' || 
+                           (selectedCategory === 'Featured' ? post.featured : post.category === selectedCategory);
     return matchesSearch && matchesCategory;
   });
 
@@ -137,178 +97,331 @@ const BlogPage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Handle next/previous
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Handle like
+  const handleLike = (postId) => {
+    if (likedPosts.includes(postId)) {
+      setLikedPosts(likedPosts.filter(id => id !== postId));
+    } else {
+      setLikedPosts([...likedPosts, postId]);
     }
   };
 
   // Format date
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
   };
 
-  return (
-    <div className="min-h-screen bg-soft-cream">
-      {/* Hero Section */}
-      <section className="relative h-96 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Tavisha Lounge Interior"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        </div>
+  // Featured posts (for sidebar)
+  const featuredPosts = blogPosts.filter(post => post.featured).slice(0, 3);
 
-        <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-soft-cream via-white to-soft-cream/50">
+      {/* Hero Header */}
+
+<div className="relative overflow-hidden bg-gradient-to-b from-white via-soft-cream to-white">
+  {/* Background Elements */}
+  <div className="absolute inset-0">
+    {/* Decorative Pattern */}
+    <div className="absolute inset-0 opacity-5">
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-royal-maroon rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-metallic-gold rounded-full blur-3xl"></div>
+    </div>
+    
+    {/* Geometric Pattern */}
+    <div className="absolute top-0 left-0 w-full h-full opacity-10">
+      <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" className="text-royal-maroon"/>
+      </svg>
+    </div>
+  </div>
+
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Left Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative"
+      >
+        {/* Main Title */}
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 font-serif leading-tight">
+          <span className="block text-charcoal">Taste the</span>
+          <span className="relative inline-block">
+            <span className="relative z-10 bg-gradient-to-r from-royal-maroon via-royal-maroon-dark to-royal-maroon bg-clip-text text-transparent">
+              Extraordinary
+            </span>
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
+          Where every dish tells a story, and every meal becomes a cherished memory. 
+          Experience culinary artistry at its finest.
+        </p>
+
+       
+       
+
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap gap-4">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group bg-gradient-to-r from-royal-maroon to-royal-maroon-dark text-metallic-gold font-semibold px-8 py-4 rounded-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-metallic-gold mb-4 font-serif">
-              Tavisha Lounge Blog
-            </h1>
-            <p className="text-xl md:text-2xl text-soft-cream mb-8 max-w-2xl mx-auto">
-              Stories from our kitchen, insights from our experts, and the art of royal dining
-            </p>
+            <span>Explore Our Menu</span>
+            <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
+          </motion.button>
+          
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group bg-white text-royal-maroon font-semibold px-8 py-4 rounded-xl border-2 border-royal-maroon/20 hover:border-royal-maroon hover:shadow-lg transition-all duration-300 flex items-center gap-3"
+          >
+            <span>Book a Table</span>
+            <CalendarDays className="h-5 w-5 group-hover:scale-110 transition-transform" />
+          </motion.button>
+        </div>
+      </motion.div>
+
+      {/* Right Content - Image/Visual */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="relative"
+      >
+        {/* Main Image Container */}
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          {/* Gradient Border */}
+          <div className="absolute inset-0 bg-gradient-to-r from-royal-maroon via-metallic-gold to-royal-maroon p-1 rounded-3xl">
+            <div className="w-full h-full bg-white rounded-3xl"></div>
+          </div>
+          
+          {/* Image */}
+          <div className="relative z-10 rounded-3xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Tavisha Lounge Interior"
+              className="w-full h-[500px] object-cover rounded-3xl transform hover:scale-110 transition-transform duration-1000"
+            />
+            
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-3xl"></div>
+          </div>
+
+          {/* Floating Card 1 */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-5 shadow-2xl w-64 z-20"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-metallic-gold/20 to-yellow-600/20 rounded-xl flex items-center justify-center">
+                <Star className="h-6 w-6 text-metallic-gold" />
+              </div>
+              <div>
+                <div className="font-bold text-charcoal">Michelin Star</div>
+                <div className="text-sm text-gray-500">2024 Award</div>
+              </div>
+            </div>
+            <div className="text-xs text-gray-500">Recognized for culinary excellence</div>
+          </motion.div>
+
+          {/* Floating Card 2 */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="absolute -top-6 -right-6 bg-gradient-to-br from-royal-maroon to-royal-maroon-dark rounded-2xl p-5 shadow-2xl w-56 z-20"
+          >
+            <div className="text-white">
+              <div className="flex items-center gap-2 mb-2">
+                <CheckIcon className="h-4 w-4 text-metallic-gold" />
+                <div className="font-bold">Chef's Special</div>
+              </div>
+              <div className="text-sm opacity-90">Seasonal Tasting Menu</div>
+              <div className="text-xs opacity-70 mt-2">Available exclusively</div>
+            </div>
           </motion.div>
         </div>
-      </section>
+
+        {/* Decorative Elements */}
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-br from-metallic-gold/5 to-transparent rounded-full blur-2xl -z-10"></div>
+        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-tl from-royal-maroon/5 to-transparent rounded-full blur-2xl -z-10"></div>
+      </motion.div>
+    </div>
+  </div>
+</div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Search and Filter Section */}
-        <div className="mb-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
-            <div className="relative w-full md:w-1/2">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-charcoal opacity-70" />
-              </div>
-              <input
-                type="text"
-                placeholder="Search articles..."
-                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-royal-maroon focus:border-transparent"
-                value={searchTerm}
-                onChange={(e) => {
-                  setSearchTerm(e.target.value);
-                  setCurrentPage(1);
-                }}
-              />
-            </div>
-
-            <div className="w-full md:w-auto">
-              <select
-                className="w-full md:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-metallic-gold focus:border-transparent bg-white"
-                value={selectedCategory}
-                onChange={(e) => {
-                  setSelectedCategory(e.target.value);
-                  setCurrentPage(1);
-                }}
+      <div className="max-w-8xl mx-auto px-4 pb-20">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Main Blog Posts */}
+          <div className="lg:w-3/4">
+          
+            {/* Featured Post */}
+            {(currentPage === 1) && (
+              <motion.article
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mb-12"
               >
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+                  <img
+                    src={filteredPosts[0].image}
+                    alt={filteredPosts[0].title}
+                    className="w-full h-96 object-cover transform hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 z-20 p-8">
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="bg-metallic-gold text-royal-marold px-4 py-1 rounded-full text-sm font-bold">
+                        FEATURED
+                      </span>
+                      <span className="text-white/80">{filteredPosts[0].category}</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">
+                      {filteredPosts[0].title}
+                    </h2>
+                    <p className="text-white/90 text-lg mb-6 max-w-3xl">
+                      {filteredPosts[0].excerpt}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-metallic-gold rounded-full flex items-center justify-center text-royal-marold font-bold">
+                            {filteredPosts[0].author.charAt(0)}
+                          </div>
+                          <div>
+                            <div className="text-white font-semibold">{filteredPosts[0].author}</div>
+                            <div className="text-white/70 text-sm">{formatDate(filteredPosts[0].date)}</div>
+                          </div>
+                        </div>
+                        <div className="text-white/70 text-sm flex items-center gap-1">
+                          <Clock className="h-4 w-4" />
+                          {filteredPosts[0].readTime}
+                        </div>
+                      </div>
+                      <button className="group bg-metallic-gold text-royal-marold px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-yellow-600 transition-all duration-300">
+                        Read Story
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
+            )}
 
-          {/* Category Chips */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => {
-                  setSelectedCategory(category);
-                  setCurrentPage(1);
-                }}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-royal-maroon text-metallic-gold'
-                    : 'bg-white text-charcoal hover:bg-gray-100'
-                } shadow-soft`}
-              >
-                <Tag className="h-4 w-4" />
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Blog Posts Grid */}
-        {currentPosts.length > 0 ? (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {currentPosts.map((post, index) => (
+            {/* Blog Posts Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {currentPosts.slice(currentPage === 1 ? 1 : 0).map((post, index) => (
                 <motion.article
                   key={post.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-xl overflow-hidden shadow-soft-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                  className="group relative bg-white rounded-2xl overflow-hidden shadow-soft-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
                 >
-                  {/* Featured Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  {/* Save Button */}
+                  <button
+                    onClick={() => handleSave(post.id)}
+                    className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 group-hover:scale-110 shadow-md"
+                  >
+                    <Bookmark className={`h-5 w-5 ${savedPosts.includes(post.id) ? 'fill-royal-maroon text-royal-maroon' : 'text-gray-400'}`} />
+                  </button>
+
+                  {/* Post Image */}
+                  <div className="relative h-56 overflow-hidden rounded-t-2xl">
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-royal-maroon text-metallic-gold px-3 py-1 rounded-full text-xs font-semibold">
-                        {post.category}
-                      </span>
-                    </div>
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    
+                    {/* Featured Badge */}
+                    {post.featured && (
+                      <div className="absolute top-4 left-4">
+                        <div className="bg-gradient-to-r from-metallic-gold to-yellow-600 text-royal-marold px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                          <Star className="h-3 w-3 fill-current" />
+                          Featured
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Post Content */}
                   <div className="p-6">
-                    <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                      <div className="flex items-center gap-1">
-                        <CalendarDays className="h-4 w-4" />
-                        <span>{formatDate(post.date)}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
+                    {/* Meta Information */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-sm font-semibold text-royal-maroon bg-royal-maroon/10 px-3 py-1.5 rounded-full">
+                        {post.category}
+                      </span>
+                      <div className="text-sm text-gray-500 flex items-center gap-1">
                         <Clock className="h-4 w-4" />
-                        <span>{post.readTime}</span>
+                        {post.readTime}
                       </div>
                     </div>
 
-                    <h2 className="text-xl font-bold text-charcoal mb-3 font-serif hover:text-royal-maroon transition-colors duration-300">
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-charcoal mb-3 font-serif group-hover:text-royal-maroon transition-colors duration-300 line-clamp-2">
                       {post.title}
-                    </h2>
+                    </h3>
 
-                    <p className="text-gray-600 mb-4 line-clamp-2">
+                    {/* Excerpt */}
+                    <p className="text-gray-600 mb-6 line-clamp-2">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between mt-6">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-metallic-gold rounded-full flex items-center justify-center text-white font-bold">
-                          {post.author.charAt(0)}
+                    {/* Author and Date */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 bg-royal-maroon/10 rounded-full flex items-center justify-center">
+                        <User className="h-5 w-5 text-royal-maroon" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-charcoal text-sm">{post.author}</div>
+                        <div className="text-xs text-gray-500 flex items-center gap-1">
+                          <CalendarDays className="h-3 w-3" />
+                          {formatDate(post.date)}
                         </div>
-                        <span className="text-sm font-medium text-charcoal">
-                          {post.author}
-                        </span>
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center gap-4">
+                        <button
+                          onClick={() => handleLike(post.id)}
+                          className={`flex items-center gap-2 transition-all duration-300 ${
+                            likedPosts.includes(post.id)
+                              ? 'text-red-500'
+                              : 'text-gray-400 hover:text-red-500'
+                          }`}
+                        >
+                          <Heart className={`h-5 w-5 ${likedPosts.includes(post.id) ? 'fill-red-500' : ''}`} />
+                          <span className="text-sm font-medium">{post.likes + (likedPosts.includes(post.id) ? 1 : 0)}</span>
+                        </button>
+                        
+                        <button className="text-gray-400 hover:text-royal-maroon transition-colors duration-300">
+                          <Share2 className="h-5 w-5" />
+                        </button>
                       </div>
 
-                      <button className="text-royal-maroon hover:text-royal-maroon-dark font-medium text-sm flex items-center gap-1 group">
-                        Read More
-                        <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      {/* Read More Button */}
+                      <button className="group text-royal-maroon hover:text-royal-maroon-dark font-semibold text-sm flex items-center gap-2">
+                        <span>Read More</span>
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>
                   </div>
@@ -317,133 +430,231 @@ const BlogPage = () => {
             </div>
 
             {/* Pagination */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-8 border-t border-gray-200">
-              <div className="text-gray-600">
-                Showing <span className="font-semibold text-charcoal">{indexOfFirstPost + 1}</span> to{" "}
-                <span className="font-semibold text-charcoal">
-                  {Math.min(indexOfLastPost, filteredPosts.length)}
-                </span>{" "}
-                of <span className="font-semibold text-charcoal">{filteredPosts.length}</span> articles
-              </div>
+            {filteredPosts.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="mt-12 pt-8 border-t border-gray-200"
+              >
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="text-gray-600">
+                    Page <span className="font-bold text-royal-maroon">{currentPage}</span> of{" "}
+                    <span className="font-bold text-royal-maroon">{totalPages}</span>
+                  </div>
 
-              <div className="flex items-center gap-2">
-                {/* Previous Button */}
-                <button
-                  onClick={handlePrevPage}
-                  disabled={currentPage === 1}
-                  className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 ${
-                    currentPage === 1
-                      ? "opacity-50 cursor-not-allowed bg-gray-100 text-gray-400"
-                      : "bg-white text-charcoal hover:bg-royal-maroon hover:text-metallic-gold"
-                  } shadow-soft`}
-                >
-                  <ChevronLeft className="h-4 w-4" />
-                  Previous
-                </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className={`p-3 rounded-xl transition-all duration-300 ${
+                        currentPage === 1
+                          ? "opacity-50 cursor-not-allowed bg-gray-100 text-gray-400"
+                          : "bg-white text-charcoal hover:bg-royal-maroon hover:text-metallic-gold shadow-soft"
+                      }`}
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
 
-                {/* Page Numbers */}
-                <div className="flex items-center gap-1">
-                  {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                    let pageNumber;
-                    if (totalPages <= 5) {
-                      pageNumber = i + 1;
-                    } else if (currentPage <= 3) {
-                      pageNumber = i + 1;
-                    } else if (currentPage >= totalPages - 2) {
-                      pageNumber = totalPages - 4 + i;
-                    } else {
-                      pageNumber = currentPage - 2 + i;
-                    }
-
-                    return (
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                       <button
-                        key={pageNumber}
-                        onClick={() => handlePageChange(pageNumber)}
-                        className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-300 ${
-                          currentPage === pageNumber
-                            ? "bg-royal-maroon text-metallic-gold font-semibold"
-                            : "bg-white text-charcoal hover:bg-gray-100"
-                        } shadow-soft`}
+                        key={page}
+                        onClick={() => handlePageChange(page)}
+                        className={`w-12 h-12 flex items-center justify-center rounded-xl font-medium transition-all duration-300 ${
+                          currentPage === page
+                            ? "bg-gradient-to-r from-royal-maroon to-royal-maroon-dark text-metallic-gold shadow-lg scale-110"
+                            : "bg-white text-charcoal hover:bg-gray-50 shadow-soft"
+                        }`}
                       >
-                        {pageNumber}
+                        {page}
                       </button>
-                    );
-                  })}
+                    ))}
 
-                  {totalPages > 5 && currentPage < totalPages - 2 && (
-                    <>
-                      <span className="px-2 text-gray-400">...</span>
-                      <button
-                        onClick={() => handlePageChange(totalPages)}
-                        className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-300 ${
-                          currentPage === totalPages
-                            ? "bg-royal-maroon text-metallic-gold font-semibold"
-                            : "bg-white text-charcoal hover:bg-gray-100"
-                        } shadow-soft`}
-                      >
-                        {totalPages}
-                      </button>
-                    </>
-                  )}
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className={`p-3 rounded-xl transition-all duration-300 ${
+                        currentPage === totalPages
+                          ? "opacity-50 cursor-not-allowed bg-gray-100 text-gray-400"
+                          : "bg-white text-charcoal hover:bg-royal-maroon hover:text-metallic-gold shadow-soft"
+                      }`}
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </div>
                 </div>
+              </motion.div>
+            )}
+          </div>
 
-                {/* Next Button */}
-                <button
-                  onClick={handleNextPage}
-                  disabled={currentPage === totalPages}
-                  className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 ${
-                    currentPage === totalPages
-                      ? "opacity-50 cursor-not-allowed bg-gray-100 text-gray-400"
-                      : "bg-white text-charcoal hover:bg-royal-maroon hover:text-metallic-gold"
-                  } shadow-soft`}
-                >
-                  Next
-                  <ChevronRight className="h-4 w-4" />
-                </button>
+          {/* Sidebar */}
+          <div className="lg:w-1/4">
+            <div className="sticky top-8 space-y-8">
+              {/* Featured Stories */}
+              <div className="bg-white rounded-2xl p-6 shadow-soft-lg">
+                <div className="flex items-center gap-2 mb-6">
+                  <Star className="h-5 w-5 text-metallic-gold fill-metallic-gold" />
+                  <h3 className="text-xl font-bold text-charcoal font-serif">Featured Stories</h3>
+                </div>
+                <div className="space-y-6">
+                  {featuredPosts.map((post) => (
+                    <div key={post.id} className="group cursor-pointer">
+                      <div className="flex items-start gap-3">
+                        <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-charcoal group-hover:text-royal-maroon transition-colors duration-300 line-clamp-2">
+                            {post.title}
+                          </h4>
+                          <div className="text-sm text-gray-500 mt-1">
+                            {formatDate(post.date)}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Newsletter */}
+              <div className="bg-gradient-to-br from-royal-maroon to-royal-maroon-dark rounded-2xl p-6 text-white shadow-soft-lg">
+                <div className="w-12 h-12 bg-metallic-gold/20 rounded-xl flex items-center justify-center mb-4">
+                  <BookOpen className="h-6 w-6 text-metallic-gold" />
+                </div>
+                <h3 className="text-xl font-bold mb-2 font-serif">Join Our Culinary Journey</h3>
+                <p className="text-white/80 mb-6 text-sm">
+                  Subscribe to receive exclusive recipes, stories, and special offers
+                </p>
+                <div className="space-y-3">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/60 text-white focus:outline-none focus:ring-2 focus:ring-metallic-gold"
+                  />
+                  <button className="w-full bg-metallic-gold text-royal-marold font-semibold py-3 rounded-lg hover:bg-yellow-600 transition-colors duration-300">
+                    Subscribe Now
+                  </button>
+                </div>
               </div>
             </div>
-          </>
-        ) : (
-          /* No Results Message */
-          <div className="text-center py-16">
-            <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gray-100 flex items-center justify-center">
-              <Search className="h-12 w-12 text-gray-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-charcoal mb-2">No articles found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your search or filter to find what you're looking for.</p>
-            <button
-              onClick={() => {
-                setSearchTerm('');
-                setSelectedCategory('All');
-                setCurrentPage(1);
-              }}
-              className="bg-royal-maroon hover:bg-royal-maroon-dark text-metallic-gold px-6 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              Clear Filters
-            </button>
-          </div>
-        )}
-
-        {/* Newsletter Subscription */}
-        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-royal-maroon to-royal-maroon-dark text-center text-white">
-          <h2 className="text-2xl font-bold mb-4 font-serif">Stay Updated</h2>
-          <p className="mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter to receive the latest stories, recipes, and exclusive offers from Tavisha Lounge.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-metallic-gold text-charcoal"
-            />
-            <button className="bg-metallic-gold hover:bg-yellow-600 text-royal-maroon font-semibold px-6 py-3 rounded-lg transition-all duration-300">
-              Subscribe
-            </button>
           </div>
         </div>
       </div>
+
+      {/* CTA Section */}
+<div className="relative overflow-hidden bg-gradient-to-b from-white via-soft-cream/30 to-soft-cream/50 py-24">
+
+ 
+ 
+
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Left Side - Heading & Description */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-left"
+      >
+       
+       
+
+        {/* Main Heading */}
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-6 font-serif leading-tight">
+          <span className="block">Experience the</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-maroon via-royal-maroon-dark to-metallic-gold">
+            Art of Dining
+          </span>
+        </h2>
+
+        {/* Description */}
+        <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+          At Tavisha Lounge, every meal is a masterpiece. Our chefs craft unforgettable experiences 
+          using the finest ingredients, traditional techniques.
+        </p>
+
+      </motion.div>
+
+      {/* Right Side - Information Card */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative"
+      >
+        <div className="bg-gradient-to-br from-white via-white to-soft-cream rounded-3xl shadow-2xl overflow-hidden border border-gray-100 transform hover:shadow-3xl transition-all duration-500">
+          {/* Card Decorative Header */}
+          <div className="relative h-3 bg-gradient-to-r from-royal-maroon via-metallic-gold to-royal-maroon"></div>
+          
+          <div className="p-8">
+            {/* Card Header */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-royal-maroon/10 to-metallic-gold/10 rounded-2xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-royal-maroon to-royal-maroon-dark rounded-xl flex items-center justify-center">
+                  <Star className="h-6 w-6 text-metallic-gold" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-charcoal font-serif">Premium Reservation</h3>
+                <p className="text-gray-500">Guaranteed seating experience</p>
+              </div>
+            </div>
+
+            {/* Booking Information */}
+            <div className="space-y-6 mb-8">
+              
+              
+
+   
+   
+
+              <div className="p-4 bg-gradient-to-br from-soft-cream to-white rounded-xl border border-gray-100">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm text-gray-500 mb-1">Special Offer</div>
+                    <div className="font-bold text-royal-maroon">Complimentary Dessert</div>
+                  </div>
+                  <div className="w-10 h-10 bg-gradient-to-br from-metallic-gold/20 to-yellow-600/20 rounded-lg flex items-center justify-center">
+                    <Star className="h-5 w-5 text-metallic-gold" />
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-2">For reservations made 48+ hours in advance</p>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <button className="group w-full bg-gradient-to-r from-royal-maroon via-royal-maroon-dark to-royal-maroon text-metallic-gold font-bold text-lg py-5 rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3">
+              <span>Reserve Your Royal Experience</span>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
+            </button>
+
+            {/* Additional Note */}
+            <div className="mt-6 pt-6 border-t border-gray-100 text-center">
+              <div className="flex items-center justify-center gap-2 text-gray-500 text-sm">
+                <Clock className="h-4 w-4" />
+                <span>Reservation confirmation within 2 hours</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-metallic-gold/5 to-transparent rounded-full blur-2xl -z-10"></div>
+        <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-tl from-royal-maroon/5 to-transparent rounded-full blur-2xl -z-10"></div>
+      </motion.div>
+    </div>
+  </div>
+</div>
     </div>
   );
 };
 
 export default BlogPage;
+
