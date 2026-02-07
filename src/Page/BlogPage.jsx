@@ -1,10 +1,8 @@
-// src/components/BlogPage.js
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CalendarDays,CheckIcon , Bookmark, Clock, User, ChevronLeft, ChevronRight, Search, Tag, BookOpen, Star, Heart, Share2, ArrowRight } from 'lucide-react';
 
 const BlogPage = () => {
-  // Enhanced blog data with more details
   const [savedPosts, setSavedPosts] = useState([]);
   const blogPosts = [
     {
@@ -66,17 +64,12 @@ const BlogPage = () => {
 
   ];
 
-  // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [likedPosts, setLikedPosts] = useState([]);
   const postsPerPage = 6;
 
-  // Categories
-//   const categories = ['All',];
-
-  // Filter posts
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
