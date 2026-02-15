@@ -9,14 +9,12 @@ import FloatingChat from './Components/FloatingChat';
 import CelebrationSection from './Components/CelebrationSection';
 import InteractiveMap from './Components/InteractiveMap';
 import ContactFooter from './Components/ContactFooter';
-import GoldenParticles from './Components/GoldenParticles';
 
 const Main = () => {
   const [activeWizard, setActiveWizard] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-soft-cream via-white to-metallic-gold/5 relative overflow-hidden">
-      <GoldenParticles />
       <FloatingChat />
       
       <ElegantHero onReservationClick={() => setActiveWizard(true)} />
