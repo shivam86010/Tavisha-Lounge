@@ -12,6 +12,7 @@ import Login from '../../Page/Login/Login';
 import Signup from '../../Page/Login/Signup';
 import ReservationTable from '../../Page/Reservations'
 import BlogPage from '../../Page/BlogPage'
+import BlogPost from '../../Page/BlogPost'
 function index() {
   return (
  <div>
@@ -26,6 +27,8 @@ function index() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
             <Route path="/blog" element={<BlogPage />} />
+        
+  <Route path="/blog/:id" element={<BlogPost />} />
           <Route path='/reservation-table' element={<ReservationTable/>} />
         </Route>
       </Routes>
