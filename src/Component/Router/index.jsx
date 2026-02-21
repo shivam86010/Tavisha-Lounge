@@ -13,6 +13,8 @@ import Signup from '../../Page/Login/Signup';
 import ReservationTable from '../../Page/Reservations'
 import BlogPage from '../../Page/BlogPage'
 import BlogPost from '../../Page/BlogPost'
+import Reservations from '../../Page/ReservationsHeader'
+
 function index() {
   return (
  <div>
@@ -24,6 +26,7 @@ function index() {
           <Route path='/gallery' element={<Gallery/>} />
           <Route path='/contacts' element={<Contacts/>} />
           <Route path='/reservation' element={<ReservationPage/>} />
+           <Route path="/reservations" element={<Reservations />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
             <Route path="/blog" element={<BlogPage />} />
