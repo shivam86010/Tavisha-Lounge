@@ -1,7 +1,8 @@
-// src/components/RoyalDishDetail.jsx
+import { ROYAL_DISHES } from '../MenuMainPage';
 import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
-  Crown, Diamond, Star, Award, Clock, Flame, Leaf,
+  Crown, Star, Award, Clock, Flame, Leaf,
   Wine, Fish, ChefHat, Heart, Share2, Bookmark,
   ChevronLeft, ChevronRight, Info, Sparkles,
   Thermometer, Droplets, Scale, Users, Calendar,
@@ -15,6 +16,7 @@ import {
   TrendingUp, Award as AwardIcon
 } from 'lucide-react';
 
+
 // Mock data for related dishes
 const RELATED_DISHES = [
   {
@@ -22,14 +24,14 @@ const RELATED_DISHES = [
     name: 'TANDOORI TIGER PRAWNS',
     price: 2800,
     rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1625943553852-781c6ab46f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+    image: 'https://images.unsplash.com/photo-1604909052743-94e838986d24?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
   },
   {
     id: 'related-2',
     name: 'LUCKNOWI GALOUTI KEBAB',
     price: 2400,
     rating: 5.0,
-    image: 'https://images.unsplash.com/photo-1599487488172-70625c04c805?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
   },
   {
     id: 'related-3',
@@ -74,7 +76,10 @@ const CUSTOMER_REVIEWS = [
   }
 ];
 
-const RoyalDishDetail = ({ dish, onBack, onAddToWishlist, isInWishlist }) => {
+const RoyalDishDetail = ({ onAddToWishlist, isInWishlist }) => {
+  const { dishId } = useParams();
+  const navigate = useNavigate();
+  
   const [activeTab, setActiveTab] = useState('details');
   const [isImageFullscreen, setIsImageFullscreen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -89,99 +94,46 @@ const RoyalDishDetail = ({ dish, onBack, onAddToWishlist, isInWishlist }) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [guestCount, setGuestCount] = useState(2);
+  const [loading, setLoading] = useState(true);
+  const [dishData, setDishData] = useState(null);
   
-  // Sample dish data (replace with actual props)
-  const dishData = dish || {
-    id: 'dish-001',
-    name: 'TANDOORI TIGER PRAWNS',
-    subtitle: 'The Monarch\'s Choice',
-    description: 'Jumbo prawns marinated in a secret blend of 25 royal spices, grilled to perfection in our traditional clay oven. This dish represents the pinnacle of coastal Indian cuisine, prepared using techniques passed down through generations of master chefs.',
-    longDescription: 'Our signature Tandoori Tiger Prawns are a testament to the rich culinary heritage of India\'s coastal regions. Each prawn is carefully selected for its size and freshness, then marinated for 24 hours in a proprietary blend of 25 hand-ground spices including Kashmiri chili, kasuri methi, and a hint of saffron. The marination process, developed over decades, ensures that every bite is infused with complex flavors while maintaining the natural sweetness of the prawns. Grilled in our traditional clay tandoor at precisely 450°C, the prawns emerge with a perfect char and smoky aroma that elevates this dish to royal status.',
-    price: 2800,
-    calories: 320,
-    protein: '28g',
-    carbs: '12g',
-    fat: '18g',
-    prepTime: '25 mins',
-    cookingTime: '15 mins',
-    totalTime: '40 mins',
-    spiceLevel: 3,
-    difficulty: 'Expert',
-    isVegetarian: false,
-    isVegan: false,
-    isGlutenFree: true,
-    isSignature: true,
-    isSeasonal: false,
-    isChefSpecial: true,
-    rating: 4.9,
-    reviews: 312,
-    image: 'https://images.unsplash.com/photo-1625943553852-781c6ab46f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1625943553852-781c6ab46f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      'https://images.unsplash.com/photo-1625943553852-781c6ab46f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      'https://images.unsplash.com/photo-1625943553852-781c6ab46f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    ],
-    videoUrl: 'https://example.com/video.mp4',
-    ingredients: [
-      { name: 'Tiger Prawns', quantity: '6 pieces', notes: 'Fresh, jumbo-sized' },
-      { name: 'Kashmiri Chili', quantity: '2 tbsp', notes: 'For color and heat' },
-      { name: 'Kasuri Methi', quantity: '1 tbsp', notes: 'Dried fenugreek leaves' },
-      { name: 'Saffron', quantity: '1/4 tsp', notes: 'Kashmiri saffron' },
-      { name: 'Ginger-Garlic Paste', quantity: '2 tbsp', notes: 'Freshly ground' },
-      { name: 'Mustard Oil', quantity: '3 tbsp', notes: 'For authentic flavor' },
-      { name: 'Greek Yogurt', quantity: '1/2 cup', notes: 'For marination' },
-      { name: 'Lemon Juice', quantity: '2 tbsp', notes: 'Freshly squeezed' }
-    ],
-    origin: 'Coastal India',
-    history: 'This recipe dates back to the royal kitchens of the Mughal Empire, where it was created for emperors who craved the flavors of the coast. The combination of tandoor cooking with coastal ingredients represents the fusion of two great culinary traditions.',
-    chef: {
-      name: 'CHEF ARJUN MEHRA',
-      title: 'Culinary Director',
-      image: 'https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-      note: 'This dish represents my interpretation of a recipe passed down through five generations of royal chefs.'
-    },
-    winePairing: 'Sancerre',
-    wineNotes: 'The crisp acidity and mineral notes of Sancerre complement the succulent prawns perfectly, while its citrus undertones enhance the subtle spice blend.',
-    beerPairing: 'Belgian Witbier',
-    cocktailPairing: 'Saffron Martini',
-    allergens: ['Shellfish', 'Dairy'],
-    dietaryInfo: ['Contains Shellfish', 'Contains Dairy', 'Gluten-Free'],
-    servingSize: '6 pieces',
-    serves: '2 people',
-    bestFor: ['Dinner', 'Special Occasions', 'Date Night'],
-    availableFrom: '6:00 PM',
-    availableTo: '11:00 PM',
-    minOrder: 1,
-    maxOrder: 10,
-    tags: ['Signature', 'Premium', 'Seafood', 'Tandoori'],
-    awards: [
-      { name: 'Best Seafood Dish 2024', organization: 'Culinary Excellence Awards' },
-      { name: 'People\'s Choice Award', organization: 'Food Critics Circle' }
-    ],
-    certifications: ['Sustainable Seafood', 'Traditional Recipe'],
-    pairings: [
-      { type: 'Wine', name: 'Sancerre', price: 4500 },
-      { type: 'Wine', name: 'Chablis', price: 4200 },
-      { type: 'Beer', name: 'Belgian Witbier', price: 800 },
-      { type: 'Cocktail', name: 'Saffron Martini', price: 1200 }
-    ],
-    similarDishes: RELATED_DISHES,
-    reviews: CUSTOMER_REVIEWS,
-    nutritionFacts: {
-      calories: 320,
-      totalFat: '18g',
-      saturatedFat: '4g',
-      cholesterol: '180mg',
-      sodium: '720mg',
-      totalCarbs: '12g',
-      dietaryFiber: '2g',
-      sugars: '3g',
-      protein: '28g',
-      vitaminA: '15%',
-      vitaminC: '8%',
-      calcium: '6%',
-      iron: '20%'
+  // Fetch dish data based on dishId
+  useEffect(() => {
+    // Find the dish from ROYAL_DISHES array
+    const foundDish = ROYAL_DISHES.find(d => d.id === dishId);
+    
+    if (foundDish) {
+      // Enhance the dish data with additional properties needed for the detail view
+      const enhancedDish = {
+        ...foundDish,
+        videoUrl: 'https://example.com/video.mp4',
+        certifications: ['Sustainable Seafood', 'Traditional Recipe'],
+        similarDishes: RELATED_DISHES,
+        customerReviews: CUSTOMER_REVIEWS, // Renamed from 'reviews' to 'customerReviews' to avoid conflict
+        nutritionFacts: {
+          calories: foundDish.calories,
+          totalFat: foundDish.fat,
+          saturatedFat: '4g',
+          cholesterol: '180mg',
+          sodium: '720mg',
+          totalCarbs: foundDish.carbs,
+          dietaryFiber: '2g',
+          sugars: '3g',
+          protein: foundDish.protein,
+          vitaminA: '15%',
+          vitaminC: '8%',
+          calcium: '6%',
+          iron: '20%'
+        }
+      };
+      setDishData(enhancedDish);
     }
+    setLoading(false);
+  }, [dishId]);
+
+  // Handle back navigation
+  const handleBack = () => {
+    navigate(-1);
   };
 
   // Handle fullscreen image
@@ -194,10 +146,11 @@ const RoyalDishDetail = ({ dish, onBack, onAddToWishlist, isInWishlist }) => {
   }, []);
 
   // Calculate total price
-  const totalPrice = dishData.price * quantity;
+  const totalPrice = dishData ? dishData.price * quantity : 0;
 
   // Spice level indicator
   const renderSpiceLevel = () => {
+    if (!dishData) return null;
     const levels = [1, 2, 3];
     return (
       <div className="flex items-center gap-1">
@@ -214,6 +167,34 @@ const RoyalDishDetail = ({ dish, onBack, onAddToWishlist, isInWishlist }) => {
       </div>
     );
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-400">Loading royal delicacy...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!dishData) {
+    return (
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-yellow-500 mb-4">Dish Not Found</h2>
+          <p className="text-gray-400 mb-6">The royal delicacy you're looking for doesn't exist.</p>
+          <button
+            onClick={handleBack}
+            className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold px-6 py-3 rounded-full hover:shadow-2xl transition-all duration-300"
+          >
+            Return to Menu
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200">
@@ -267,7 +248,7 @@ const RoyalDishDetail = ({ dish, onBack, onAddToWishlist, isInWishlist }) => {
       <div className="container mx-auto px-4 py-8">
         {/* Back Button */}
         <button
-          onClick={onBack}
+          onClick={handleBack}
           className="mb-6 flex items-center gap-2 text-gray-400 hover:text-yellow-500 transition-colors group"
         >
           <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
@@ -434,14 +415,14 @@ const RoyalDishDetail = ({ dish, onBack, onAddToWishlist, isInWishlist }) => {
                   </button>
                   
                   <button
-                    onClick={() => onAddToWishlist(dishData.id)}
+                    onClick={() => onAddToWishlist && onAddToWishlist(dishData.id)}
                     className={`p-3 rounded-full transition-all duration-300 ${
-                      isInWishlist 
+                      isInWishlist && isInWishlist(dishData.id)
                         ? 'bg-yellow-500/20 text-yellow-500 border-yellow-500/30' 
                         : 'bg-gray-800 text-gray-400 border-gray-700 hover:text-yellow-500'
                     } border`}
                   >
-                    <Bookmark className={`w-6 h-6 ${isInWishlist ? 'fill-current' : ''}`} />
+                    <Bookmark className={`w-6 h-6 ${isInWishlist && isInWishlist(dishData.id) ? 'fill-current' : ''}`} />
                   </button>
                   
                   <button
@@ -820,9 +801,9 @@ const RoyalDishDetail = ({ dish, onBack, onAddToWishlist, isInWishlist }) => {
                 </div>
               </div>
 
-              {/* Reviews List */}
+              {/* Reviews List - Using customerReviews instead of reviews */}
               <div className="space-y-6">
-                {dishData.reviews.map((review) => (
+                {dishData.customerReviews.map((review) => (
                   <div key={review.id} className="bg-gray-900/50 p-6 rounded-2xl border border-yellow-500/20">
                     <div className="flex items-start gap-4">
                       <img
@@ -977,6 +958,7 @@ const RoyalDishDetail = ({ dish, onBack, onAddToWishlist, isInWishlist }) => {
               <div
                 key={dish.id}
                 className="group relative overflow-hidden rounded-2xl border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                onClick={() => navigate(`/menu/${dish.id}`)}
               >
                 <img
                   src={dish.image}

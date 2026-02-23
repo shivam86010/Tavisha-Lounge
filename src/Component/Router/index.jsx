@@ -23,7 +23,7 @@ function index() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path='/menu' element={<MenuPage />} />
-          <Route path="/menus" element={<RoyalDishDetail />} />
+           <Route path="/menu/:dishId" element={<RoyalDishDetail />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/gallery' element={<Gallery/>} />
           <Route path='/contacts' element={<Contacts/>} />
