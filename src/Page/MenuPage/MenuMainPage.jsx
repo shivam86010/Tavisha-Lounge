@@ -2172,6 +2172,263 @@ const GrandMenu = () => {
           </div>
         </section>
 
+        // Add this after the Special Events section and before the Gallery section
+
+        {/* ==================== ROYAL EXPERIENCES SECTION ==================== */}
+        <section className="mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-4 font-serif animate-slideUp">
+            <span className="bg-gradient-to-r from-yellow-500 via-white to-yellow-500 bg-clip-text text-transparent">
+              ROYAL EXPERIENCES
+            </span>
+          </h2>
+          <p className="text-center text-gray-400 mb-12 text-lg max-w-3xl mx-auto">
+            Immerse yourself in exclusive dining experiences crafted for royalty
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Chef's Table Experience */}
+            <div className="group relative overflow-hidden rounded-3xl border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-700 hover:-translate-y-2">
+              <div className="absolute inset-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  alt="Chef's Table"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-transparent" />
+              </div>
+              
+              <div className="relative p-8 h-[500px] flex flex-col justify-end">
+                <div className="absolute top-8 right-8">
+                  <Crown className="w-16 h-16 text-yellow-500/30 group-hover:text-yellow-500/50 transition-colors duration-500" />
+                </div>
+                
+                <h3 className="text-3xl font-bold text-yellow-400 mb-3 font-serif">THE CHEF'S TABLE</h3>
+                <p className="text-xl text-white mb-4">An intimate culinary journey</p>
+                <p className="text-gray-300 mb-6">
+                  Seated at the heart of our kitchen, witness the artistry of our master chefs as they create a personalized 10-course tasting menu exclusively for you.
+                </p>
+                
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/20">
+                    <span className="block text-2xl font-bold text-yellow-400">10</span>
+                    <span className="text-sm text-gray-400">Exclusive Courses</span>
+                  </div>
+                  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/20">
+                    <span className="block text-2xl font-bold text-yellow-400">3</span>
+                    <span className="text-sm text-gray-400">Master Chefs</span>
+                  </div>
+                  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/20">
+                    <span className="block text-2xl font-bold text-yellow-400">4 hrs</span>
+                    <span className="text-sm text-gray-400">Culinary Journey</span>
+                  </div>
+                  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/20">
+                    <span className="block text-2xl font-bold text-yellow-400">₹15k</span>
+                    <span className="text-sm text-gray-400">Per Person</span>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold py-4 px-6 rounded-xl hover:shadow-2xl hover:shadow-yellow-500/30 transition-all duration-500 transform group-hover:scale-105">
+                  Reserve Chef's Table
+                </button>
+              </div>
+            </div>
+
+            {/* Royal Wine Tasting */}
+            <div className="group relative overflow-hidden rounded-3xl border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-700 hover:-translate-y-2">
+              <div className="absolute inset-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  alt="Wine Tasting"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-transparent" />
+              </div>
+              
+              <div className="relative p-8 h-[500px] flex flex-col justify-end">
+                <div className="absolute top-8 right-8">
+                  <Wine className="w-16 h-16 text-yellow-500/30 group-hover:text-yellow-500/50 transition-colors duration-500" />
+                </div>
+                
+                <h3 className="text-3xl font-bold text-yellow-400 mb-3 font-serif">ROYAL WINE EXPERIENCE</h3>
+                <p className="text-xl text-white mb-4">Journey through 500+ labels</p>
+                <p className="text-gray-300 mb-6">
+                  Descend into our temperature-controlled wine cellar housing over 500 rare vintages. Guided by our sommelier, explore the world's finest wines paired with artisanal cheeses.
+                </p>
+                
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/20">
+                    <span className="block text-2xl font-bold text-yellow-400">500+</span>
+                    <span className="text-sm text-gray-400">Wine Labels</span>
+                  </div>
+                  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/20">
+                    <span className="block text-2xl font-bold text-yellow-400">15</span>
+                    <span className="text-sm text-gray-400">Countries</span>
+                  </div>
+                  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/20">
+                    <span className="block text-2xl font-bold text-yellow-400">7</span>
+                    <span className="text-sm text-gray-400">Course Pairing</span>
+                  </div>
+                  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/20">
+                    <span className="block text-2xl font-bold text-yellow-400">₹8.5k</span>
+                    <span className="text-sm text-gray-400">Per Person</span>
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold py-4 px-6 rounded-xl hover:shadow-2xl hover:shadow-yellow-500/30 transition-all duration-500 transform group-hover:scale-105">
+                  Book Wine Experience
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================== ROYAL TESTIMONIALS SECTION ==================== */}
+        <section className="mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-4 font-serif animate-slideUp">
+            <span className="bg-gradient-to-r from-yellow-500 via-white to-yellow-500 bg-clip-text text-transparent">
+              VOICES OF ROYALTY
+            </span>
+          </h2>
+          <p className="text-center text-gray-400 mb-12 text-lg max-w-3xl mx-auto">
+            What our esteemed guests say about their royal dining experience
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-3xl p-8 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-6 right-6 text-6xl text-yellow-500/20 font-serif">"</div>
+              
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                  alt="Guest"
+                  className="w-16 h-16 rounded-full object-cover border-2 border-yellow-500"
+                />
+                <div>
+                  <h4 className="text-xl font-bold text-white">Rajiv Mehta</h4>
+                  <p className="text-yellow-500">Business Tycoon</p>
+                </div>
+              </div>
+              
+              <p className="text-gray-300 mb-4 italic">
+                "Tavisha Grand isn't just a restaurant; it's a journey through India's royal culinary heritage. The Galouti Kebabs literally melt in your mouth. A truly regal experience."
+              </p>
+              
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                ))}
+              </div>
+              
+              <p className="text-sm text-gray-500">Dined on February 15, 2024</p>
+              
+              <div className="absolute bottom-6 right-6">
+                <Medal className="w-8 h-8 text-yellow-500/30" />
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-3xl p-8 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-6 right-6 text-6xl text-yellow-500/20 font-serif">"</div>
+              
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1494790108777-383fd5c8a4b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                  alt="Guest"
+                  className="w-16 h-16 rounded-full object-cover border-2 border-yellow-500"
+                />
+                <div>
+                  <h4 className="text-xl font-bold text-white">Sarah Johnson</h4>
+                  <p className="text-yellow-500">Food Critic, Michelin Guide</p>
+                </div>
+              </div>
+              
+              <p className="text-gray-300 mb-4 italic">
+                "The fusion of French techniques with Indian spices at Chef Pierre's table is nothing short of revolutionary. The Truffle Butter Chicken deserves its own standing ovation."
+              </p>
+              
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                ))}
+              </div>
+              
+              <p className="text-sm text-gray-500">Dined on January 28, 2024</p>
+              
+              <div className="absolute bottom-6 right-6">
+                <Medal className="w-8 h-8 text-yellow-500/30" />
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-3xl p-8 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-6 right-6 text-6xl text-yellow-500/20 font-serif">"</div>
+              
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                  alt="Guest"
+                  className="w-16 h-16 rounded-full object-cover border-2 border-yellow-500"
+                />
+                <div>
+                  <h4 className="text-xl font-bold text-white">Michael Chang</h4>
+                  <p className="text-yellow-500">CEO, Luxury Hotels International</p>
+                </div>
+              </div>
+              
+              <p className="text-gray-300 mb-4 italic">
+                "From the moment you step in, every detail screams royalty. The wine cellar is a treasure trove, and the service is impeccable. This is how fine dining should be."
+              </p>
+              
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                ))}
+              </div>
+              
+              <p className="text-sm text-gray-500">Dined on February 10, 2024</p>
+              
+              <div className="absolute bottom-6 right-6">
+                <Medal className="w-8 h-8 text-yellow-500/30" />
+              </div>
+            </div>
+          </div>
+
+          {/* Rating Summary */}
+          <div className="mt-12 p-8 bg-gradient-to-r from-gray-900/50 to-gray-950/50 rounded-3xl border border-yellow-500/20">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">4.9</div>
+                <div className="flex items-center justify-center gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                  ))}
+                </div>
+                <p className="text-gray-400">Overall Rating</p>
+                <p className="text-sm text-gray-500">Based on 2,847 reviews</p>
+              </div>
+              
+              <div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">#1</div>
+                <p className="text-gray-400">Fine Dining</p>
+                <p className="text-sm text-gray-500">Mumbai 2024</p>
+              </div>
+              
+              <div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">97%</div>
+                <p className="text-gray-400">Would Return</p>
+                <p className="text-sm text-gray-500">Guest Satisfaction</p>
+              </div>
+              
+              <div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">15</div>
+                <p className="text-gray-400">International Awards</p>
+                <p className="text-sm text-gray-500">2023-2024</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Gallery Section */}
         <section className="mb-20">
           <h2 className="text-5xl md:text-6xl font-bold text-center mb-4 font-serif animate-slideUp">
