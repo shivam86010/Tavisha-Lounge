@@ -1289,7 +1289,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Crown, Diamond, Star, Award,
+  Crown, Diamond, Star, Award,Check,Phone,Mail,Sparkles,
   Wine, Fish, Flame, Leaf,
   Sun, Moon, Clock,
   Facebook, Twitter, Instagram, Youtube, Linkedin,
@@ -2172,7 +2172,7 @@ const GrandMenu = () => {
           </div>
         </section>
 
-        // Add this after the Special Events section and before the Gallery section
+        
 
         {/* ==================== ROYAL EXPERIENCES SECTION ==================== */}
         <section className="mb-20">
@@ -2428,6 +2428,866 @@ const GrandMenu = () => {
             </div>
           </div>
         </section>
+
+      {/* // Add these sections after the Special Events section and before the Gallery section */}
+
+        {/* ==================== THE ROYAL CELLAR ==================== */}
+        <section className="mb-20 relative">
+          {/* Decorative Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl" />
+          </div>
+
+          <div className="relative">
+            {/* Section Header with Ornate Design */}
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="h-px w-16 bg-gradient-to-r from-transparent via-amber-500 to-amber-500" />
+                <Wine className="w-8 h-8 text-amber-500" />
+                <div className="h-px w-16 bg-gradient-to-l from-transparent via-amber-500 to-amber-500" />
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold font-serif mb-4">
+                <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
+                  THE ROYAL CELLAR
+                </span>
+              </h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                A curated collection of the world's finest vintages, aged to perfection in our temperature-controlled cellars
+              </p>
+            </div>
+
+            {/* Featured Wine Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* Premium Wine Collection */}
+              <div className="group relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-rose-500 rounded-3xl opacity-20 group-hover:opacity-30 blur transition duration-1000" />
+                <div className="relative bg-gray-900/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-800 overflow-hidden">
+                  
+                  {/* Background Pattern */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber-500/10 to-rose-500/10 rounded-full blur-3xl" />
+                  
+                  <div className="relative flex flex-col md:flex-row gap-8 items-center">
+                    {/* Wine Image with Bottle Effect */}
+                    <div className="relative w-48 h-96">
+                      <div className="absolute inset-0 bg-gradient-to-b from-amber-500/30 to-rose-500/30 rounded-full blur-2xl transform rotate-12" />
+                      <img 
+                        src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Premium Wine Collection"
+                        className="relative h-full w-full object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                    
+                    {/* Wine Details */}
+                    <div className="flex-1">
+                      <div className="inline-block px-4 py-2 bg-amber-500/20 rounded-full text-amber-500 text-sm font-semibold mb-4 border border-amber-500/30">
+                        ✦ SIGNATURE COLLECTION ✦
+                      </div>
+                      
+                      <h3 className="text-3xl font-bold text-white mb-2">Château Margaux 2010</h3>
+                      <p className="text-amber-500 mb-4">Premier Grand Cru Classé</p>
+                      
+                      <p className="text-gray-400 mb-6">
+                        A legendary vintage from Bordeaux's most prestigious estate. Notes of blackcurrant, violet, and cedar with an extraordinarily long finish.
+                      </p>
+                      
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="bg-black/40 rounded-xl p-4 text-center">
+                          <div className="text-2xl font-bold text-amber-500">98</div>
+                          <div className="text-xs text-gray-400">Wine Spectator</div>
+                        </div>
+                        <div className="bg-black/40 rounded-xl p-4 text-center">
+                          <div className="text-2xl font-bold text-amber-500">100</div>
+                          <div className="text-xs text-gray-400">Robert Parker</div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-3xl font-bold text-white">₹85,000</span>
+                          <span className="text-gray-500 text-sm ml-2">per bottle</span>
+                        </div>
+                        <button className="px-6 py-3 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-xl hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-500 transform hover:scale-105">
+                          Reserve Bottle
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Rare Vintage Selection */}
+              <div className="group relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-rose-500 to-purple-500 rounded-3xl opacity-20 group-hover:opacity-30 blur transition duration-1000" />
+                <div className="relative bg-gray-900/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-800 overflow-hidden">
+                  
+                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-rose-500/10 to-purple-500/10 rounded-full blur-3xl" />
+                  
+                  <div className="relative flex flex-col md:flex-row gap-8 items-center">
+                    <div className="relative w-48 h-96">
+                      <div className="absolute inset-0 bg-gradient-to-b from-rose-500/30 to-purple-500/30 rounded-full blur-2xl transform -rotate-12" />
+                      <img 
+                        src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Rare Vintage"
+                        className="relative h-full w-full object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                    
+                    <div className="flex-1">
+                      <div className="inline-block px-4 py-2 bg-rose-500/20 rounded-full text-rose-500 text-sm font-semibold mb-4 border border-rose-500/30">
+                        ✦ RARE RESERVE ✦
+                      </div>
+                      
+                      <h3 className="text-3xl font-bold text-white mb-2">Domaine de la Romanée-Conti 2015</h3>
+                      <p className="text-rose-500 mb-4">Grand Cru, Burgundy</p>
+                      
+                      <p className="text-gray-400 mb-6">
+                        The pinnacle of Pinot Noir. Exquisite aromas of rose petal, cherry, and exotic spices. Only 6,000 bottles produced annually.
+                      </p>
+                      
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="bg-black/40 rounded-xl p-4 text-center">
+                          <div className="text-2xl font-bold text-rose-500">100</div>
+                          <div className="text-xs text-gray-400">Decanter</div>
+                        </div>
+                        <div className="bg-black/40 rounded-xl p-4 text-center">
+                          <div className="text-2xl font-bold text-rose-500">19.5</div>
+                          <div className="text-xs text-gray-400">Jancis Robinson</div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-3xl font-bold text-white">₹2,50,000</span>
+                          <span className="text-gray-500 text-sm ml-2">per bottle</span>
+                        </div>
+                        <button className="px-6 py-3 bg-gradient-to-r from-rose-500 to-purple-500 text-white rounded-xl hover:shadow-2xl hover:shadow-rose-500/30 transition-all duration-500 transform hover:scale-105">
+                          Inquire
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Wine Categories Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { name: 'Champagne', count: 48, icon: '🥂', color: 'amber' },
+                { name: 'Red Wine', count: 156, icon: '🍷', color: 'rose' },
+                { name: 'White Wine', count: 98, icon: '🥂', color: 'amber' },
+                { name: 'Whisky', count: 72, icon: '🥃', color: 'rose' },
+              ].map((item, index) => (
+                <div key={index} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 text-center hover:border-amber-500/30 transition-all duration-300">
+                    <span className="text-4xl mb-3 block">{item.icon}</span>
+                    <h4 className="text-white font-semibold mb-1">{item.name}</h4>
+                    <p className="text-amber-500 text-sm">{item.count} Labels</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ==================== PRIVATE DINING & ROYAL SUITES ==================== */}
+        <section className="mb-20">
+          {/* Section Header with Golden Ornament */}
+          <div className="relative mb-16">
+            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-amber-500/20 to-rose-500/20 rounded-full blur-3xl" />
+            
+            <div className="relative text-center">
+              <div className="flex items-center justify-center gap-6 mb-6">
+                <div className="w-12 h-12 border-t-2 border-l-2 border-amber-500/30 rounded-tl-3xl" />
+                <Crown className="w-10 h-10 text-amber-500" />
+                <div className="w-12 h-12 border-b-2 border-r-2 border-amber-500/30 rounded-br-3xl" />
+              </div>
+              
+              <h2 className="text-5xl md:text-6xl font-bold font-serif mb-4">
+                <span className="bg-gradient-to-r from-amber-300 via-white to-amber-300 bg-clip-text text-transparent">
+                  PRIVATE DINING
+                </span>
+              </h2>
+              <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                Intimate spaces designed for life's most memorable moments, where every detail is tailored to perfection
+              </p>
+            </div>
+          </div>
+
+          {/* Main Feature - Maharaja's Hall */}
+          <div className="relative h-[600px] rounded-3xl overflow-hidden mb-8 group">
+            {/* Background Image */}
+            <img 
+              src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Maharaja's Hall"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+            />
+            
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/90 to-transparent" />
+            
+            {/* Ornate Border */}
+            <div className="absolute inset-6 border-2 border-amber-500/20 rounded-2xl pointer-events-none" />
+            
+            {/* Content */}
+            <div className="absolute inset-0 flex items-center">
+              <div className="container mx-auto px-12">
+                <div className="max-w-2xl">
+                  <div className="inline-block px-6 py-3 bg-amber-500/20 backdrop-blur-sm rounded-full text-amber-500 font-semibold mb-6 border border-amber-500/30">
+                    ✦ THE MAHARAJA'S HALL ✦
+                  </div>
+                  
+                  <h3 className="text-5xl font-bold text-white mb-4 font-serif">A Hall Fit for Kings</h3>
+                  <p className="text-xl text-gray-300 mb-8">
+                    Our crown jewel, this majestic hall features hand-carved pillars, crystal chandeliers, and a private balcony overlooking the royal gardens.
+                  </p>
+                  
+                  <div className="grid grid-cols-3 gap-6 mb-10">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-amber-500 mb-1">40</div>
+                      <div className="text-sm text-gray-400">Guests</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-amber-500 mb-1">2</div>
+                      <div className="text-sm text-gray-400">Private Chefs</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-amber-500 mb-1">360°</div>
+                      <div className="text-sm text-gray-400">Garden View</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4">
+                    <button className="px-8 py-4 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-xl hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-500">
+                      Inquire Availability
+                    </button>
+                    <button className="px-8 py-4 border-2 border-amber-500/30 text-amber-500 rounded-xl hover:bg-amber-500/10 transition-all duration-300">
+                      Virtual Tour
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Other Venues Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: 'THE WINE CELLAR',
+                description: 'Intimate dining surrounded by 500+ rare vintages',
+                capacity: '12 guests',
+                image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                icon: Wine
+              },
+              {
+                name: 'THE TERRACE GARDEN',
+                description: 'Alfresco dining under the stars with city views',
+                capacity: '60 guests',
+                image: 'https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                icon: Sun
+              },
+              {
+                name: 'THE MAHARANI SUITE',
+                description: 'Opulent private room with royal decor and butler service',
+                capacity: '20 guests',
+                image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                icon: Diamond
+              }
+            ].map((venue, index) => {
+              const Icon = venue.icon;
+              return (
+                <div key={index} className="group relative h-96 rounded-3xl overflow-hidden">
+                  <img 
+                    src={venue.image}
+                    alt={venue.name}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/70 to-transparent" />
+                  
+                  {/* Decorative Corner Elements */}
+                  <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-amber-500/30 rounded-tl-2xl" />
+                  <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-amber-500/30 rounded-br-2xl" />
+                  
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                    <div className="mb-4">
+                      <Icon className="w-8 h-8 text-amber-500 mb-3" />
+                      <h4 className="text-2xl font-bold text-white mb-2">{venue.name}</h4>
+                      <p className="text-gray-300 text-sm mb-3">{venue.description}</p>
+                      <p className="text-amber-500 text-sm font-semibold">{venue.capacity}</p>
+                    </div>
+                    
+                    <button 
+                     onClick={() => navigate(`/venue/${venue.id}`)}
+                    className="w-full py-3 bg-white/10 backdrop-blur-sm border border-amber-500/30 rounded-xl text-amber-500 hover:bg-amber-500 hover:text-gray-900 transition-all duration-300">
+                      Explore Venue
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Custom Events Banner */}
+          <div className="mt-8 p-10 bg-gradient-to-r from-gray-900/50 to-gray-950/50 rounded-3xl border border-amber-500/20 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber-500/10 to-rose-500/10 rounded-full blur-3xl" />
+            
+            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
+              <div>
+                <h4 className="text-3xl font-bold text-white mb-3">Plan Your Royal Event</h4>
+                <p className="text-gray-400 max-w-2xl">
+                  Weddings, anniversaries, corporate galas — our dedicated events team ensures every moment is extraordinary.
+                </p>
+              </div>
+              
+              <div className="flex gap-4">
+                <button className="px-8 py-4 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-xl hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-500 whitespace-nowrap">
+                  Request Proposal
+                </button>
+                <button className="px-8 py-4 bg-gray-800 text-gray-300 rounded-xl hover:bg-gray-700 transition-all duration-300 whitespace-nowrap">
+                  View Brochure
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* ==================== THE ROYAL LEGACY ==================== */}
+        <section className="mb-20 relative">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-20 left-20 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '12s' }} />
+            
+            {/* Heritage Pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-0 left-0 w-full h-full" style={{
+                backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(245, 158, 11, 0.3) 1px, transparent 0)',
+                backgroundSize: '40px 40px'
+              }} />
+            </div>
+          </div>
+
+          <div className="relative">
+            {/* Section Header with Royal Seal */}
+            <div className="text-center mb-16">
+              <div className="inline-block relative mb-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-rose-500 rounded-full blur-xl opacity-30 animate-pulse" />
+                <div className="relative w-24 h-24 mx-auto">
+                  <div className="absolute inset-0 border-2 border-amber-500 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
+                  <div className="absolute inset-2 border border-amber-500/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+                  <Crown className="absolute inset-0 m-auto w-10 h-10 text-amber-500" />
+                </div>
+              </div>
+              
+              <h2 className="text-5xl md:text-6xl font-bold font-serif mb-4">
+                <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
+                  THE ROYAL LEGACY
+                </span>
+              </h2>
+              <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                Three decades of culinary excellence, preserving heritage while embracing innovation
+              </p>
+            </div>
+
+            {/* Timeline Journey */}
+            <div className="relative mb-20">
+              {/* Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-transparent via-amber-500 to-transparent" />
+              
+              <div className="space-y-16">
+                {/* 1995 - Founding */}
+                <div className="relative flex items-center">
+                  <div className="w-1/2 pr-12 text-right">
+                    <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="absolute left-full top-1/2 transform -translate-y-1/2 -translate-x-6 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center shadow-2xl shadow-amber-500/30 group-hover:scale-110 transition-transform duration-500">
+                        <span className="text-gray-900 font-bold">'95</span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-amber-500 mb-3">The Humble Beginning</h3>
+                      <p className="text-gray-400">Founded by Chef Arjun Mehra's grandfather in the heart of Old Delhi, Tavisha began as a 10-table restaurant serving authentic Mughlai cuisine to discerning patrons.</p>
+                      <div className="mt-4 text-sm text-gray-500">28 years of culinary heritage</div>
+                    </div>
+                  </div>
+                  <div className="w-1/2 pl-12">
+                    <img 
+                      src="https://images.unsplash.com/photo-1552566624-52f8b3add7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      alt="Original Restaurant"
+                      className="rounded-3xl h-48 w-full object-cover shadow-2xl border border-amber-500/20"
+                    />
+                  </div>
+                </div>
+
+                {/* 2005 - First Michelin Star */}
+                <div className="relative flex items-center flex-row-reverse">
+                  <div className="w-1/2 pl-12">
+                    <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="absolute right-full top-1/2 transform -translate-y-1/2 translate-x-6 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center shadow-2xl shadow-amber-500/30 group-hover:scale-110 transition-transform duration-500">
+                        <Star className="w-6 h-6 text-gray-900 fill-gray-900" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-amber-500 mb-3">First Michelin Star</h3>
+                      <p className="text-gray-400">Tavisha became the first Indian restaurant to receive a Michelin star, recognizing our commitment to preserving royal recipes while innovating presentation.</p>
+                      <div className="mt-4 flex gap-2">
+                        {[...Array(3)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 text-amber-500 fill-amber-500" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-1/2 pr-12 text-right">
+                    <img 
+                      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      alt="Michelin Star Ceremony"
+                      className="rounded-3xl h-48 w-full object-cover shadow-2xl border border-amber-500/20"
+                    />
+                  </div>
+                </div>
+
+                {/* 2015 - Expansion to Mumbai */}
+                <div className="relative flex items-center">
+                  <div className="w-1/2 pr-12 text-right">
+                    <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="absolute left-full top-1/2 transform -translate-y-1/2 -translate-x-6 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center shadow-2xl shadow-amber-500/30 group-hover:scale-110 transition-transform duration-500">
+                        <Diamond className="w-5 h-5 text-gray-900" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-amber-500 mb-3">The Grand Opening</h3>
+                      <p className="text-gray-400">Tavisha Grand opened in Mumbai's Royal Enclave, featuring 15,000 sq ft of opulent dining space, private cellars, and our signature chef's table.</p>
+                      <div className="mt-4 text-sm text-gray-500">Now serving 500+ guests daily</div>
+                    </div>
+                  </div>
+                  <div className="w-1/2 pl-12">
+                    <img 
+                      src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      alt="Tavisha Grand Mumbai"
+                      className="rounded-3xl h-48 w-full object-cover shadow-2xl border border-amber-500/20"
+                    />
+                  </div>
+                </div>
+
+                {/* 2024 - Present Day */}
+                <div className="relative flex items-center flex-row-reverse">
+                  <div className="w-1/2 pl-12">
+                    <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="absolute right-full top-1/2 transform -translate-y-1/2 translate-x-6 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center shadow-2xl shadow-amber-500/30 group-hover:scale-110 transition-transform duration-500">
+                        <Award className="w-5 h-5 text-gray-900" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-amber-500 mb-3">Global Recognition</h3>
+                      <p className="text-gray-400">Today, with 47 international awards, 15 master chefs, and a wine cellar of 500+ labels, Tavisha Grand stands as India's premier dining destination.</p>
+                      <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+                        <div>
+                          <div className="text-2xl font-bold text-amber-500">47</div>
+                          <div className="text-xs text-gray-500">Awards</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-amber-500">15</div>
+                          <div className="text-xs text-gray-500">Chefs</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-amber-500">28</div>
+                          <div className="text-xs text-gray-500">Years</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-1/2 pr-12 text-right">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      alt="Present Day Excellence"
+                      className="rounded-3xl h-48 w-full object-cover shadow-2xl border border-amber-500/20"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Heritage Numbers */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
+              {[
+                { number: '28', label: 'Years of Excellence', icon: Crown },
+                { number: '47', label: 'International Awards', icon: Award },
+                { number: '15', label: 'Master Chefs', icon: Medal },
+                { number: '500+', label: 'Rare Wines', icon: Wine }
+              ].map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div key={index} className="group relative text-center">
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-rose-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative bg-gray-900/30 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-amber-500/30 transition-all duration-500">
+                      <Icon className="w-10 h-10 text-amber-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-500" />
+                      <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
+                      <div className="text-sm text-gray-400">{stat.label}</div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        
+        {/* ==================== ROYAL CONCIERGE SERVICES ==================== */}
+        <section className="mb-20">
+          {/* Background with Gold Overlay */}
+          <div className="relative rounded-3xl overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img 
+                src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Concierge Service"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/95 to-gray-950" />
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 via-transparent to-transparent" />
+            </div>
+
+            {/* Content */}
+            <div className="relative p-16">
+              {/* Header */}
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-3 px-6 py-3 bg-amber-500/10 backdrop-blur-sm rounded-full border border-amber-500/30 mb-6">
+                  <Sparkles className="w-5 h-5 text-amber-500" />
+                  <span className="text-amber-500 font-semibold">BEYOND DINING</span>
+                </div>
+                
+                <h2 className="text-5xl md:text-6xl font-bold font-serif mb-4">
+                  <span className="bg-gradient-to-r from-amber-300 via-white to-amber-300 bg-clip-text text-transparent">
+                    ROYAL CONCIERGE
+                  </span>
+                </h2>
+                <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                  Personalized services that transform your visit into an unforgettable royal experience
+                </p>
+              </div>
+
+              {/* Services Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                {/* Private Jet Catering */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-rose-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
+                  <div className="relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-rose-500/10 rounded-full blur-2xl" />
+                    
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform duration-500">
+                        <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-white mb-3">Private Jet Catering</h3>
+                      <p className="text-gray-400 mb-6">Gourmet meals prepared by our chefs and delivered to your aircraft, anywhere in India.</p>
+                      
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">Customized 5-course menus</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">Temperature-controlled packaging</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">4-hour advance notice</span>
+                        </div>
+                      </div>
+                      
+                      <button className="w-full py-3 bg-amber-500/20 border border-amber-500/30 rounded-xl text-amber-500 hover:bg-amber-500 hover:text-gray-900 transition-all duration-300 font-semibold">
+                        Inquire Pricing
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Personal Chef Service */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-rose-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
+                  <div className="relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-rose-500/10 rounded-full blur-2xl" />
+                    
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform duration-500">
+                        <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                        </svg>
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-white mb-3">Personal Chef Service</h3>
+                      <p className="text-gray-400 mb-6">A master chef from Tavisha Grand comes to your home for intimate dinner parties or special occasions.</p>
+                      
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">Choice of any master chef</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">Full service team included</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">Custom menu planning</span>
+                        </div>
+                      </div>
+                      
+                      <button className="w-full py-3 bg-amber-500/20 border border-amber-500/30 rounded-xl text-amber-500 hover:bg-amber-500 hover:text-gray-900 transition-all duration-300 font-semibold">
+                        Book a Chef
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Luxury Gift Hampers */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-rose-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
+                  <div className="relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-rose-500/10 rounded-full blur-2xl" />
+                    
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform duration-500">
+                        <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                        </svg>
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-white mb-3">Royal Gift Hampers</h3>
+                      <p className="text-gray-400 mb-6">Curated collections of our signature products, rare wines, and gourmet delicacies, beautifully presented.</p>
+                      
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">Signature spice collections</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">Rare vintage wines</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm">
+                          <Check className="w-4 h-4 text-amber-500" />
+                          <span className="text-gray-300">Personalized engraving</span>
+                        </div>
+                      </div>
+                      
+                      <button className="w-full py-3 bg-amber-500/20 border border-amber-500/30 rounded-xl text-amber-500 hover:bg-amber-500 hover:text-gray-900 transition-all duration-300 font-semibold">
+                        Explore Hampers
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional Services */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { name: 'Private Car Service', icon: '🚗' },
+                  { name: 'Hotel Partnerships', icon: '🏨' },
+                  { name: 'Event Planning', icon: '✨' },
+                  { name: 'Wine Advisory', icon: '🍷' }
+                ].map((service, index) => (
+                  <div key={index} className="group relative">
+                    <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800 rounded-xl p-4 text-center hover:border-amber-500/30 transition-all duration-300">
+                      <span className="text-2xl mb-2 block group-hover:scale-110 transition-transform">{service.icon}</span>
+                      <span className="text-sm text-gray-400 group-hover:text-amber-500 transition-colors">{service.name}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Concierge Contact */}
+              <div className="mt-12 p-8 bg-gradient-to-r from-gray-900/50 to-gray-950/50 rounded-2xl border border-amber-500/20 text-center">
+                <p className="text-gray-300 mb-4">
+                  <span className="text-amber-500 font-semibold">24/7 Personal Concierge:</span> Available for our esteemed guests
+                </p>
+                <div className="flex items-center justify-center gap-8">
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-amber-500" />
+                    <span className="text-white">+91 98765 43210</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail className="w-5 h-5 text-amber-500" />
+                    <span className="text-white">concierge@tavisha.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+       {/* ==================== ROYAL COLLECTIBLES ==================== */}
+<section className="mb-20">
+  <div className="relative">
+    {/* Header */}
+    <div className="text-center mb-12">
+      <h2 className="text-5xl md:text-6xl font-bold font-serif mb-4">
+        <span className="bg-gradient-to-r from-amber-300 via-white to-amber-300 bg-clip-text text-transparent">
+          ROYAL COLLECTIBLES
+        </span>
+      </h2>
+      <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        Take a piece of Tavisha Grand home with our exclusive range of luxury merchandise
+      </p>
+    </div>
+
+    {/* Products Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      {[
+        {
+          name: 'Signature Spice Box',
+          desc: '12 rare spice blends from our royal kitchen',
+          price: '₹4,500',
+          image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          badge: 'Best Seller'
+        },
+        {
+          name: 'Gold-Plated Cutlery Set',
+          desc: '24K gold-plated, handcrafted in Jaipur',
+          price: '₹25,000',
+          image: 'https://images.unsplash.com/photo-1584990347449-a5f2feb2af77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          badge: 'Limited Edition'
+        },
+        {
+          name: 'Chef\'s Recipe Book',
+          desc: 'Hand-signed by all 15 master chefs',
+          price: '₹8,500',
+          image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          badge: 'Exclusive'
+        },
+        {
+          name: 'Royal Tea Collection',
+          desc: 'Premium teas from Darjeeling & Assam',
+          price: '₹3,200',
+          image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          badge: 'New'
+        }
+      ].map((product, index) => (
+        <div key={index} className="group relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-rose-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
+          <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-4 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-2">
+            <div className="relative h-48 mb-4 rounded-2xl overflow-hidden">
+              <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute top-2 right-2 bg-amber-500 text-gray-900 text-xs font-bold px-2 py-1 rounded-full">
+                {product.badge}
+              </div>
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2">{product.name}</h3>
+            <p className="text-sm text-gray-400 mb-4">{product.desc}</p>
+            <div className="flex items-center justify-between">
+              <span className="text-xl font-bold text-amber-500">{product.price}</span>
+              <button className="px-4 py-2 bg-amber-500/20 text-amber-500 rounded-xl text-sm hover:bg-amber-500 hover:text-gray-900 transition-all duration-300">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Gift Card Promo */}
+    <div className="mt-8 p-8 bg-gradient-to-r from-amber-500/10 to-rose-500/10 rounded-3xl border border-amber-500/20 flex items-center justify-between">
+      <div>
+        <h4 className="text-2xl font-bold text-white mb-2">Royal Gift Cards</h4>
+        <p className="text-gray-400">The perfect gift for special occasions</p>
+      </div>
+      <div className="flex gap-4">
+        <button className="px-6 py-3 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-xl hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-500">
+          Buy Gift Card
+        </button>
+        <button className="px-6 py-3 border-2 border-amber-500/30 text-amber-500 rounded-xl hover:bg-amber-500/10 transition-all duration-300">
+          Check Balance
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{/* ==================== ROYAL GARDENS & SUSTAINABILITY ==================== */}
+<section className="mb-20">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    {/* Left Side - Gardens */}
+    <div className="relative h-[600px] rounded-3xl overflow-hidden group">
+      <img 
+        src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        alt="Royal Gardens"
+        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/70 to-transparent" />
+      
+      <div className="absolute bottom-0 left-0 right-0 p-8">
+        <div className="flex items-center gap-3 mb-4">
+          <Leaf className="w-6 h-6 text-green-400" />
+          <span className="text-green-400 font-semibold">SUSTAINABILITY FIRST</span>
+        </div>
+        <h3 className="text-3xl font-bold text-white mb-3 font-serif">Our Royal Gardens</h3>
+        <p className="text-gray-300 mb-6 max-w-lg">
+          5 acres of organic heirloom vegetables, rare herbs, and edible flowers, grown using traditional methods passed down through generations.
+        </p>
+        
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4">
+            <div className="text-2xl font-bold text-green-400">45+</div>
+            <div className="text-sm text-gray-400">Heirloom Varieties</div>
+          </div>
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4">
+            <div className="text-2xl font-bold text-green-400">100%</div>
+            <div className="text-sm text-gray-400">Organic & Pesticide-Free</div>
+          </div>
+        </div>
+        
+        <button className="mt-6 px-6 py-3 border-2 border-green-400/30 text-green-400 rounded-xl hover:bg-green-400/10 transition-all duration-300">
+          Schedule Garden Tour
+        </button>
+      </div>
+    </div>
+
+    {/* Right Side - Sustainability Initiatives */}
+    <div className="space-y-6">
+      <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-800">
+        <h4 className="text-2xl font-bold text-white mb-6 font-serif">Zero Waste Commitment</h4>
+        <div className="space-y-4">
+          {[
+            { title: 'Composting Program', desc: '100% of kitchen waste composted for gardens', progress: 100 },
+            { title: 'Plastic-Free', desc: 'Eliminated single-use plastics entirely', progress: 100 },
+            { title: 'Water Conservation', desc: 'Rainwater harvesting & smart irrigation', progress: 85 },
+            { title: 'Local Sourcing', desc: '85% ingredients from within 100km', progress: 85 }
+          ].map((item, index) => (
+            <div key={index}>
+              <div className="flex justify-between mb-2">
+                <span className="text-white">{item.title}</span>
+                <span className="text-green-400">{item.progress}%</span>
+              </div>
+              <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"
+                  style={{ width: `${item.progress}%` }}
+                />
+              </div>
+              <p className="text-sm text-gray-500 mt-1">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-800">
+        <h4 className="text-2xl font-bold text-white mb-6 font-serif">Seasonal Harvest</h4>
+        <div className="grid grid-cols-4 gap-4 text-center">
+          {['Spring', 'Summer', 'Monsoon', 'Winter'].map((season, index) => (
+            <div key={index} className="group cursor-pointer">
+              <div className="w-12 h-12 mx-auto mb-2 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-green-400/20 transition-colors">
+                <Sun className="w-6 h-6 text-gray-400 group-hover:text-green-400" />
+              </div>
+              <div className="text-sm text-gray-400 group-hover:text-green-400 transition-colors">{season}</div>
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-gray-500 text-sm mt-4">
+          Our menu changes with the seasons, featuring the freshest harvest from our gardens
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Gallery Section */}
         <section className="mb-20">

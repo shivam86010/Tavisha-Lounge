@@ -15,6 +15,7 @@ import BlogPage from '../../Page/BlogPage'
 import BlogPost from '../../Page/BlogPost'
 import Reservations from '../../Page/ReservationsHeader'
 import RoyalDishDetail from '../../Page/MenuPage/Components/RoyalDishDetail'
+import VenueDetailPage from '../../Page/VenueDetailPage';
 
 function index() {
   return (
@@ -22,6 +23,7 @@ function index() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="/venue/:venueId" element={<VenueDetailPage />} />
           <Route path='/menu' element={<MenuPage />} />
            <Route path="/menu/:dishId" element={<RoyalDishDetail />} />
           <Route path='/about' element={<AboutPage />} />
