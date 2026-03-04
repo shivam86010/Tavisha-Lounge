@@ -9,13 +9,27 @@ import {
   Gem, Medal, Trophy, Utensils, ChefHat,
   Quote, Leaf, Flower2, PartyPopper
 } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
+import PrivateViewingPage from '../Component/PrivateViewingPage'
 const AboutPage = () => {
+  const navigate = useNavigate();
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [visibleSections, setVisibleSections] = useState({});
   const [hoveredChef, setHoveredChef] = useState(null);
  const [activeTimelineIndex, setActiveTimelineIndex] = useState(0);
   const [heroTextVisible, setHeroTextVisible] = useState(false);
+
+  const [showPrivateViewing, setShowPrivateViewing] = useState(false);
+const [showCelebrationPlanning, setShowCelebrationPlanning] = useState(false);
+const [showPrivateDining, setShowPrivateDining] = useState(false);
+const [showWineTasting, setShowWineTasting] = useState(false);
+
+// Then add these handlers:
+
+const handlePrivateViewing = () => setShowPrivateViewing(true);
+const handleCelebrationPlanning = () => setShowCelebrationPlanning(true);
+const handlePrivateDining = () => setShowPrivateDining(true);
+const handleWineTasting = () => setShowWineTasting(true);
 
   useEffect(() => {
     // Hero text animation
@@ -201,24 +215,7 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200 overflow-x-hidden">
-      {/* Floating Gold Particles */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-br from-amber-500/20 to-transparent animate-pulse"
-            style={{
-              width: `${Math.random() * 6 + 2}px`,
-              height: `${Math.random() * 6 + 2}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${Math.random() * 5 + 3}s`
-            }}
-          />
-        ))}
-      </div>
-
+  
        <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Opulent Background with Parallax */}
         <div className="absolute inset-0">
@@ -278,18 +275,15 @@ const AboutPage = () => {
             </div>
             
             {/* Animated Text Reveal with Stagger */}
-            <div className="space-y-6">
-              <p className={`text-amber-500 tracking-[0.3em] text-sm transition-all duration-1000 delay-300 ${heroTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                EST. 1995
-              </p>
-              
-              <h1 className={`text-7xl md:text-9xl font-bold font-serif mb-6 transition-all duration-1000 delay-500 ${heroTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="space-y-4">
+             
+              <h1 className={`text-3xl md:text-6xl font-bold font-serif mb-6 transition-all duration-1000 delay-500 ${heroTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent relative">
                   TAVISHA
                   <span className="absolute -top-6 -right-8 text-2xl animate-ping">👑</span>
                 </span>
-                <br />
-                <span className="text-5xl md:text-7xl text-white/90 font-light tracking-[0.3em]">
+                {' '}
+                <span className="text-3xl md:text-6xl text-white/90 font-light tracking-[0.3em]">
                   GRAND
                 </span>
               </h1>
@@ -305,7 +299,7 @@ const AboutPage = () => {
                 Where Royal Heritage Meets Modern Luxury
               </p>
               
-              <p className={`text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-1100 ${heroTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <p className={`text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-1100 ${heroTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 Welcome to a realm where centuries-old culinary traditions are reborn through artistic innovation. 
                 Every visit is a journey through India's royal past, presented with contemporary grandeur.
               </p>
@@ -313,7 +307,7 @@ const AboutPage = () => {
 
             {/* Opulent Buttons with Hover Effects */}
             <div className={`flex justify-center gap-6 mt-12 transition-all duration-1000 delay-1300 ${heroTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <button className="group relative px-10 py-5 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-2xl font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-105">
+              <button className="group relative px-10 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-2xl font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-105">
                 <span className="relative z-10 flex items-center gap-2">
                   Discover Our Story
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -322,7 +316,7 @@ const AboutPage = () => {
                 <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </button>
               
-              <button className="group relative px-10 py-5 border-2 border-amber-500/30 text-amber-500 rounded-2xl font-bold text-lg overflow-hidden hover:border-amber-500 transition-all duration-500 hover:scale-105">
+              <button className="group relative px-10 py-3 border-2 border-amber-500/30 text-amber-500 rounded-2xl font-bold text-lg overflow-hidden hover:border-amber-500 transition-all duration-500 hover:scale-105">
                 <span className="relative z-10 flex items-center gap-2">
                   <Diamond className="w-5 h-5" />
                   Virtual Tour
@@ -333,24 +327,11 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-
-        {/* Enhanced Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="relative group cursor-pointer">
-            <div className="absolute -inset-4 bg-amber-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative w-10 h-16 border-2 border-amber-500/30 rounded-full flex justify-center">
-              <div className="w-1.5 h-4 bg-gradient-to-b from-amber-500 to-amber-300 rounded-full mt-3 animate-[bounce_2s_ease-in-out_infinite]" />
-            </div>
-            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 text-amber-500/70 text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-              Scroll to Explore
-            </div>
-          </div>
-        </div>
       </section>
      
 
       {/* Opulent Divider */}
-      <div className="relative py-12">
+      <div className="relative py-10">
         <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-amber-500 to-transparent" />
         <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 w-12 h-12 border-2 border-amber-500/30 rounded-full flex items-center justify-center">
           <Diamond className="w-4 h-4 text-amber-500" />
@@ -361,14 +342,14 @@ const AboutPage = () => {
       <section 
         id="story" 
         data-observe 
-        className={`py-20 relative transition-all duration-1000 transform ${
-          visibleSections.story ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        className={`py-10 relative transition-all duration-1000 transform ${
+          visibleSections.story ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">OUR HERITAGE</p>
-            <h2 className="text-6xl md:text-7xl font-bold font-serif mb-4">
+          <div className="text-center mb-14">
+            <p className="text-amber-500 tracking-[0.2em] text-sm mb-1">OUR HERITAGE</p>
+            <h2 className="text-3xl md:text-6xl font-bold font-serif mb-4">
               <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                 The Royal Legacy
               </span>
@@ -386,7 +367,7 @@ const AboutPage = () => {
                 <img
                   src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Tavisha Lounge Interior"
-                  className="w-full h-[600px] object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 
                 {/* Gold Overlay */}
@@ -400,8 +381,8 @@ const AboutPage = () => {
               </div>
             </div>
             
-            <div className="space-y-8">
-              <h3 className="text-5xl font-bold text-white mb-8 font-serif">
+            <div className="space-y-6">
+              <h3 className="text-5xl font-bold text-white font-serif">
                 A Tapestry of <span className="text-amber-500">Time</span>
               </h3>
               
@@ -419,7 +400,7 @@ const AboutPage = () => {
               </div>
 
               {/* Royal Stats with Opulent Design */}
-              <div className="grid grid-cols-3 gap-6 mt-12">
+              <div className="grid grid-cols-3 gap-6 mt-10">
                 {[
                   { number: '28', label: 'Years', icon: '👑' },
                   { number: '47', label: 'Awards', icon: '🏆' },
@@ -427,9 +408,9 @@ const AboutPage = () => {
                 ].map((stat, index) => (
                   <div key={index} className="group relative text-center">
                     <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-rose-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-500" />
-                    <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-2">
+                    <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl p-3 border border-gray-800 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-2">
                       <span className="text-3xl mb-2 block">{stat.icon}</span>
-                      <div className="text-4xl font-bold text-amber-500 mb-1">{stat.number}</div>
+                      <div className="text-2xl font-bold text-amber-500 mb-1">{stat.number}</div>
                       <div className="text-sm text-gray-400">{stat.label}</div>
                     </div>
                   </div>
@@ -441,25 +422,25 @@ const AboutPage = () => {
       </section>
 
       {/* Opulent Timeline */}
-         <section className="py-20 relative overflow-hidden">
+         <section className="py-10 relative overflow-hidden">
         {/* Opulent Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.05),transparent_70%)]" />
         </div>
 
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">THROUGH THE AGES</p>
-            <h2 className="text-5xl md:text-6xl font-bold font-serif mb-4">
+          <div className="text-center mb-12">
+            <p className="text-amber-500 tracking-[0.2em] text-sm mb-2">THROUGH THE AGES</p>
+            <h2 className="text-5xl md:text-6xl font-bold font-serif mb-2">
               <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                 The Royal Chronicle
               </span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-amber-500 to-rose-500 mx-auto" />
+            <div className="w-96 h-1 bg-gradient-to-r from-amber-500 to-rose-500 mx-auto" />
           </div>
 
           {/* Interactive Timeline */}
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             {/* Timeline Navigation */}
             <div className="flex justify-between items-center mb-16 relative">
               <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent top-1/2 transform -translate-y-1/2" />
@@ -472,7 +453,7 @@ const AboutPage = () => {
                     activeTimelineIndex === index ? 'scale-125' : 'scale-100 hover:scale-110'
                   }`}
                 >
-                  <div className={`w-20 h-20 rounded-full flex items-center justify-center transition-all duration-500 ${
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500 ${
                     activeTimelineIndex === index 
                       ? 'bg-gradient-to-br from-amber-500 to-amber-600 shadow-2xl shadow-amber-500/50' 
                       : 'bg-gray-900 border-2 border-amber-500/30 group-hover:border-amber-500'
@@ -503,7 +484,7 @@ const AboutPage = () => {
                     <img
                       src={milestones[activeTimelineIndex].image}
                       alt={milestones[activeTimelineIndex].event}
-                      className="w-full h-[400px] object-cover transition-transform duration-1000 group-hover:scale-110"
+                      className="w-full h-[350px] object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
                     
                     {/* Ornate Overlay */}
@@ -516,14 +497,14 @@ const AboutPage = () => {
                     <div className="absolute bottom-4 right-4 w-16 h-16 border-b-2 border-r-2 border-amber-500/60 rounded-br-2xl" />
                     
                     {/* Year Badge */}
-                    <div className="absolute top-6 left-6 bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-3 rounded-full">
-                      <span className="text-2xl font-bold text-gray-900">{milestones[activeTimelineIndex].year}</span>
+                    <div className="absolute top-6 left-6 bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-1 rounded-full">
+                      <span className="text-xl font-bold text-gray-900">{milestones[activeTimelineIndex].year}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <h3 className="text-4xl font-bold text-white font-serif">
                     {milestones[activeTimelineIndex].event}
                   </h3>
@@ -592,7 +573,7 @@ const AboutPage = () => {
       <section 
         id="philosophy" 
         data-observe 
-        className={`py-20 relative overflow-hidden transition-all duration-1000 transform ${
+        className={`py-10 relative overflow-hidden transition-all duration-1000 transform ${
           visibleSections.philosophy ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
@@ -607,14 +588,14 @@ const AboutPage = () => {
         </div>
 
         <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-20">
-            <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">THE ART OF FINE DINING</p>
-            <h2 className="text-6xl md:text-7xl font-bold font-serif mb-4">
+          <div className="text-center mb-10">
+            <p className="text-amber-500 tracking-[0.2em] text-sm mb-2">THE ART OF FINE DINING</p>
+            <h2 className="text-3xl md:text-6xl font-bold font-serif mb-2">
               <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                 Culinary Philosophy
               </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto">
               Where cooking transcends mere preparation to become an expression of love and artistry
             </p>
           </div>
@@ -624,24 +605,24 @@ const AboutPage = () => {
             {values.map((value, index) => (
               <div
                 key={value.title}
-                className="group relative h-80"
+                className="group relative"
               >
                 {/* Background Glow */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`} />
                 
                 {/* Main Card */}
-                <div className="relative h-full bg-gray-900/90 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 overflow-hidden hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-full bg-gray-900/90 backdrop-blur-sm border border-gray-800 rounded-3xl p-6 overflow-hidden hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2">
                   
                   {/* Decorative Corner */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-2xl" />
                   
                   <div className="relative h-full flex flex-col">
                     {/* Icon Container */}
-                    <div className={`w-20 h-20 bg-gradient-to-br ${value.gradient} rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-500`}>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-500`}>
                       <div className="text-white text-3xl">{value.icon}</div>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
+                    <h3 className="text-2xl font-bold text-white mb-2">{value.title}</h3>
                     <p className="text-gray-400 flex-grow">{value.description}</p>
                     
                     {/* Decorative Line */}
@@ -654,18 +635,18 @@ const AboutPage = () => {
 
           {/* Master's Quote - Opulent Design */}
           <div className="max-w-5xl mx-auto">
-            <div className="relative p-16 bg-gradient-to-br from-gray-900/90 to-gray-950/90 rounded-3xl border border-amber-500/20 backdrop-blur-sm">
+            <div className="relative p-10 bg-gradient-to-br from-gray-900/90 to-gray-950/90 rounded-3xl border border-amber-500/20 backdrop-blur-sm">
               {/* Ornate Corners */}
-              <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-amber-500/30 rounded-tl-3xl" />
-              <div className="absolute top-0 right-0 w-32 h-32 border-t-4 border-r-4 border-amber-500/30 rounded-tr-3xl" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 border-b-4 border-l-4 border-amber-500/30 rounded-bl-3xl" />
-              <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-amber-500/30 rounded-br-3xl" />
+              <div className="absolute top-0 left-0 w-14 h-14 border-t-4 border-l-4 border-amber-500/30 rounded-tl-3xl" />
+              <div className="absolute top-0 right-0 w-14 h-14 border-t-4 border-r-4 border-amber-500/30 rounded-tr-3xl" />
+              <div className="absolute bottom-0 left-0 w-14 h-14 border-b-4 border-l-4 border-amber-500/30 rounded-bl-3xl" />
+              <div className="absolute bottom-0 right-0 w-14 h-14 border-b-4 border-r-4 border-amber-500/30 rounded-br-3xl" />
               
               {/* Quote Content */}
               <div className="relative text-center">
-                <div className="text-8xl text-amber-500/20 font-serif absolute -top-12 left-1/2 transform -translate-x-1/2">"</div>
+                <div className="text-7xl text-amber-500/20 font-serif absolute -top-12 left-1/2 transform -translate-x-1/2">"</div>
                 
-                <p className="text-3xl text-gray-300 italic leading-relaxed mb-8 relative z-10">
+                <p className="text-xl text-gray-300 italic leading-relaxed mb-6 relative z-10">
                   "Whether it's a simple cup of chai or an elaborate royal thali, our goal is to make 
                   every meal memorable and meaningful. Each dish tells a story of generations past, 
                   while embracing the innovations of tomorrow."
@@ -682,8 +663,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-       {/* NEW SECTION 1: Royal Art Collection */}
-      <section className="py-20 relative overflow-hidden">
+       {/*  Royal Art Collection */}
+      <section className="py-10 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1465146344425-f3d94f0c5b33?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -694,9 +675,9 @@ const AboutPage = () => {
         </div>
 
         <div className="relative container mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">CURATED MASTERPIECES</p>
-            <h2 className="text-6xl md:text-7xl font-bold font-serif mb-4">
+          <div className="text-center mb-10">
+            <p className="text-amber-500 tracking-[0.2em] text-sm mb-1">CURATED MASTERPIECES</p>
+            <h2 className="text-3xl md:text-6xl font-bold font-serif mb-2">
               <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                 The Royal Art Collection
               </span>
@@ -704,7 +685,7 @@ const AboutPage = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className="space-y-4">
               <p className="text-2xl text-amber-500 font-serif">
                 A gallery of heritage and opulence
               </p>
@@ -715,25 +696,27 @@ const AboutPage = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 bg-gray-900/50 rounded-2xl border border-amber-500/20">
+                <div className="p-4 bg-gray-900/50 rounded-2xl border border-amber-500/20">
                   <div className="text-3xl font-bold text-amber-500 mb-2">47+</div>
                   <div className="text-sm text-gray-400">Original Artworks</div>
                 </div>
-                <div className="p-6 bg-gray-900/50 rounded-2xl border border-amber-500/20">
+                <div className="p-4 bg-gray-900/50 rounded-2xl border border-amber-500/20">
                   <div className="text-3xl font-bold text-amber-500 mb-2">3</div>
                   <div className="text-sm text-gray-400">Centuries of Art</div>
                 </div>
-                <div className="p-6 bg-gray-900/50 rounded-2xl border border-amber-500/20">
+                <div className="p-4 bg-gray-900/50 rounded-2xl border border-amber-500/20">
                   <div className="text-3xl font-bold text-amber-500 mb-2">12</div>
                   <div className="text-sm text-gray-400">Rajasthani Masters</div>
                 </div>
-                <div className="p-6 bg-gray-900/50 rounded-2xl border border-amber-500/20">
+                <div className="p-4 bg-gray-900/50 rounded-2xl border border-amber-500/20">
                   <div className="text-3xl font-bold text-amber-500 mb-2">₹5Cr+</div>
                   <div className="text-sm text-gray-400">Collection Value</div>
                 </div>
               </div>
 
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-xl font-bold overflow-hidden">
+              <button
+                onClick={() => navigate('/private-viewing')}
+               className="group relative px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-xl font-bold overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">
                   Request Private Viewing
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -759,8 +742,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* NEW SECTION 2: Royal Wellness & Spa */}
-      <section className="py-20 relative">
+      {/*Royal Wellness & Spa */}
+      <section className="py-10 relative">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -772,21 +755,21 @@ const AboutPage = () => {
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-2xl ml-auto">
-            <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">HOLISTIC INDULGENCE</p>
-            <h2 className="text-5xl md:text-6xl font-bold font-serif mb-6">
+            <p className="text-amber-500 tracking-[0.2em] text-sm mb-1">HOLISTIC INDULGENCE</p>
+            <h2 className="text-3xl md:text-6xl font-bold font-serif mb-4">
               <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                 The Royal Wellness
               </span>
             </h2>
 
-            <div className="space-y-8">
+            <div className="space-y-4">
               <p className="text-xl text-gray-300">
                 Before or after your dining experience, retreat to our exclusive spa sanctuary. 
                 Ancient Ayurvedic treatments meet modern luxury in our 10,000 sq ft wellness pavilion.
               </p>
 
               <div className="grid grid-cols-2 gap-6">
-                <div className="p-6 bg-black/60 backdrop-blur-sm rounded-2xl border border-amber-500/20 hover:border-amber-500/40 transition-all">
+                <div className="p-5 bg-black/60 backdrop-blur-sm rounded-2xl border border-amber-500/20 hover:border-amber-500/40 transition-all">
                   <h3 className="text-xl font-bold text-white mb-2">Royal Abhyanga</h3>
                   <p className="text-gray-400 text-sm">Four-hand synchronized massage with warm herbal oils</p>
                 </div>
@@ -804,22 +787,6 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-8 pt-6">
-                <div>
-                  <div className="text-3xl font-bold text-amber-500">6:00</div>
-                  <div className="text-sm text-gray-400">AM - 10:00 PM</div>
-                </div>
-                <div className="w-px h-12 bg-amber-500/30" />
-                <div>
-                  <div className="text-3xl font-bold text-amber-500">12</div>
-                  <div className="text-sm text-gray-400">Treatment Rooms</div>
-                </div>
-                <div className="w-px h-12 bg-amber-500/30" />
-                <div>
-                  <div className="text-3xl font-bold text-amber-500">24</div>
-                  <div className="text-sm text-gray-400">Carat Gold</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -829,14 +796,14 @@ const AboutPage = () => {
       <section 
         id="ambiance" 
         data-observe 
-        className={`py-20 transition-all duration-1000 transform ${
+        className={`py-10 transition-all duration-1000 transform ${
           visibleSections.ambiance ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">A PALACE FOR THE SENSES</p>
-            <h2 className="text-6xl md:text-7xl font-bold font-serif mb-4">
+          <div className="text-center mb-10">
+            <p className="text-amber-500 tracking-[0.2em] text-sm mb-1">A PALACE FOR THE SENSES</p>
+            <h2 className="text-3xl md:text-6xl font-bold font-serif mb-2">
               <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                 The Royal Ambiance
               </span>
@@ -906,7 +873,7 @@ const AboutPage = () => {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group relative p-8 bg-gradient-to-br from-gray-900/50 to-gray-950/50 rounded-2xl border border-gray-800 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-1"
+                className="group relative p-4 bg-gradient-to-br from-gray-900/50 to-gray-950/50 rounded-2xl border border-gray-800 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-1"
               >
                 <div className="absolute -top-3 -left-3 w-12 h-12 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all" />
                 <p className="text-lg text-gray-300 relative z-10">{feature}</p>
@@ -920,14 +887,14 @@ const AboutPage = () => {
       <section 
         id="team" 
         data-observe 
-        className={`py-20 relative transition-all duration-1000 transform ${
+        className={`py-10 relative transition-all duration-1000 transform ${
           visibleSections.team ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">THE ARTISANS</p>
-            <h2 className="text-6xl md:text-7xl font-bold font-serif mb-4">
+          <div className="text-center mb-10">
+            <p className="text-amber-500 tracking-[0.2em] text-sm mb-1">THE ARTISANS</p>
+            <h2 className="text-3xl md:text-6xl font-bold font-serif mb-2">
               <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                 Masters of Craft
               </span>
@@ -952,7 +919,7 @@ const AboutPage = () => {
                 <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-3xl overflow-hidden hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2">
                   
                   {/* Image Container */}
-                  <div className="relative h-96 overflow-hidden">
+                  <div className="relative h-56 overflow-hidden">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -963,7 +930,7 @@ const AboutPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent" />
                     
                     {/* Experience Badge */}
-                    <div className="absolute top-6 right-6 bg-gradient-to-r from-amber-500 to-amber-600 px-4 py-2 rounded-full shadow-2xl">
+                    <div className="absolute top-6 right-6 bg-gradient-to-r from-amber-500 to-amber-600 px-4 py-1 rounded-full shadow-2xl">
                       <span className="text-sm font-bold text-gray-900">{member.experience}</span>
                     </div>
 
@@ -979,7 +946,7 @@ const AboutPage = () => {
                   </div>
                   
                   {/* Content */}
-                  <div className="relative p-8">
+                  <div className="relative p-4">
                     <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
                     <p className="text-amber-500 font-semibold mb-4">{member.role}</p>
                     
@@ -1648,6 +1615,7 @@ const AboutPage = () => {
   </div>
 </section>
     
+    {showPrivateViewing && <PrivateViewingPage onClose={() => setShowPrivateViewing(false)} />}
     </div>
   );
 };
