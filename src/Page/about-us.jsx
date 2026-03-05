@@ -1130,22 +1130,22 @@ const handleWineTasting = () => setShowWineTasting(true);
     <div className="max-w-4xl ml-auto">
       {/* Section Header */}
       <div className="mb-8">
-        <p className="text-amber-500 tracking-[0.3em] text-sm mb-4">EXCLUSIVE EXPERIENCES</p>
-        <h2 className="text-3xl md:text-6xl font-bold font-serif mb-6">
+        <p className="text-amber-500 tracking-[0.3em] text-sm mb-2">EXCLUSIVE EXPERIENCES</p>
+        <h2 className="text-3xl md:text-6xl font-bold font-serif mb-4">
           <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
             The Private Pavilions
           </span>
         </h2>
-        <div className="w-32 h-1 bg-gradient-to-r from-amber-500 to-rose-500" />
+        <div className="w-60 h-1 bg-gradient-to-r from-amber-500 to-rose-500" />
       </div>
 
       {/* Content Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Maharaja Suite */}
-        <div className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/60 transition-all duration-500 hover:-translate-y-2">
+        <div className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-6 border border-amber-500/20 hover:border-amber-500/60 transition-all duration-500 hover:-translate-y-2">
           <div className="absolute -top-3 -right-3 w-20 h-20 bg-amber-500/20 rounded-full blur-2xl group-hover:bg-amber-500/40 transition-all" />
-          <Crown className="w-12 h-12 text-amber-500 mb-6" />
-          <h3 className="text-2xl font-bold text-white mb-3">The Maharaja Suite</h3>
+          <Crown className="w-12 h-12 text-amber-500 mb-4" />
+          <h3 className="text-2xl font-bold text-white mb-2">The Maharaja Suite</h3>
           <p className="text-gray-400 mb-4">An intimate 8-seat chamber with antique thrones, personal butler, and heirloom silverware.</p>
           <div className="flex items-center gap-2 text-amber-500">
             <Diamond className="w-4 h-4" />
@@ -1154,10 +1154,10 @@ const handleWineTasting = () => setShowWineTasting(true);
         </div>
 
         {/* Garden Pavilion */}
-        <div className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/60 transition-all duration-500 hover:-translate-y-2">
+        <div className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-6 border border-amber-500/20 hover:border-amber-500/60 transition-all duration-500 hover:-translate-y-2">
           <div className="absolute -top-3 -right-3 w-20 h-20 bg-amber-500/20 rounded-full blur-2xl group-hover:bg-amber-500/40 transition-all" />
-          <Flower2 className="w-12 h-12 text-amber-500 mb-6" />
-          <h3 className="text-2xl font-bold text-white mb-3">The Garden Pavilion</h3>
+          <Flower2 className="w-12 h-12 text-amber-500 mb-4" />
+          <h3 className="text-2xl font-bold text-white mb-2">The Garden Pavilion</h3>
           <p className="text-gray-400 mb-4">Al fresco dining surrounded by heirloom roses and fountains, under a canopy of fairy lights.</p>
           <div className="flex items-center gap-2 text-amber-500">
             <Diamond className="w-4 h-4" />
@@ -1166,10 +1166,10 @@ const handleWineTasting = () => setShowWineTasting(true);
         </div>
 
         {/* Wine Cellar */}
-        <div className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/60 transition-all duration-500 hover:-translate-y-2">
+        <div className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-6 border border-amber-500/20 hover:border-amber-500/60 transition-all duration-500 hover:-translate-y-2">
           <div className="absolute -top-3 -right-3 w-20 h-20 bg-amber-500/20 rounded-full blur-2xl group-hover:bg-amber-500/40 transition-all" />
-          <Wine className="w-12 h-12 text-amber-500 mb-6" />
-          <h3 className="text-2xl font-bold text-white mb-3">The Vault</h3>
+          <Wine className="w-12 h-12 text-amber-500 mb-4" />
+          <h3 className="text-2xl font-bold text-white mb-2">The Vault</h3>
           <p className="text-gray-400 mb-4">Dine inside our temperature-controlled wine cellar surrounded by 2000+ rare vintages.</p>
           <div className="flex items-center gap-2 text-amber-500">
             <Diamond className="w-4 h-4" />
@@ -1178,10 +1178,10 @@ const handleWineTasting = () => setShowWineTasting(true);
         </div>
 
         {/* Rooftop Terrace */}
-        <div className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/60 transition-all duration-500 hover:-translate-y-2">
+        <div className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-6 border border-amber-500/20 hover:border-amber-500/60 transition-all duration-500 hover:-translate-y-2">
           <div className="absolute -top-3 -right-3 w-20 h-20 bg-amber-500/20 rounded-full blur-2xl group-hover:bg-amber-500/40 transition-all" />
-          <Moon className="w-12 h-12 text-amber-500 mb-6" />
-          <h3 className="text-2xl font-bold text-white mb-3">The Celestial Deck</h3>
+          <Moon className="w-12 h-12 text-amber-500 mb-4" />
+          <h3 className="text-2xl font-bold text-white mb-2">The Celestial Deck</h3>
           <p className="text-gray-400 mb-4">Stargaze while you dine with a personal astronomer and telescope at your table.</p>
           <div className="flex items-center gap-2 text-amber-500">
             <Diamond className="w-4 h-4" />
@@ -1191,8 +1191,8 @@ const handleWineTasting = () => setShowWineTasting(true);
       </div>
 
       {/* Reserve Button */}
-      <div className="mt-12 text-right">
-        <button className="group relative px-10 py-5 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-2xl font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-105">
+      <div className="mt-8 text-right">
+        <button className="group relative px-10 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-2xl font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-105">
           <span className="relative z-10 flex items-center gap-2">
             Inquire About Private Dining
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -1206,11 +1206,11 @@ const handleWineTasting = () => setShowWineTasting(true);
 
 
 {/* Signature Experiences - NEW SECTION */}
-<section className="py-20 relative bg-gray-950">
+<section className="py-10 relative bg-gray-950">
   <div className="container mx-auto px-4">
-    <div className="text-center mb-16">
-      <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">CURATED EXPERIENCES</p>
-      <h2 className="text-6xl md:text-7xl font-bold font-serif mb-4">
+    <div className="text-center mb-10">
+      <p className="text-amber-500 tracking-[0.2em] text-sm mb-2">CURATED EXPERIENCES</p>
+      <h2 className="text-3xl md:text-6xl font-bold font-serif mb-2">
         <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
           Beyond The Plate
         </span>
@@ -1220,7 +1220,7 @@ const handleWineTasting = () => setShowWineTasting(true);
     {/* Experience Cards */}
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {/* Chef's Table Experience */}
-      <div className="group relative h-[600px] overflow-hidden rounded-3xl">
+      <div className="group relative h-[500px] overflow-hidden rounded-3xl">
         <img 
           src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
           alt="Chef's Table"
@@ -1228,7 +1228,7 @@ const handleWineTasting = () => setShowWineTasting(true);
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent" />
         
-        <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-transform duration-500 group-hover:translate-y-[-10px]">
+        <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-500 group-hover:translate-y-[-10px]">
           <div className="flex items-center gap-3 mb-4">
             <ChefHat className="w-8 h-8 text-amber-500" />
             <h3 className="text-3xl font-bold text-white">The Chef's Table</h3>
@@ -1250,7 +1250,7 @@ const handleWineTasting = () => setShowWineTasting(true);
       </div>
 
       {/* Royal Tasting Menu */}
-      <div className="group relative h-[600px] overflow-hidden rounded-3xl">
+      <div className="group relative h-[500px] overflow-hidden rounded-3xl">
         <img 
           src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
           alt="Royal Tasting"
@@ -1279,7 +1279,7 @@ const handleWineTasting = () => setShowWineTasting(true);
       </div>
 
       {/* Spice Market Tour */}
-      <div className="group relative h-[600px] overflow-hidden rounded-3xl">
+      <div className="group relative h-[500px] overflow-hidden rounded-3xl">
         <img 
           src="https://images.unsplash.com/photo-1536596331127-90dbba5aaa4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
           alt="Spice Tour"
@@ -1309,10 +1309,10 @@ const handleWineTasting = () => setShowWineTasting(true);
     </div>
 
     {/* Experience Calendar */}
-    <div className="mt-16 bg-gradient-to-r from-gray-900 to-gray-950 rounded-3xl p-10 border border-amber-500/20">
+    <div className="mt-12 bg-gradient-to-r from-gray-900 to-gray-950 rounded-3xl p-8 border border-amber-500/20">
       <div className="flex items-center justify-between flex-wrap gap-6">
         <div>
-          <h4 className="text-2xl font-bold text-white mb-2">Upcoming Special Experiences</h4>
+          <h4 className="text-2xl font-bold text-white mb-1">Upcoming Special Experiences</h4>
           <p className="text-gray-400">Book early as seats are limited</p>
         </div>
         <div className="flex gap-6">
@@ -1336,7 +1336,7 @@ const handleWineTasting = () => setShowWineTasting(true);
 
 
 {/* The Royal Cellar - NEW SECTION */}
-<section className="py-20 relative">
+<section className="py-14 relative">
   {/* Background with parallax */}
   <div className="absolute inset-0">
     <img 
@@ -1351,14 +1351,14 @@ const handleWineTasting = () => setShowWineTasting(true);
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       {/* Left Content */}
       <div>
-        <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">THE ROYAL CELLAR</p>
-        <h2 className="text-5xl md:text-6xl font-bold font-serif mb-6">
+        <p className="text-amber-500 tracking-[0.2em] text-sm mb-2">THE ROYAL CELLAR</p>
+        <h2 className="text-5xl md:text-6xl font-bold font-serif mb-4">
           <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
             A Treasury of Liquid Gold
           </span>
         </h2>
         
-        <div className="space-y-6 text-gray-300 text-lg mb-10">
+        <div className="space-y-6 text-gray-300 text-lg mb-6">
           <p>
             Hidden beneath Tavisha lies one of Asia's most extraordinary wine collections. 
             Over 5,000 labels from the world's most prestigious vineyards, including vintages 
@@ -1367,7 +1367,7 @@ const handleWineTasting = () => setShowWineTasting(true);
         </div>
 
         {/* Wine Stats */}
-        <div className="grid grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-3 gap-6 mb-8">
           <div className="text-center p-4 bg-black/40 rounded-2xl border border-amber-500/20">
             <div className="text-3xl font-bold text-amber-500 mb-1">5000+</div>
             <div className="text-sm text-gray-400">Wine Labels</div>
@@ -1400,10 +1400,10 @@ const handleWineTasting = () => setShowWineTasting(true);
 
       {/* Right Content - Wine Tasting Experience */}
       <div className="relative">
-        <div className="bg-gradient-to-br from-gray-900/90 to-gray-950/90 backdrop-blur-sm rounded-3xl p-10 border-2 border-amber-500/30">
+        <div className="bg-gradient-to-br from-gray-900/90 to-gray-950/90 backdrop-blur-sm rounded-3xl p-8 border-2 border-amber-500/30">
           <h3 className="text-3xl font-bold text-white mb-6">Wine Tasting Experiences</h3>
           
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="flex items-start gap-4 p-4 bg-black/40 rounded-xl">
               <Wine className="w-10 h-10 text-amber-500 flex-shrink-0" />
               <div>
@@ -1429,7 +1429,7 @@ const handleWineTasting = () => setShowWineTasting(true);
             </div>
           </div>
 
-          <button className="w-full mt-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-xl font-bold hover:shadow-2xl hover:shadow-amber-500/30 transition-all">
+          <button className="w-full mt-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-xl font-bold hover:shadow-2xl hover:shadow-amber-500/30 transition-all">
             Book a Tasting
           </button>
         </div>
@@ -1441,7 +1441,7 @@ const handleWineTasting = () => setShowWineTasting(true);
 
 
 {/* Royal Membership - NEW SECTION */}
-<section className="py-20 relative overflow-hidden">
+<section className="py-10 relative overflow-hidden">
   {/* Decorative Background */}
   <div className="absolute inset-0">
     <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.1),transparent_50%)]" />
@@ -1449,9 +1449,9 @@ const handleWineTasting = () => setShowWineTasting(true);
   </div>
 
   <div className="relative container mx-auto px-4">
-    <div className="text-center mb-16">
-      <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">EXCLUSIVE ACCESS</p>
-      <h2 className="text-6xl md:text-7xl font-bold font-serif mb-4">
+    <div className="text-center mb-14">
+      <p className="text-amber-500 tracking-[0.2em] text-sm ">EXCLUSIVE ACCESS</p>
+      <h2 className="text-3xl md:text-6xl font-bold font-serif mb-2">
         <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
           The Royal Circle
         </span>
@@ -1491,7 +1491,7 @@ const handleWineTasting = () => setShowWineTasting(true);
             </li>
           </ul>
           
-          <button className="w-full py-4 border-2 border-gray-400/30 text-gray-400 rounded-xl font-bold hover:bg-gray-400 hover:text-gray-900 transition-all">
+          <button className="w-full py-3 border-2 border-gray-400/30 text-gray-400 rounded-xl font-bold hover:bg-gray-400 hover:text-gray-900 transition-all">
             Enquire
           </button>
         </div>
@@ -1501,7 +1501,7 @@ const handleWineTasting = () => setShowWineTasting(true);
       <div className="group relative scale-105 z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-600 rounded-3xl opacity-20 group-hover:opacity-30 blur-xl transition-all" />
         <div className="relative bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-amber-500 rounded-3xl p-8 hover:-translate-y-4 transition-all duration-500">
-          <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-2 rounded-full">
+          <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-1 rounded-full">
             <span className="text-sm font-bold text-gray-900">MOST POPULAR</span>
           </div>
           
@@ -1537,7 +1537,7 @@ const handleWineTasting = () => setShowWineTasting(true);
             </li>
           </ul>
           
-          <button className="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-xl font-bold hover:shadow-2xl hover:shadow-amber-500/30 transition-all">
+          <button className="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-xl font-bold hover:shadow-2xl hover:shadow-amber-500/30 transition-all">
             Join Now
           </button>
         </div>
@@ -1579,7 +1579,7 @@ const handleWineTasting = () => setShowWineTasting(true);
             </li>
           </ul>
           
-          <button className="w-full py-4 border-2 border-amber-500/30 text-amber-500 rounded-xl font-bold hover:bg-amber-500 hover:text-gray-900 transition-all">
+          <button className="w-full py-3 border-2 border-amber-500/30 text-amber-500 rounded-xl font-bold hover:bg-amber-500 hover:text-gray-900 transition-all">
             Enquire
           </button>
         </div>
@@ -1587,7 +1587,7 @@ const handleWineTasting = () => setShowWineTasting(true);
     </div>
 
     {/* Membership Benefits Banner */}
-    <div className="mt-16 p-8 bg-gradient-to-r from-amber-500/10 to-transparent rounded-3xl border border-amber-500/20">
+    <div className="mt-14 p-8 bg-gradient-to-r from-amber-500/10 to-transparent rounded-3xl border border-amber-500/20">
       <div className="flex items-center justify-between flex-wrap gap-6">
         <div className="flex items-center gap-4">
           <Gift className="w-10 h-10 text-amber-500" />
