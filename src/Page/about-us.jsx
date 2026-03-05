@@ -974,13 +974,13 @@ const handleWineTasting = () => setShowWineTasting(true);
       </section>
 
      {/* NEW SECTION 3: Private Events & Celebrations */}
-      <section className="py-20 relative">
+      <section className="py-10 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-gray-950 to-gray-950" />
         
         <div className="relative container mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-amber-500 tracking-[0.2em] text-sm mb-4">CELEBRATE IN STYLE</p>
-            <h2 className="text-6xl md:text-7xl font-bold font-serif mb-4">
+          <div className="text-center mb-10">
+            <p className="text-amber-500 tracking-[0.2em] text-sm mb-2">CELEBRATE IN STYLE</p>
+            <h2 className="text-3xl md:text-6xl font-bold font-serif mb-2">
               <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                 Royal Celebrations
               </span>
@@ -989,7 +989,7 @@ const handleWineTasting = () => setShowWineTasting(true);
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Wedding Events */}
-            <div className="group relative h-[500px] overflow-hidden rounded-3xl">
+            <div className="group relative h-[450px] overflow-hidden rounded-3xl">
               <img 
                 src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Royal Wedding"
@@ -1009,7 +1009,7 @@ const handleWineTasting = () => setShowWineTasting(true);
             </div>
 
             {/* Corporate Events */}
-            <div className="group relative h-[500px] overflow-hidden rounded-3xl">
+            <div className="group relative h-[450px] overflow-hidden rounded-3xl">
               <img 
                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Corporate Event"
@@ -1029,7 +1029,7 @@ const handleWineTasting = () => setShowWineTasting(true);
             </div>
 
             {/* Birthday Celebrations */}
-            <div className="group relative h-[500px] overflow-hidden rounded-3xl">
+            <div className="group relative h-[450px] overflow-hidden rounded-3xl">
               <img 
                 src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Birthday Celebration"
@@ -1049,8 +1049,8 @@ const handleWineTasting = () => setShowWineTasting(true);
             </div>
           </div>
 
-          <div className="text-center mt-12">
-            <button className="group relative px-12 py-5 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-2xl font-bold text-lg overflow-hidden">
+          <div className="text-center mt-8">
+            <button className="group relative px-12 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 rounded-2xl font-bold text-lg overflow-hidden">
               <span className="relative z-10 flex items-center gap-2">
                 Plan Your Royal Celebration
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -1065,8 +1065,8 @@ const handleWineTasting = () => setShowWineTasting(true);
       <section 
         id="why-us" 
         data-observe 
-        className={`py-20 transition-all duration-1000 transform ${
-          visibleSections['why-us'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        className={`py-10 transition-all duration-1000 transform ${
+          visibleSections['why-us'] ? 'opacity-100 translate-y-0' : 'opacity-0 '
         }`}
       >
         <div className="container mx-auto px-4">
@@ -1080,8 +1080,8 @@ const handleWineTasting = () => setShowWineTasting(true);
             </div>
             
             <div className="relative">
-              <div className="text-center mb-12">
-                <h2 className="text-5xl md:text-6xl font-bold font-serif mb-4">
+              <div className="text-center mb-8">
+                <h2 className="text-5xl md:text-6xl font-bold font-serif mb-2">
                   <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
                     The Tavisha Difference
                   </span>
@@ -1115,7 +1115,7 @@ const handleWineTasting = () => setShowWineTasting(true);
 
 
 {/* Private Dining Experience - NEW SECTION */}
-<section className="relative py-32 overflow-hidden">
+<section className="relative py-10 overflow-hidden">
   {/* Lavish Background */}
   <div className="absolute inset-0">
     <img 
@@ -1129,9 +1129,9 @@ const handleWineTasting = () => setShowWineTasting(true);
   <div className="relative container mx-auto px-4">
     <div className="max-w-4xl ml-auto">
       {/* Section Header */}
-      <div className="mb-12">
+      <div className="mb-8">
         <p className="text-amber-500 tracking-[0.3em] text-sm mb-4">EXCLUSIVE EXPERIENCES</p>
-        <h2 className="text-6xl md:text-7xl font-bold font-serif mb-6">
+        <h2 className="text-3xl md:text-6xl font-bold font-serif mb-6">
           <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 bg-clip-text text-transparent">
             The Private Pavilions
           </span>
