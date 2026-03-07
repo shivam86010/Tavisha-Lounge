@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 import MenuPage from '../../Page/MenuPage/MenuMainPage'
 import Layout from '../Layout/Main'
 import HomePage from '../../Page/HomePage/index'
-import AboutPage from '../../Page/About'
 import Gallery from '../../Page/Gallery/GalleryPage'
 import Contacts from '../../Page/Contacts/Main'
 import ReservationPage from '../../Page/Reservation/Main'
@@ -37,7 +36,7 @@ function index() {
           <Route path='/about-us' element={<AboutUsPage/>} />
           <Route path='/menu' element={<MenuPage />} />
            <Route path="/menu/:dishId" element={<RoyalDishDetail />} />
-          <Route path='/about' element={<AboutPage />} />
+        
           <Route path='/gallery' element={<Gallery/>} />
           <Route path='/contacts' element={<Contacts/>} />
           <Route path='/reservation' element={<ReservationPage/>} />
