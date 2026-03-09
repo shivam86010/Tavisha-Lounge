@@ -78,7 +78,6 @@ const Header = () => {
       <header className={headerClasses}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-            {/* Logo */}
             <div>
               <Link to="/" className={`text-2xl font-bold font-serif transition-colors duration-300 ${logoColor}`}>
                 Tavisha <span className="text-burnt-orange">Lounge</span>
@@ -105,7 +104,6 @@ const Header = () => {
               </button>
             </nav>
 
-            {/* Mobile Menu Button */}
             <button
               className={`lg:hidden text-2xl z-50 transition-colors duration-300 ${mobileButtonColor}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -119,7 +117,6 @@ const Header = () => {
         {/* Mobile Sidebar Menu */}
         {isMenuOpen && (
           <>
-            {/* Backdrop */}
             <div
               className="fixed inset-0 bg-black/50 lg:hidden"
               onClick={() => setIsMenuOpen(false)}
