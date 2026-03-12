@@ -3,7 +3,16 @@ import React, { useState, useEffect } from 'react';
 import { 
   ChevronRight, 
   Maximize2, 
-  Minimize2, 
+  Minimize2,  Briefcase,
+  Car,
+  Music,
+  Flower,Wine ,
+  Clock,
+  Utensils,
+  Moon,
+  Wind,
+  Sun,
+  Cloud,
   Play, 
   Pause,
   Heart, 
@@ -17,12 +26,7 @@ import {
   Bookmark,
   Crown,
   Sparkles,
-  Wine,
-  Utensils,
-  Sun,
-  Cloud,
-  Moon,
-  Wind,
+
   Diamond,
   PartyPopper,
   ChefHat,
@@ -706,8 +710,7 @@ const GalleryPage = () => {
 
 
     {/* ==================== ROYAL SIGNATURE COLLECTION ==================== */}
-<section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
-  {/* Opulent Background Pattern */}
+{/* <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
   <div className="absolute inset-0 opacity-10">
     <div className="absolute inset-0" style={{
       backgroundImage: 'url("data:image/svg+xml,%3Csvg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M60 10 L110 60 L60 110 L10 60 L60 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
@@ -715,7 +718,6 @@ const GalleryPage = () => {
     }} />
   </div>
 
-  {/* Floating Gold Orbs */}
   <div className="absolute inset-0 overflow-hidden">
     {[...Array(20)].map((_, i) => (
       <div
@@ -735,12 +737,11 @@ const GalleryPage = () => {
   </div>
 
   <div className="max-w-7xl mx-auto relative">
-    {/* Section Header with Royal Crest */}
     <div className="text-center mb-16">
       <div className="relative inline-block mb-8">
         <div className="absolute inset-0 bg-metallic-gold rounded-full blur-3xl opacity-30 animate-pulse" />
         <div className="relative w-32 h-32">
-          {/* Rotating Ring */}
+        
           <div className="absolute inset-0 border-4 border-metallic-gold rounded-full animate-[spin_15s_linear_infinite]" style={{ borderStyle: 'dotted' }} />
           <div className="absolute inset-4 border-2 border-metallic-gold/60 rounded-full" />
           <div className="absolute inset-8 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-full flex items-center justify-center">
@@ -766,7 +767,6 @@ const GalleryPage = () => {
       </p>
     </div>
 
-    {/* Signature Pieces Grid */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
       {[
         {
@@ -810,7 +810,6 @@ const GalleryPage = () => {
               <img src={piece.image} alt={piece.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
               
-              {/* Year Badge */}
               <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-metallic-gold/30">
                 <span className="text-metallic-gold font-bold text-sm">{piece.year}</span>
               </div>
@@ -832,7 +831,6 @@ const GalleryPage = () => {
       ))}
     </div>
 
-    {/* Curator's Corner */}
     <div className="relative bg-gradient-to-br from-royal-maroon/80 to-[#0a0a0a] rounded-3xl p-12 border-2 border-metallic-gold/30 overflow-hidden">
       <div className="absolute top-0 left-0 w-64 h-64 bg-metallic-gold/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-rose-500/20 rounded-full blur-3xl" />
@@ -877,11 +875,10 @@ const GalleryPage = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 {/* ==================== ROYAL TESTIMONIALS ==================== */}
-<section className="py-24 px-4 relative overflow-hidden">
-  {/* Background Image with Overlay */}
+{/* <section className="py-24 px-4 relative overflow-hidden">
   <div className="absolute inset-0">
     <img 
       src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -952,10 +949,10 @@ const GalleryPage = () => {
       ))}
     </div>
   </div>
-</section>
+</section> */}
 
 {/* ==================== ROYAL PRIVATE DINING ==================== */}
-<section className="py-24 px-4 relative overflow-hidden">
+{/* <section className="py-24 px-4 relative overflow-hidden">
   <div className="absolute inset-0">
     <img 
       src="https://images.unsplash.com/photo-1519671282429-b44660ead0a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -1002,7 +999,7 @@ const GalleryPage = () => {
       </button>
     </div>
   </div>
-</section>
+</section> */}
 
 {/* ==================== ROYAL MEMBERSHIP ==================== */}
 <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
@@ -1083,7 +1080,6 @@ const GalleryPage = () => {
       ))}
     </div>
 
-    {/* Membership Benefits */}
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-16">
       {[
         { icon: <Calendar className="w-6 h-6" />, text: 'Priority Booking' },
@@ -1105,7 +1101,7 @@ const GalleryPage = () => {
 </section>
 
 {/* Add these animation keyframes to your existing style tag */}
-<style jsx>{`
+{/* <style jsx>{`
   @keyframes floatOrb {
     0%, 100% { transform: translateY(0) translateX(0); }
     25% { transform: translateY(-20px) translateX(10px); }
@@ -1117,7 +1113,185 @@ const GalleryPage = () => {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
-`}</style>
+`}</style> */}
+
+
+
+      {/* The Art of Dining - Culinary Masterpiece Section */}
+      <section className="pb-10 px-4 relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] overflow-hidden">
+        {/* Subtle Gold Pattern Overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 20L70 40L50 60L30 40L50 20z' fill='none' stroke='%23d4af37' stroke-width='0.5'/%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative">
+          {/* Section Header */}
+          <div className="text-center mb-10">
+            <div className="flex justify-center mb-4">
+              <div className="relative">
+                <div className="absolute inset-0 bg-metallic-gold blur-xl opacity-30 rounded-full"></div>
+                <Utensils className="w-10 h-10 text-metallic-gold relative" />
+              </div>
+            </div>
+            <span className="text-metallic-gold uppercase tracking-[0.3em] text-sm font-semibold mb-2 block">
+              HAUTE CUISINE
+            </span>
+            <h2 className="text-2xl md:text-5xl font-serif font-bold text-metallic-gold mb-2">
+              The Art of Dining
+            </h2>
+            <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
+              Where culinary artistry meets architectural magnificence
+            </p>
+          </div>
+
+          {/* Main Feature - Full Width Image with Overlay */}
+          <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl mb-6 group">
+            <img 
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+              alt="Grand Dining Hall"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent"></div>
+            
+            {/* Floating Gold Accents */}
+            <div className="absolute top-10 left-10 w-32 h-32 border-2 border-metallic-gold/30 rounded-full"></div>
+            <div className="absolute bottom-10 right-10 w-32 h-32 border-2 border-metallic-gold/30 rounded-full"></div>
+            
+            {/* Content Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-12">
+              <div className="max-w-3xl">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-16 h-0.5 bg-metallic-gold"></div>
+                  <span className="text-metallic-gold uppercase tracking-widest text-sm">Signature Experience</span>
+                </div>
+                <h3 className="text-4xl md:text-5xl font-serif text-metallic-gold mb-4">The Grand Salon</h3>
+                <p className="text-soft-cream/80 text-lg mb-8 leading-relaxed">
+                  Experience an unparalleled culinary journey in our most prestigious dining room, 
+                  adorned with crystal chandeliers and original 18th-century artwork.
+                </p>
+                <button className="px-8 py-3 bg-metallic-gold text-royal-maroon font-semibold rounded-full hover:shadow-2xl transition-all duration-300 inline-flex items-center space-x-2 group">
+                  <span>Discover the Menu</span>
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Culinary Highlights Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <ChefHat className="w-8 h-8" />,
+                title: "Michelin-Starred Chefs",
+                description: "Our culinary team, led by Chef Antoine Dubois, brings decades of Michelin-starred experience",
+                image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              },
+              {
+                icon: <Wine className="w-8 h-8" />,
+                title: "Curated Wine Cellar",
+                description: "Over 2,500 labels from the world's most prestigious vineyards, including rare vintages",
+                image: "https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+              },
+              {
+                icon: <Flame className="w-8 h-8" />,
+                title: "Live Cooking Theaters",
+                description: "Interactive dining experiences where chefs prepare your meal tableside",
+                image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80"
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="group relative h-80 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent"></div>
+                
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="p-2 bg-metallic-gold/20 rounded-lg text-metallic-gold">
+                      {item.icon}
+                    </div>
+                    <h4 className="text-xl font-serif text-metallic-gold">{item.title}</h4>
+                  </div>
+                  <p className="text-soft-cream/70 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className=" px-4 relative h-[500px] flex items-center">
+        {/* Fullscreen Background */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Terrace View"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl md:text-5xl font-serif font-bold text-metallic-gold mb-3">
+              Dining Above the Clouds
+            </h2>
+
+            <p className="text-xl text-soft-cream/80 mb-8 leading-relaxed">
+              Perched on the 45th floor, our open-air terrace offers panoramic city views, 
+              infinity pools, and al fresco dining under the stars.
+            </p>
+
+            {/* Experience Features */}
+            <div className="space-y-2 mb-6">
+              {[
+                { icon: <Sun className="w-5 h-5" />, text: 'Sunset dining with city skyline views' },
+                { icon: <Wind className="w-5 h-5" />, text: 'Climate-controlled pergolas' },
+                { icon: <Flame className="w-5 h-5" />, text: 'Private fire pit cabanas' }
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-metallic-gold/10 rounded-full flex items-center justify-center text-metallic-gold">
+                    {item.icon}
+                  </div>
+                  <span className="text-soft-cream/90">{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <button className="px-8 py-3 bg-metallic-gold text-royal-maroon font-semibold rounded-full hover:shadow-2xl transition-all duration-300 inline-flex items-center space-x-2 group">
+                <span>Reserve Terrace Table</span>
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="px-8 py-3 border-2 border-metallic-gold text-metallic-gold font-semibold rounded-full hover:bg-metallic-gold/10 transition-all duration-300">
+                View Gallery
+              </button>
+            </div>
+
+            {/* Weather Indicator */}
+            <div className="mt-6 flex items-center space-x-6 text-metallic-gold/60">
+              <div className="flex items-center space-x-2">
+                <Sun className="w-5 h-5" />
+                <span>24°C</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Wind className="w-5 h-5" />
+                <span>Gentle Breeze</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Cloud className="w-5 h-5" />
+                <span>Clear Skies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
     </div>
   );
