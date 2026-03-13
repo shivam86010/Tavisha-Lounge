@@ -4,7 +4,7 @@ import {
   ChevronRight, 
   Maximize2, 
   Minimize2,  Briefcase,
-  Car,
+  Car,Gem ,
   Music,
   Flower,Wine ,
   Clock,
@@ -710,7 +710,7 @@ const GalleryPage = () => {
 
 
     {/* ==================== ROYAL SIGNATURE COLLECTION ==================== */}
-{/* <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+<section className="py-12 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
   <div className="absolute inset-0 opacity-10">
     <div className="absolute inset-0" style={{
       backgroundImage: 'url("data:image/svg+xml,%3Csvg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M60 10 L110 60 L60 110 L10 60 L60 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
@@ -718,27 +718,10 @@ const GalleryPage = () => {
     }} />
   </div>
 
-  <div className="absolute inset-0 overflow-hidden">
-    {[...Array(20)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute rounded-full bg-gradient-to-br from-metallic-gold/30 to-transparent"
-        style={{
-          width: `${Math.random() * 10 + 5}px`,
-          height: `${Math.random() * 10 + 5}px`,
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animation: `floatOrb ${Math.random() * 10 + 10}s linear infinite`,
-          animationDelay: `${Math.random() * 5}s`,
-          filter: 'blur(2px)'
-        }}
-      />
-    ))}
-  </div>
 
   <div className="max-w-7xl mx-auto relative">
-    <div className="text-center mb-16">
-      <div className="relative inline-block mb-8">
+    <div className="text-center mb-10">
+      <div className="relative inline-block mb-3">
         <div className="absolute inset-0 bg-metallic-gold rounded-full blur-3xl opacity-30 animate-pulse" />
         <div className="relative w-32 h-32">
         
@@ -750,19 +733,19 @@ const GalleryPage = () => {
         </div>
       </div>
       
-      <h2 className="text-6xl md:text-7xl font-serif font-bold mb-6">
+      <h2 className="text-4xl md:text-6xl font-serif font-bold mb-3">
         <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
           The Royal Signature
         </span>
       </h2>
       
-      <div className="flex items-center justify-center gap-4 mb-6">
+      <div className="flex items-center justify-center gap-4 mb-3">
         <div className="w-20 h-px bg-gradient-to-r from-transparent via-metallic-gold to-metallic-gold" />
         <Diamond className="w-6 h-6 text-metallic-gold animate-pulse" />
         <div className="w-20 h-px bg-gradient-to-l from-transparent via-metallic-gold to-metallic-gold" />
       </div>
       
-      <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
+      <p className="text-xl text-soft-cream/70 max-w-4xl mx-auto">
         Curated masterpieces from our royal collection, each piece tells a story of heritage and artistry
       </p>
     </div>
@@ -810,7 +793,7 @@ const GalleryPage = () => {
               <img src={piece.image} alt={piece.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
               
-              <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-metallic-gold/30">
+              <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-4 py-1 rounded-full border border-metallic-gold/30">
                 <span className="text-metallic-gold font-bold text-sm">{piece.year}</span>
               </div>
             </div>
@@ -831,7 +814,7 @@ const GalleryPage = () => {
       ))}
     </div>
 
-    <div className="relative bg-gradient-to-br from-royal-maroon/80 to-[#0a0a0a] rounded-3xl p-12 border-2 border-metallic-gold/30 overflow-hidden">
+    <div className="relative bg-gradient-to-br from-royal-maroon/80 to-[#0a0a0a] rounded-3xl p-8 border-2 border-metallic-gold/30 overflow-hidden">
       <div className="absolute top-0 left-0 w-64 h-64 bg-metallic-gold/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-rose-500/20 rounded-full blur-3xl" />
       
@@ -866,7 +849,7 @@ const GalleryPage = () => {
               <img 
                 src={`https://images.unsplash.com/photo-${i === 0 ? '1578302758063' : i === 1 ? '1579783902614' : i === 2 ? '1547891654' : '1531913764164'}-${i === 0 ? '0ef3e048ca89' : i === 1 ? 'a3fb3927b6a5' : i === 2 ? 'e66ed7ebb968' : 'f2af33884fc5'}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80`}
                 alt="Art"
-                className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-32 object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
@@ -875,355 +858,487 @@ const GalleryPage = () => {
       </div>
     </div>
   </div>
-</section> */}
+</section>
 
-{/* ==================== ROYAL TESTIMONIALS ==================== */}
-{/* <section className="py-24 px-4 relative overflow-hidden">
-  <div className="absolute inset-0">
-    <img 
-      src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-      alt="Luxury Dining"
-      className="w-full h-full object-cover opacity-20"
-    />
-    <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/95 to-[#0a0a0a]" />
-  </div>
-
-  <div className="max-w-7xl mx-auto relative">
-    <div className="text-center mb-16">
-      <Star className="w-16 h-16 text-metallic-gold mx-auto mb-6" />
-      <h2 className="text-5xl md:text-6xl font-serif font-bold text-metallic-gold mb-6">
-        Voices of Royalty
-      </h2>
-      <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
-        What our distinguished guests say about their experience at Tavisha
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-3 gap-8">
-      {[
-        {
-          name: 'Maharaja Yadvendra Singh',
-          title: 'Royal Patron',
-          quote: 'Tavisha reminds me of my ancestral palace kitchens. The authenticity of flavors is truly remarkable.',
-          rating: 5,
-          image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-        },
-        {
-          name: 'Mrs. Anita Singhania',
-          title: 'Business Tycoon',
-          quote: 'The hospitality is unparalleled. Every visit feels like a celebration, and the staff remembers your preferences.',
-          rating: 5,
-          image: 'https://images.unsplash.com/photo-1494790108777-383fd5c8a4b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-        },
-        {
-          name: 'Mr. Vikram Rathore',
-          title: 'Industrialist',
-          quote: 'I\'ve dined at the world\'s best restaurants, but Tavisha has a soul. It\'s not just food; it\'s an emotion.',
-          rating: 5,
-          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-        }
-      ].map((testimonial, index) => (
-        <div key={index} className="group relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700" />
-          
-          <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2">
-            <div className="absolute -top-4 left-8 text-7xl text-metallic-gold/20 font-serif">"</div>
-            
-            <div className="flex items-center gap-4 mb-6">
-              <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover border-2 border-metallic-gold" />
-              <div>
-                <h4 className="text-xl font-bold text-white">{testimonial.name}</h4>
-                <p className="text-metallic-gold text-sm">{testimonial.title}</p>
-              </div>
-            </div>
-            
-            <p className="text-soft-cream/80 mb-6 italic">"{testimonial.quote}"</p>
-            
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-metallic-gold text-metallic-gold" />
-              ))}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section> */}
-
-{/* ==================== ROYAL PRIVATE DINING ==================== */}
-{/* <section className="py-24 px-4 relative overflow-hidden">
+<section className="py-20 px-4 relative overflow-hidden min-h-screen flex items-center">
+  {/* Cinematic Background with Parallax */}
   <div className="absolute inset-0">
     <img 
       src="https://images.unsplash.com/photo-1519671282429-b44660ead0a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
       alt="Private Dining"
-      className="w-full h-full object-cover"
+      className="w-full h-full object-cover scale-105 transition-transform duration-[20s] group-hover:scale-110"
     />
-    <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
+    {/* Multi-layered Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/95 to-transparent"></div>
+    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/30"></div>
+    
+  </div>
+
+  {/* Ornate Overlay Pattern */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="absolute inset-0" style={{
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M60 10 L110 60 L60 110 L10 60 L60 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
+      backgroundSize: '120px 120px'
+    }} />
   </div>
 
   <div className="max-w-7xl mx-auto relative">
-    <div className="max-w-2xl">
-      <div className="inline-block p-4 bg-metallic-gold/20 rounded-2xl mb-6">
-        <Diamond className="w-10 h-10 text-metallic-gold" />
+    {/* Floating Decorative Elements */}
+    <div className="absolute -top-20 -right-20 w-64 h-64">
+      <div className="absolute inset-0 border-8 border-metallic-gold/20 rounded-full animate-spin-slow"></div>
+      <div className="absolute inset-12 border-4 border-metallic-gold/30 rounded-full animate-pulse"></div>
+      <div className="absolute inset-24 bg-gradient-to-br from-metallic-gold/20 to-transparent rounded-full blur-2xl"></div>
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* Left Content */}
+      <div className="relative">
+        {/* Royal Crest Animation */}
+        <div className="relative w-24 h-24 mb-8">
+          <div className="absolute inset-0 border-4 border-metallic-gold rounded-full animate-[spin_10s_linear_infinite]" style={{ borderStyle: 'dotted' }} />
+          <div className="absolute inset-3 border-2 border-metallic-gold/50 rounded-full animate-pulse" />
+          <div className="absolute inset-6 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-full flex items-center justify-center">
+            <Crown className="w-8 h-8 text-charcoal" />
+          </div>
+          
+          {/* Orbiting Dots */}
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-metallic-gold rounded-full"
+              style={{
+                top: '50%',
+                left: '50%',
+                transform: `rotate(${i * 60}deg) translateX(40px)`,
+                animation: `orbitPulse 3s ease-in-out infinite ${i * 0.2}s`
+              }}
+            />
+          ))}
+        </div>
+
+        
+        
+        
+        <h2 className="text-6xl md:text-7xl font-serif font-bold text-white mb-4 leading-tight">
+          The Private
+          <br />
+          <span className="bg-gradient-to-r from-metallic-gold via-amber-400 to-metallic-gold bg-clip-text text-transparent">
+            Pavilions
+          </span>
+        </h2>
+        
+        {/* Decorative Divider */}
+        <div className="flex items-center gap-4 mb-5">
+          <div className="w-20 h-px bg-gradient-to-r from-metallic-gold to-transparent"></div>
+          <Gem className="w-5 h-5 text-metallic-gold" />
+          <div className="w-20 h-px bg-gradient-to-l from-metallic-gold to-transparent"></div>
+        </div>
+        
+        <p className="text-xl text-soft-cream/90 mb-6 leading-relaxed max-w-xl">
+          Step into a world of unparalleled luxury where every detail is crafted for royalty. 
+          Our exclusive private chambers offer the perfect setting for your most intimate celebrations.
+        </p>
+        
+        {/* Luxury Stats */}
+        <div className="flex gap-8 mb-6">
+          <div>
+            <div className="text-4xl font-bold text-metallic-gold mb-1">4</div>
+            <div className="text-sm text-soft-cream/60">Exclusive Suites</div>
+          </div>
+          <div className="w-px h-12 bg-gradient-to-b from-transparent via-metallic-gold/50 to-transparent"></div>
+          <div>
+            <div className="text-4xl font-bold text-metallic-gold mb-1">24/7</div>
+            <div className="text-sm text-soft-cream/60">Butler Service</div>
+          </div>
+          <div className="w-px h-12 bg-gradient-to-b from-transparent via-metallic-gold/50 to-transparent"></div>
+          <div>
+            <div className="text-4xl font-bold text-metallic-gold mb-1">5★</div>
+            <div className="text-sm text-soft-cream/60">Michelin Chef</div>
+          </div>
+        </div>
+        
+        <button className="group relative px-12 py-3 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-metallic-gold/30 hover:scale-105 flex items-center gap-3">
+          <span className="relative z-10">Inquire About Private Dining</span>
+          <ChevronRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-metallic-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        </button>
       </div>
-      
-      <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6">
-        The Private
-        <br />
-        <span className="text-metallic-gold">Pavilions</span>
-      </h2>
-      
-      <p className="text-xl text-soft-cream/80 mb-8 leading-relaxed">
-        Intimate dining experiences in our exclusive private chambers, each designed to offer the utmost privacy and luxury
-      </p>
-      
-      <div className="grid grid-cols-2 gap-4 mb-8">
+
+      {/* Right Content - Pavilion Cards */}
+      <div className="grid grid-cols-2 gap-4">
         {[
-          { name: 'Maharaja Suite', capacity: '8 guests', price: '₹50,000' },
-          { name: 'Garden Pavilion', capacity: '12 guests', price: '₹35,000' },
-          { name: 'Wine Vault', capacity: '6 guests', price: '₹75,000' },
-          { name: 'Celestial Deck', capacity: '10 guests', price: '₹60,000' }
+          { 
+            name: 'Maharaja Suite', 
+            capacity: '8 guests', 
+            price: '₹50,000',
+            icon: '👑',
+            features: ['Personal Butler', 'Antique Thrones'],
+            gradient: 'from-amber-500 to-amber-600'
+          },
+          { 
+            name: 'Garden Pavilion', 
+            capacity: '12 guests', 
+            price: '₹35,000',
+            icon: '🌺',
+            features: ['Fountain Views', 'Fairy Lights'],
+            gradient: 'from-emerald-500 to-green-600'
+          },
+          { 
+            name: 'Wine Vault', 
+            capacity: '6 guests', 
+            price: '₹75,000',
+            icon: '🍷',
+            features: ['Sommelier', 'Rare Vintages'],
+            gradient: 'from-rose-500 to-pink-600'
+          },
+          { 
+            name: 'Celestial Deck', 
+            capacity: '10 guests', 
+            price: '₹60,000',
+            icon: '✨',
+            features: ['Stargazing', 'Astronomer'],
+            gradient: 'from-purple-500 to-indigo-600'
+          }
         ].map((item, index) => (
-          <div key={index} className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all hover:-translate-y-1">
-            <h4 className="text-metallic-gold font-bold mb-1">{item.name}</h4>
-            <p className="text-soft-cream/60 text-sm">{item.capacity}</p>
-            <p className="text-white font-bold mt-2">{item.price}</p>
+          <div key={index} className="group relative perspective">
+            {/* Glow Effect */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700`} />
+            
+            {/* Card */}
+            <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-metallic-gold/30 hover:border-metallic-gold/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
+              {/* Shine Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shine"></div>
+              </div>
+              
+              {/* Icon */}
+              <div className={`text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-500`}>
+                {item.icon}
+              </div>
+              
+              <h4 className="text-xl font-bold text-white mb-1">{item.name}</h4>
+              <p className="text-soft-cream/70 text-sm mb-2">{item.capacity}</p>
+              
+              {/* Features */}
+              <div className="flex gap-2 mb-3">
+                {item.features.map((feature, i) => (
+                  <span key={i} className="text-xs px-2 py-1 bg-white/10 rounded-full text-soft-cream/80">
+                    {feature}
+                  </span>
+                ))}
+              </div>
+              
+              <p className="text-2xl font-bold text-metallic-gold mb-3">{item.price}</p>
+              
+              {/* View Details Button */}
+              <button className="w-full py-2 bg-white/5 border border-metallic-gold/30 rounded-xl text-metallic-gold text-sm font-bold hover:bg-metallic-gold hover:text-charcoal transition-all">
+                View Details
+              </button>
+            </div>
           </div>
         ))}
       </div>
-      
-      <button className="group px-10 py-5 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center gap-3">
-        <span>Inquire About Private Dining</span>
-        <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-      </button>
     </div>
+    
   </div>
-</section> */}
 
-{/* ==================== ROYAL MEMBERSHIP ==================== */}
-<section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
-  <div className="max-w-7xl mx-auto relative">
-    <div className="text-center mb-16">
-      <Crown className="w-16 h-16 text-metallic-gold mx-auto mb-6" />
-      <h2 className="text-5xl md:text-6xl font-serif font-bold text-metallic-gold mb-6">
-        The Royal Circle
-      </h2>
-      <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
-        Join an elite community of connoisseurs who appreciate the finest things in life
-      </p>
+  {/* Floating Badges */}
+  <div className="absolute bottom-10 right-10 flex gap-3">
+    <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-metallic-gold/30 animate-pulse">
+      <span className="text-metallic-gold text-sm">✨ Limited Availability</span>
     </div>
-
-    <div className="grid md:grid-cols-3 gap-8">
-      {[
-        {
-          tier: 'Silver',
-          price: '₹50,000',
-          features: ['Priority reservations', '2 complimentary menus', '10% dining discount'],
-          gradient: 'from-gray-400 to-gray-500',
-          icon: '🥈'
-        },
-        {
-          tier: 'Gold',
-          price: '₹1,50,000',
-          features: ['All Silver benefits', '4 wine tastings', 'Private dining access', '20% discount'],
-          gradient: 'from-metallic-gold to-amber-600',
-          icon: '👑',
-          popular: true
-        },
-        {
-          tier: 'Platinum',
-          price: '₹3,00,000',
-          features: ['All Gold benefits', 'Unlimited private dining', '24/7 concierge', 'Chauffeur service'],
-          gradient: 'from-purple-400 to-indigo-500',
-          icon: '💎'
-        }
-      ].map((tier, index) => (
-        <div key={index} className="group relative">
-          <div className={`absolute inset-0 bg-gradient-to-br ${tier.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700`} />
-          
-          <div className={`relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border-2 ${
-            tier.popular ? 'border-metallic-gold' : 'border-metallic-gold/20 hover:border-metallic-gold/40'
-          } transition-all duration-500 hover:-translate-y-4`}>
-            
-            {tier.popular && (
-              <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-metallic-gold to-amber-600 px-8 py-3 rounded-full whitespace-nowrap">
-                <span className="text-sm font-bold text-charcoal">MOST POPULAR</span>
-              </div>
-            )}
-            
-            <div className="text-center mb-8">
-              <span className="text-5xl mb-4 block">{tier.icon}</span>
-              <h3 className="text-3xl font-bold text-white mb-2">{tier.tier}</h3>
-              <div className="text-4xl font-bold text-metallic-gold mb-2">{tier.price}</div>
-              <p className="text-soft-cream/60">/year</p>
-            </div>
-            
-            <ul className="space-y-4 mb-8">
-              {tier.features.map((feature, i) => (
-                <li key={i} className="flex items-center gap-3 text-soft-cream/80">
-                  <CheckCircle className="w-5 h-5 text-metallic-gold" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            
-            <button className={`w-full py-4 ${
-              tier.popular 
-                ? 'bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal'
-                : 'border-2 border-metallic-gold/30 text-metallic-gold hover:bg-metallic-gold hover:text-charcoal'
-            } rounded-xl font-bold transition-all hover:scale-105`}>
-              {tier.popular ? 'JOIN NOW' : 'ENQUIRE'}
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-16">
-      {[
-        { icon: <Calendar className="w-6 h-6" />, text: 'Priority Booking' },
-        { icon: <Gift className="w-6 h-6" />, text: 'Exclusive Gifts' },
-        { icon: <Users className="w-6 h-6" />, text: 'Private Events' },
-        { icon: <MapPin className="w-6 h-6" />, text: 'Global Access' }
-      ].map((benefit, index) => (
-        <div key={index} className="text-center group">
-          <div className="w-16 h-16 mx-auto bg-metallic-gold/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform group-hover:bg-metallic-gold group-hover:text-charcoal">
-            <div className="text-metallic-gold group-hover:text-charcoal transition-colors">
-              {benefit.icon}
-            </div>
-          </div>
-          <p className="text-soft-cream/80 text-sm">{benefit.text}</p>
-        </div>
-      ))}
+    <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-metallic-gold/30">
+      <span className="text-metallic-gold text-sm">👑 Royal Treatment</span>
     </div>
   </div>
 </section>
 
-{/* Add these animation keyframes to your existing style tag */}
-{/* <style jsx>{`
-  @keyframes floatOrb {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    25% { transform: translateY(-20px) translateX(10px); }
-    50% { transform: translateY(0) translateX(20px); }
-    75% { transform: translateY(20px) translateX(10px); }
-  }
-  
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-`}</style> */}
+<section className="py-16 lg:py-20 px-4 relative overflow-hidden">
+  {/* Opulent Background with Gold Accents */}
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2a] to-[#0a0a0a]"></div>
+    
+    {/* Gold Geometric Pattern */}
+    <div className="absolute inset-0 opacity-20" style={{
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 10L110 60L60 110L10 60L60 10' stroke='%23D4AF37' fill='none' stroke-width='1'/%3E%3C/svg%3E")`,
+      backgroundSize: '120px 120px'
+    }} />
+    
+   
+   
+  </div>
 
-
-
-      {/* The Art of Dining - Culinary Masterpiece Section */}
-      <section className="pb-10 px-4 relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] overflow-hidden">
-        {/* Subtle Gold Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 20L70 40L50 60L30 40L50 20z' fill='none' stroke='%23d4af37' stroke-width='0.5'/%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}></div>
+  <div className="max-w-7xl mx-auto relative">
+    {/* Royal Crest Header */}
+    <div className="text-center mb-16">
+      <div className="relative inline-block mb-4">
+        {/* Animated Crest */}
+        <div className="relative w-32 h-32 mx-auto">
+          <div className="absolute inset-0 border-4 border-metallic-gold rounded-full animate-[spin_15s_linear_infinite]" style={{ borderStyle: 'dotted' }} />
+          <div className="absolute inset-3 border-2 border-metallic-gold/50 rounded-full animate-pulse" />
+          <div className="absolute inset-6 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-full flex items-center justify-center">
+            <Crown className="w-10 h-10 text-charcoal" />
+          </div>
         </div>
+      </div>
+      
+      <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-1">L'ART DE LA TABLE</span>
+      
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-3 leading-tight">
+        <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
+          The Art of Dining
+        </span>
+      </h2>
+      
+      <div className="flex items-center justify-center gap-4 mb-3">
+        <div className="w-16 h-px bg-gradient-to-r from-transparent via-metallic-gold to-metallic-gold" />
+        <Diamond className="w-5 h-5 text-metallic-gold animate-pulse" />
+        <div className="w-16 h-px bg-gradient-to-l from-transparent via-metallic-gold to-metallic-gold" />
+      </div>
+      
+      <p className="text-lg md:text-xl text-soft-cream/70 max-w-3xl mx-auto px-4">
+        Where culinary excellence meets architectural splendor in perfect harmony
+      </p>
+    </div>
 
-        <div className="max-w-7xl mx-auto relative">
-          {/* Section Header */}
-          <div className="text-center mb-10">
-            <div className="flex justify-center mb-4">
-              <div className="relative">
-                <div className="absolute inset-0 bg-metallic-gold blur-xl opacity-30 rounded-full"></div>
-                <Utensils className="w-10 h-10 text-metallic-gold relative" />
+    {/* Main Feature - Grand Salon with Parallax */}
+    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-20 items-center">
+      {/* Left Content */}
+      <div className="space-y-6 order-2 lg:order-1">
+        <div className="inline-block p-3 bg-gradient-to-br from-metallic-gold/20 to-amber-600/20 rounded-xl backdrop-blur-sm border border-metallic-gold/30">
+          <Sparkles className="w-6 h-6 text-metallic-gold" />
+        </div>
+        
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+          The <span className="text-metallic-gold">Grand Salon</span>
+        </h3>
+        
+        <p className="text-base md:text-lg text-soft-cream/80 leading-relaxed">
+          Step into a realm of timeless elegance where crystal chandeliers dance with golden light. 
+          Our most prestigious dining room features hand-carved ceilings, original 18th-century artwork, 
+          and an atmosphere that transforms every meal into a celebration.
+        </p>
+        
+        {/* Feature List */}
+        <div className="grid grid-cols-4 gap-4 py-4">
+          {[
+            { label: 'Seating Capacity', value: '80 guests' },
+            { label: 'Private Rooms', value: '4 suites' },
+            { label: 'Michelin Stars', value: '3 ★' },
+            { label: 'Wine Selection', value: '2,500+' }
+          ].map((feature, idx) => (
+            <div key={idx} className="border-l-2 border-metallic-gold/30 pl-4">
+              <p className="text-2xl font-bold text-metallic-gold">{feature.value}</p>
+              <p className="text-xs text-soft-cream/60">{feature.label}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div className="flex flex-wrap gap-4 pt-2">
+          <button className="group relative px-8 py-3 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-metallic-gold/30 hover:scale-105 flex items-center gap-2">
+            <span className="relative z-10">Explore Menu</span>
+            <ChevronRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-metallic-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </button>
+          
+          <button className="px-8 py-3 border-2 border-metallic-gold/30 text-metallic-gold rounded-xl font-bold hover:bg-metallic-gold/10 transition-all duration-300 hover:scale-105">
+            Virtual Tour
+          </button>
+        </div>
+      </div>
+      
+      {/* Right Image with Ornate Frame */}
+      <div className="relative order-1 lg:order-2 group">
+        <div className="absolute -inset-4 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-3xl opacity-20 group-hover:opacity-30 blur-xl transition-all duration-700" />
+        
+        <div className="relative rounded-2xl overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Grand Dining Hall"
+            className="w-full h-[400px] lg:h-[400px] object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          
+          {/* Ornate Frame Overlay */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-4 left-4 w-16 h-16 border-t-4 border-l-4 border-metallic-gold/60 rounded-tl-2xl" />
+            <div className="absolute top-4 right-4 w-16 h-16 border-t-4 border-r-4 border-metallic-gold/60 rounded-tr-2xl" />
+            <div className="absolute bottom-4 left-4 w-16 h-16 border-b-4 border-l-4 border-metallic-gold/60 rounded-bl-2xl" />
+            <div className="absolute bottom-4 right-4 w-16 h-16 border-b-4 border-r-4 border-metallic-gold/60 rounded-br-2xl" />
+          </div>
+          
+          {/* Floating Badge */}
+          <div className="absolute top-6 right-6 bg-black/60 backdrop-blur-md px-4 py-1 rounded-full border border-metallic-gold/30">
+            <span className="text-metallic-gold text-sm font-bold">Signature Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Culinary Highlights - Luxury Card Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10">
+      {[
+        {
+          icon: <ChefHat className="w-8 h-8" />,
+          title: "Michelin-Starred Chefs",
+          description: "Led by Chef Antoine Dubois, our culinary team has earned 12 Michelin stars across the globe",
+          image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          color: "from-amber-500 to-amber-600",
+          stats: "15+ Master Chefs"
+        },
+        {
+          icon: <Wine className="w-8 h-8" />,
+          title: "Curated Wine Cellar",
+          description: "Temperature-controlled cellar housing rare vintages dating back to 1875",
+          image: "https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
+          color: "from-rose-500 to-pink-600",
+          stats: "2,500+ Labels"
+        },
+        {
+          icon: <Flame className="w-8 h-8" />,
+          title: "Live Cooking Theaters",
+          description: "Interactive dining experiences where chefs create culinary masterpieces tableside",
+          image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80",
+          color: "from-emerald-500 to-green-600",
+          stats: "4 Theaters"
+        }
+      ].map((item, idx) => (
+        <div key={idx} className="group relative">
+          {/* Glow Effect */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${item.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700`} />
+          
+          {/* Card */}
+          <div className="relative bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm rounded-3xl overflow-hidden border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2">
+            {/* Image Container */}
+            <div className="relative h-48 overflow-hidden">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+              
+              {/* Stats Badge */}
+              <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full border border-metallic-gold/30">
+                <span className="text-metallic-gold text-xs font-bold">{item.stats}</span>
               </div>
             </div>
-            <span className="text-metallic-gold uppercase tracking-[0.3em] text-sm font-semibold mb-2 block">
-              HAUTE CUISINE
-            </span>
-            <h2 className="text-2xl md:text-5xl font-serif font-bold text-metallic-gold mb-2">
-              The Art of Dining
-            </h2>
-            <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
-              Where culinary artistry meets architectural magnificence
-            </p>
-          </div>
-
-          {/* Main Feature - Full Width Image with Overlay */}
-          <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl mb-6 group">
-            <img 
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-              alt="Grand Dining Hall"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent"></div>
             
-            {/* Floating Gold Accents */}
-            <div className="absolute top-10 left-10 w-32 h-32 border-2 border-metallic-gold/30 rounded-full"></div>
-            <div className="absolute bottom-10 right-10 w-32 h-32 border-2 border-metallic-gold/30 rounded-full"></div>
-            
-            {/* Content Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-12">
-              <div className="max-w-3xl">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-16 h-0.5 bg-metallic-gold"></div>
-                  <span className="text-metallic-gold uppercase tracking-widest text-sm">Signature Experience</span>
+            {/* Content */}
+            <div className="p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 bg-gradient-to-br from-metallic-gold/20 to-amber-600/20 rounded-xl">
+                  <div className="text-metallic-gold">{item.icon}</div>
                 </div>
-                <h3 className="text-4xl md:text-5xl font-serif text-metallic-gold mb-4">The Grand Salon</h3>
-                <p className="text-soft-cream/80 text-lg mb-8 leading-relaxed">
-                  Experience an unparalleled culinary journey in our most prestigious dining room, 
-                  adorned with crystal chandeliers and original 18th-century artwork.
-                </p>
-                <button className="px-8 py-3 bg-metallic-gold text-royal-maroon font-semibold rounded-full hover:shadow-2xl transition-all duration-300 inline-flex items-center space-x-2 group">
-                  <span>Discover the Menu</span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <h4 className="text-xl font-serif font-bold text-white">{item.title}</h4>
               </div>
+              
+              <p className="text-soft-cream/70 text-sm leading-relaxed mb-4">
+                {item.description}
+              </p>
+              
+              <button className="w-full py-3 bg-white/5 border border-metallic-gold/30 rounded-xl text-metallic-gold text-sm font-bold hover:bg-gradient-to-r hover:from-metallic-gold hover:to-amber-600 hover:text-charcoal transition-all duration-300">
+                Discover More
+              </button>
             </div>
+            
+            {/* Corner Accent */}
+            <div className="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-metallic-gold/40 rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
+        </div>
+      ))}
+    </div>
 
-          {/* Culinary Highlights Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* Experience Tabs */}
+    <div className="relative mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {[
+          { time: '11:30 AM', name: 'Lunch Service', available: true },
+          { time: '3:00 PM', name: 'Afternoon Tea', available: true },
+          { time: '7:00 PM', name: 'Dinner Service', available: true },
+          { time: '9:30 PM', name: 'Late Supper', available: false }
+        ].map((slot, idx) => (
+          <button
+            key={idx}
+            disabled={!slot.available}
+            className={`relative p-4 rounded-xl border transition-all duration-300 group ${
+              slot.available 
+                ? 'border-metallic-gold/30 hover:border-metallic-gold/60 hover:bg-metallic-gold/5' 
+                : 'border-white/5 opacity-50 cursor-not-allowed'
+            }`}
+          >
+            <p className="text-metallic-gold font-bold text-sm mb-1">{slot.time}</p>
+            <p className="text-white text-xs">{slot.name}</p>
+            {slot.available && (
+              <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    {/* Awards & Recognition */}
+    <div className="relative bg-gradient-to-br from-royal-maroon/30 to-[#0a0a0a] rounded-3xl p-8 border border-metallic-gold/30">
+      <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span className="text-metallic-gold text-sm tracking-wider mb-3 block">ACCOLADES</span>
+          <h3 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-4">
+            A Legacy of <span className="text-metallic-gold">Excellence</span>
+          </h3>
+          <p className="text-soft-cream/70 mb-6">
+            Recognized globally for our commitment to culinary perfection and unparalleled service.
+          </p>
+          
+          <div className="flex flex-wrap gap-6">
             {[
-              {
-                icon: <ChefHat className="w-8 h-8" />,
-                title: "Michelin-Starred Chefs",
-                description: "Our culinary team, led by Chef Antoine Dubois, brings decades of Michelin-starred experience",
-                image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-              },
-              {
-                icon: <Wine className="w-8 h-8" />,
-                title: "Curated Wine Cellar",
-                description: "Over 2,500 labels from the world's most prestigious vineyards, including rare vintages",
-                image: "https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
-              },
-              {
-                icon: <Flame className="w-8 h-8" />,
-                title: "Live Cooking Theaters",
-                description: "Interactive dining experiences where chefs prepare your meal tableside",
-                image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80"
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="group relative h-80 rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent"></div>
-                
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="p-2 bg-metallic-gold/20 rounded-lg text-metallic-gold">
-                      {item.icon}
-                    </div>
-                    <h4 className="text-xl font-serif text-metallic-gold">{item.title}</h4>
-                  </div>
-                  <p className="text-soft-cream/70 text-sm leading-relaxed">{item.description}</p>
+              { icon: '⭐', label: 'Michelin Star', year: '2023' },
+              { icon: '🏆', label: 'Best Restaurant', year: '2024' },
+              { icon: '🍷', label: 'Wine Spectator', year: '2023' }
+            ].map((award, idx) => (
+              <div key={idx} className="flex items-center gap-3">
+                <span className="text-3xl">{award.icon}</span>
+                <div>
+                  <p className="text-white font-bold text-sm">{award.label}</p>
+                  <p className="text-metallic-gold text-xs">{award.year}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+        
+        <div className="grid grid-cols-2 gap-4">
+          {[1, 2, 3, 4].map((_, idx) => (
+            <div key={idx} className="aspect-square rounded-xl overflow-hidden">
+              <img 
+                src={`https://images.unsplash.com/photo-${idx === 0 ? '1414235077428' : idx === 1 ? '1550966871' : idx === 2 ? '1556911220' : '1559599101'}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
+                alt="Award"
+                className="w-full h-40 object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Bottom CTA */}
+    <div className="text-center mt-10">
+      <div className="relative inline-block">
+        <div className="absolute inset-0 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-2xl blur-2xl opacity-30 animate-pulse" />
+        <button className="relative px-10 py-3 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-2xl font-bold text-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-3">
+          <span>Reserve Your Table</span>
+          <Diamond className="w-5 h-5" />
+        </button>
+      </div>
+      
+    </div>
+  </div>
+
+ 
+ 
+</section>
+
+ 
+ 
 
       <section className=" px-4 relative h-[500px] flex items-center">
         {/* Fullscreen Background */}
@@ -1292,6 +1407,220 @@ const GalleryPage = () => {
           </div>
         </div>
       </section>
+      
+
+     {/* ==================== THE CRYSTAL GALLERY ==================== */}
+<section className="py-14 px-4 relative overflow-hidden min-h-screen">
+ 
+  <div className="max-w-7xl mx-auto relative">
+    {/* Section Header with Crystal Design */}
+    <div className="text-center mb-10">
+     
+      <h2 className="text-6xl md:text-7xl font-serif font-bold mb-6">
+        <span className="bg-gradient-to-r from-metallic-gold via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          The Crystal Gallery
+        </span>
+      </h2>
+
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="w-16 h-px bg-gradient-to-r from-transparent via-metallic-gold to-transparent"></div>
+        <Sparkles className="w-6 h-6 text-metallic-gold animate-pulse" />
+        <div className="w-16 h-px bg-gradient-to-l from-transparent via-metallic-gold to-transparent"></div>
+      </div>
+
+      <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
+        Where light dances through crystal and moments become masterpieces
+      </p>
+    </div>
+
+    {/* Crystal Display Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      {[
+        {
+          title: 'Morning Light',
+          artist: 'Elena Rodriguez',
+          medium: 'Digital Art',
+          size: '40" x 60"',
+          image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          colors: ['from-amber-400', 'to-rose-400'],
+          crystal: 'Golden Quartz'
+        },
+        {
+          title: 'Midnight Sonata',
+          artist: 'James Chen',
+          medium: 'Oil on Canvas',
+          size: '36" x 48"',
+          image: 'https://images.unsplash.com/photo-1544148103-0413e5d127d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          colors: ['from-blue-400', 'to-purple-400'],
+          crystal: 'Sapphire'
+        },
+        {
+          title: 'Golden Hour',
+          artist: 'Sophie Turner',
+          medium: 'Photography',
+          size: '30" x 45"',
+          image: 'https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          colors: ['from-amber-400', 'to-yellow-400'],
+          crystal: 'Citrine'
+        },
+        {
+          title: 'Emerald Dreams',
+          artist: 'Rajiv Mehta',
+          medium: 'Mixed Media',
+          size: '48" x 48"',
+          image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          colors: ['from-emerald-400', 'to-green-400'],
+          crystal: 'Emerald'
+        },
+        {
+          title: 'Ruby Romance',
+          artist: 'Maria Garcia',
+          medium: 'Acrylic',
+          size: '24" x 36"',
+          image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          colors: ['from-rose-400', 'to-red-400'],
+          crystal: 'Ruby'
+        },
+        {
+          title: 'Amethyst Dreams',
+          artist: 'David Kim',
+          medium: 'Watercolor',
+          size: '20" x 28"',
+          image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          colors: ['from-purple-400', 'to-violet-400'],
+          crystal: 'Amethyst'
+        }
+      ].map((item, index) => (
+        <div key={index} className="group relative perspective">
+          {/* Crystal Base */}
+          <div className="absolute inset-0 bg-gradient-to-br from-metallic-gold/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+          
+          {/* Main Card - Crystal Facet Design */}
+          <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2 hover:rotate-1">
+            {/* Prismatic Overlay */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700" style={{
+              background: `linear-gradient(45deg, transparent 30%, rgba(255,215,0,0.3) 50%, transparent 70%)`,
+              backgroundSize: '200% 200%',
+              animation: 'shine 3s ease-in-out infinite'
+            }}></div>
+            
+            {/* Image Container with Crystal Frame */}
+            <div className="relative h-64 overflow-hidden">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              
+              {/* Crystal Gradient Overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-t ${item.colors[0]} ${item.colors[1]} mix-blend-overlay opacity-30`}></div>
+              
+              {/* Crystal Badge */}
+              <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-metallic-gold/30 flex items-center gap-2">
+                <Gem className="w-4 h-4 text-metallic-gold" />
+                <span className="text-metallic-gold text-xs font-bold">{item.crystal}</span>
+              </div>
+            </div>
+            
+            {/* Content */}
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-white mb-1">{item.title}</h3>
+              <p className="text-metallic-gold text-sm mb-3">{item.artist}</p>
+              
+              <div className="flex justify-between items-center text-xs text-soft-cream/60 mb-4">
+                <span>{item.medium}</span>
+                <span>{item.size}</span>
+              </div>
+              
+              <button className="w-full py-3 bg-white/5 border border-metallic-gold/30 rounded-xl text-metallic-gold text-sm font-bold hover:bg-gradient-to-r hover:from-metallic-gold hover:to-amber-600 hover:text-charcoal transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                <span>View in Crystal Light</span>
+                <Sparkles className="w-4 h-4 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+
+</section>
+
+{/* ==================== THE VELVET GALLERY ==================== */}
+<section className="py-14 px-4 relative overflow-hidden">
+  {/* Velvet Texture Background */}
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-gradient-to-br from-[#2a1a1a] via-[#1a0a0a] to-[#2a1a1a]"></div>
+  
+  </div>
+
+ 
+ 
+  <div className="max-w-7xl mx-auto relative">
+   
+    {/* Gallery Pieces */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      {[
+        {
+          title: 'The Velvet Kiss',
+          artist: 'Isabella Rossi',
+          year: '2024',
+          image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          desc: 'A study in texture and passion',
+          price: '$45,000'
+        },
+        {
+          title: 'Midnight Lounge',
+          artist: 'Victor Noir',
+          year: '2023',
+          image: 'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          desc: 'Abstract expression in deep blues',
+          price: '$38,000'
+        }
+      ].map((art, idx) => (
+        <div key={idx} className="group relative h-[500px]">
+          {/* Velvet Backdrop */}
+          <div className="absolute inset-0 bg-gradient-to-br from-rose-900/30 to-rose-950/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          {/* Main Display */}
+          <div className="relative h-full bg-gradient-to-b from-rose-900/20 to-rose-950/20 rounded-3xl overflow-hidden border border-rose-800/50 group-hover:border-metallic-gold/40 transition-all duration-500">
+            {/* Image */}
+            <div className="absolute inset-0">
+              <img 
+                src={art.image} 
+                alt={art.title}
+                className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
+              />
+            </div>
+            
+            {/* Velvet Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-rose-950 via-transparent to-transparent"></div>
+            
+            {/* Content */}
+            <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-24 group-hover:translate-y-0 transition-transform duration-500">
+              <h3 className="text-3xl font-bold text-white mb-2">{art.title}</h3>
+              <p className="text-metallic-gold text-lg mb-2">{art.artist} · {art.year}</p>
+              <p className="text-soft-cream/70 mb-4">{art.desc}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold text-metallic-gold">{art.price}</span>
+                <button className="px-6 py-3 bg-metallic-gold text-charcoal rounded-xl font-bold hover:shadow-2xl transition-all">
+                  Inquire
+                </button>
+              </div>
+            </div>
+            
+            {/* Gold Tassel */}
+            <div className="absolute top-6 right-6 w-16 h-16">
+              <div className="w-2 h-12 bg-metallic-gold mx-auto"></div>
+              <div className="w-8 h-8 bg-metallic-gold rounded-full mx-auto -mt-2"></div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section> 
       
     </div>
   );
