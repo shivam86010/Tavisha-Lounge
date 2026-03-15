@@ -1,1260 +1,10 @@
-// import React, { useState, useEffect } from 'react';
-// import { 
-//   Crown, MapPin, Phone, Mail, Clock, Send, Star ,
-//   ChevronRight, Gem, Sparkles, Users,  Instagram, Facebook, 
-//   Twitter, Linkedin,  Navigation,Diamond ,Trophy 
-// } from 'lucide-react';
-
-// const Contact = () => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     phone: '',
-//     guests: 2,
-//     date: '',
-//     message: ''
-//   });
-//   const [isSubmitting, setIsSubmitting] = useState(false);
-//   const [activeFaq, setActiveFaq] = useState(null);
-
-//   const quickContacts = [
-//     { icon: MapPin, text: 'Royal Heritage Road, City Center', subtext: 'Tavisha Grand, Mumbai', gradient: 'from-amber-500 to-amber-600' },
-//     { icon: Phone, text: '+91 98765 43210', subtext: '24/7 Concierge Service', gradient: 'from-rose-500 to-pink-600' },
-//     { icon: Mail, text: 'royal@tavisha.com', subtext: 'Quick Response Within 2 Hours', gradient: 'from-emerald-500 to-green-600' },
-//     { icon: Clock, text: '11:00 AM - 11:30 PM', subtext: 'Open Daily · Last Seating 10:30 PM', gradient: 'from-purple-500 to-indigo-600' }
-//   ];
-
-//   const faqs = [
-//     {
-//       question: "What is the dress code?",
-//       answer: "We maintain a sophisticated elegant dress code. Gentlemen are requested to wear jackets (available on request), and formal or semi-formal attire is appreciated for all guests."
-//     },
-//     {
-//       question: "Do you accommodate dietary restrictions?",
-//       answer: "Absolutely. Our chefs are delighted to accommodate vegetarian, vegan, gluten-free, and other dietary requirements. Please inform us at least 24 hours in advance."
-//     },
-//     {
-//       question: "Is there private parking available?",
-//       answer: "Yes, we offer valet parking for all our guests. Additionally, we have a secure underground parking facility with 24/7 surveillance."
-//     },
-//     {
-//       question: "Can I book for large groups?",
-//       answer: "We welcome group bookings of up to 24 guests in our private dining rooms. For larger events, please contact our events team for personalized arrangements."
-//     }
-//   ];
-
-//   const teamMembers = [
-//     {
-//       name: "Chef Rajesh Mehta",
-//       role: "Executive Chef",
-//       experience: "25+ years",
-//       image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-//       expertise: "Royal Indian Cuisine"
-//     },
-//     {
-//       name: "Priya Sharma",
-//       role: "Head of Hospitality",
-//       experience: "18+ years",
-//       image: "https://images.unsplash.com/photo-1551836026-d5c8c2d86232?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-//       expertise: "Guest Experience"
-//     },
-//     {
-//       name: "Shyam",
-//       role: "Master Mixologist",
-//       experience: "15+ years",
-//       image: "https://images.unsplash.com/photo-1581299894007-9c115449a7b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-//       expertise: "Signature Cocktails"
-//     }
-//   ];
-
-//   const awards = [
-//     { icon: "⭐", title: "Michelin Star", year: "2023", description: "Culinary Excellence" },
-//     { icon: "🏆", title: "Best Indian Restaurant", year: "2024", description: "World Culinary Awards" },
-//     { icon: "🍷", title: "Wine Spectator Award", year: "2023", description: "Best Wine List" },
-//     { icon: "👑", title: "Royal Culinary Excellence", year: "2024", description: "Presidential Award" }
-//   ];
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     setIsSubmitting(true);
-//     setTimeout(() => {
-//       setIsSubmitting(false);
-//       alert('Thank you for your inquiry. Our concierge will contact you shortly.');
-//     }, 2000);
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-[#0a0a0a]">
-//       {/* ==================== ENHANCED HERO SECTION ==================== */}
-//       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-//         {/* Background with Parallax */}
-//         <div className="absolute inset-0">
-//           <img 
-//             src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-//             alt="Tavisha Lounge"
-//             className="w-full h-full object-cover scale-105 animate-[slowZoom_30s_ease-in-out_infinite]"
-//           />
-//           <div className="absolute inset-0 bg-gradient-to-r from-royal-maroon/90 via-royal-maroon/70 to-transparent"></div>
-//           <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/20"></div>
-//         </div>
-
-//         {/* Animated Gold Particles */}
-//         <div className="absolute inset-0 overflow-hidden">
-//           {[...Array(30)].map((_, i) => (
-//             <div
-//               key={i}
-//               className="absolute rounded-full bg-gradient-to-br from-metallic-gold/40 to-transparent"
-//               style={{
-//                 width: `${Math.random() * 6 + 2}px`,
-//                 height: `${Math.random() * 6 + 2}px`,
-//                 left: `${Math.random() * 100}%`,
-//                 top: `${Math.random() * 100}%`,
-//                 animation: `floatParticle ${Math.random() * 10 + 15}s linear infinite`,
-//                 animationDelay: `${Math.random() * 5}s`,
-//                 filter: 'blur(1px)'
-//               }}
-//             />
-//           ))}
-//         </div>
-
-//         {/* Ornate Overlay Pattern */}
-//         <div className="absolute inset-0 opacity-20">
-//           <div className="absolute inset-0" style={{
-//             backgroundImage: 'url("data:image/svg+xml,%3Csvg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M60 10 L110 60 L60 110 L10 60 L60 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
-//             backgroundSize: '120px 120px'
-//           }} />
-//         </div>
-
-//         {/* Content */}
-//         <div className="relative z-20 text-center px-4 max-w-7xl mx-auto">
-//           {/* Animated Crown */}
-//           <div className="flex justify-center mb-8">
-//             <div className="relative">
-//               <div className="absolute inset-0 bg-metallic-gold blur-2xl opacity-30 rounded-full animate-pulse"></div>
-//               <div className="relative w-32 h-32">
-//                 <div className="absolute inset-0 border-4 border-metallic-gold rounded-full animate-[spin_15s_linear_infinite]" style={{ borderStyle: 'dotted' }} />
-//                 <div className="absolute inset-3 border-2 border-metallic-gold/50 rounded-full animate-pulse" />
-//                 <div className="absolute inset-6 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-full flex items-center justify-center">
-//                   <Crown className="w-12 h-12 text-charcoal" />
-//                 </div>
-                
-//                 {/* Orbiting Gems */}
-//                 {[...Array(4)].map((_, i) => (
-//                   <div
-//                     key={i}
-//                     className="absolute w-4 h-4"
-//                     style={{
-//                       top: '50%',
-//                       left: '50%',
-//                       transform: `rotate(${i * 90}deg) translateX(60px)`,
-//                       animation: `orbitGem 6s ease-in-out infinite ${i * 1.5}s`
-//                     }}
-//                   >
-//                     <Gem className="w-4 h-4 text-metallic-gold" />
-//                   </div>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Title with Gradient */}
-//           <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-6 leading-tight">
-//             <span className="bg-gradient-to-r from-amber-200 via-metallic-gold to-amber-200 bg-clip-text text-transparent">
-//               Get in Touch
-//             </span>
-//           </h1>
-
-//           <div className="flex items-center justify-center gap-4 mb-6">
-//             <div className="w-20 h-px bg-gradient-to-r from-transparent via-metallic-gold to-metallic-gold" />
-//             <Diamond className="w-6 h-6 text-metallic-gold animate-pulse" />
-//             <div className="w-20 h-px bg-gradient-to-l from-transparent via-metallic-gold to-metallic-gold" />
-//           </div>
-
-//           <p className="text-xl md:text-2xl text-soft-cream/90 max-w-3xl mx-auto font-light leading-relaxed mb-12">
-//             Where conversations begin and connections grow in an atmosphere of royal elegance
-//           </p>
-
-//           {/* Quick Contact Badges */}
-//           <div className="flex flex-wrap justify-center gap-4 mb-12">
-//             {quickContacts.map((contact, idx) => (
-//               <div
-//                 key={idx}
-//                 className="group bg-white/5 backdrop-blur-md px-6 py-3 rounded-full border border-metallic-gold/30 hover:border-metallic-gold transition-all duration-300 hover:scale-105"
-//               >
-//                 <div className="flex items-center gap-3">
-//                   <contact.icon className="w-4 h-4 text-metallic-gold" />
-//                   <span className="text-soft-cream/90 text-sm">{contact.text}</span>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-
-//           {/* CTA Buttons */}
-//           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-//             <button
-//               className="group relative px-10 py-5 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-full font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-metallic-gold/30 hover:scale-105"
-//             >
-//               <span className="relative z-10 flex items-center gap-3">
-//                 Reserve Your Experience
-//                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-//               </span>
-//               <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-metallic-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-//               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-//             </button>
-
-//             <button
-//               className="group px-10 py-5 border-2 border-metallic-gold text-metallic-gold rounded-full font-bold text-lg hover:bg-metallic-gold/10 transition-all duration-300 hover:scale-105 flex items-center gap-2"
-//             >
-//               <Phone className="w-5 h-5" />
-//               <span>Call Concierge</span>
-//             </button>
-//           </div>
-
-//           {/* Scroll Indicator */}
-//           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-//             <div className="flex flex-col items-center gap-2">
-//               <span className="text-metallic-gold/60 text-xs tracking-widest">DISCOVER MORE</span>
-//               <div className="w-px h-12 bg-gradient-to-b from-metallic-gold to-transparent"></div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ==================== SECTION 1: RESERVATION & CONTACT FORM ==================== */}
-//       <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
-//         <div className="absolute inset-0 opacity-10" style={{
-//           backgroundImage: 'url("data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M40 10 L70 40 L40 70 L10 40 L40 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
-//           backgroundSize: '80px 80px'
-//         }} />
-
-//         <div className="max-w-7xl mx-auto relative">
-//           <div className="text-center mb-16">
-//             <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">ROYAL RESERVATIONS</span>
-//             <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-//               <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
-//                 Make an Inquiry
-//               </span>
-//             </h2>
-//             <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
-//               Our concierge team will respond within 2 hours to confirm your royal experience
-//             </p>
-//           </div>
-
-//           <div className="grid lg:grid-cols-2 gap-12">
-//             {/* Contact Cards */}
-//             <div className="space-y-6">
-//               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-//                 {quickContacts.map((contact, index) => (
-//                   <div
-//                     key={index}
-//                     className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2"
-//                   >
-//                     <div className={`absolute inset-0 bg-gradient-to-br ${contact.gradient} rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-all duration-700`} />
-//                     <div className="relative">
-//                       <div className={`p-3 bg-gradient-to-br ${contact.gradient} rounded-xl w-fit mb-4`}>
-//                         <contact.icon className="w-5 h-5 text-white" />
-//                       </div>
-//                       <p className="text-white font-bold text-lg mb-1">{contact.text}</p>
-//                       <p className="text-soft-cream/60 text-sm">{contact.subtext}</p>
-//                     </div>
-//                   </div>
-//                 ))}
-//               </div>
-
-//               {/* Map Preview */}
-//               <div className="relative h-64 rounded-2xl overflow-hidden group">
-//                 <img 
-//                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-//                   alt="Location"
-//                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-//                 />
-//                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
-//                 <div className="absolute bottom-4 left-4 flex items-center gap-2">
-//                   <Navigation className="w-5 h-5 text-metallic-gold" />
-//                   <span className="text-white font-bold">Royal Heritage Road, Mumbai</span>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Form */}
-//             <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-metallic-gold/30">
-//               <h3 className="text-2xl font-serif font-bold text-white mb-6">Send us a Message</h3>
-              
-//               <form onSubmit={handleSubmit} className="space-y-5">
-//                 <div className="grid grid-cols-2 gap-4">
-//                   <input
-//                     type="text"
-//                     placeholder="First Name"
-//                     value={formData.name}
-//                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-//                     className="col-span-2 md:col-span-1 px-5 py-3 bg-white/5 border border-metallic-gold/30 rounded-xl text-white placeholder-soft-cream/50 focus:border-metallic-gold focus:outline-none transition-all"
-//                     required
-//                   />
-//                   <input
-//                     type="text"
-//                     placeholder="Last Name"
-//                     className="col-span-2 md:col-span-1 px-5 py-3 bg-white/5 border border-metallic-gold/30 rounded-xl text-white placeholder-soft-cream/50 focus:border-metallic-gold focus:outline-none transition-all"
-//                     required
-//                   />
-//                 </div>
-
-//                 <input
-//                   type="email"
-//                   placeholder="Email Address"
-//                   className="w-full px-5 py-3 bg-white/5 border border-metallic-gold/30 rounded-xl text-white placeholder-soft-cream/50 focus:border-metallic-gold focus:outline-none transition-all"
-//                   required
-//                 />
-
-//                 <input
-//                   type="tel"
-//                   placeholder="Phone Number"
-//                   className="w-full px-5 py-3 bg-white/5 border border-metallic-gold/30 rounded-xl text-white placeholder-soft-cream/50 focus:border-metallic-gold focus:outline-none transition-all"
-//                   required
-//                 />
-
-//                 <div className="grid grid-cols-2 gap-4">
-//                   <div className="flex items-center gap-3 px-5 py-3 bg-white/5 border border-metallic-gold/30 rounded-xl">
-//                     <Users className="w-5 h-5 text-metallic-gold" />
-//                     <input
-//                       type="number"
-//                       min="1"
-//                       max="20"
-//                       value={formData.guests}
-//                       onChange={(e) => setFormData({...formData, guests: parseInt(e.target.value)})}
-//                       className="w-full bg-transparent text-white focus:outline-none"
-//                     />
-//                   </div>
-//                   <input
-//                     type="date"
-//                     className="px-5 py-3 bg-white/5 border border-metallic-gold/30 rounded-xl text-white focus:border-metallic-gold focus:outline-none transition-all"
-//                     required
-//                   />
-//                 </div>
-
-//                 <textarea
-//                   placeholder="Special Requests or Message"
-//                   rows="4"
-//                   value={formData.message}
-//                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-//                   className="w-full px-5 py-3 bg-white/5 border border-metallic-gold/30 rounded-xl text-white placeholder-soft-cream/50 focus:border-metallic-gold focus:outline-none transition-all"
-//                 />
-
-//                 <button
-//                   type="submit"
-//                   disabled={isSubmitting}
-//                   className="group relative w-full py-4 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-metallic-gold/30 disabled:opacity-50"
-//                 >
-//                   <span className="relative z-10 flex items-center justify-center gap-3">
-//                     {isSubmitting ? 'Sending...' : 'Send Inquiry'}
-//                     {!isSubmitting && <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
-//                   </span>
-//                   <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-metallic-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-//                 </button>
-//               </form>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-// {/* ==================== SECTION 2: MEET THE CULINARY MASTERS ==================== */}
-// <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
-//   {/* Decorative Background */}
-//   <div className="absolute inset-0">
-//     <div className="absolute top-0 left-0 w-96 h-96 bg-metallic-gold/5 rounded-full blur-3xl"></div>
-//     <div className="absolute bottom-0 right-0 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
-//   </div>
-
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="text-center mb-16">
-//       <div className="relative inline-block mb-6">
-//         <div className="absolute inset-0 bg-metallic-gold blur-2xl opacity-30 rounded-full"></div>
-//         <div className="relative w-20 h-20 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-2xl transform rotate-12 flex items-center justify-center">
-//           <Crown className="w-10 h-10 text-charcoal transform -rotate-12" />
-//         </div>
-//       </div>
-      
-//       <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">THE ARTISANS</span>
-//       <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-//         <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
-//           Culinary Masters
-//         </span>
-//       </h2>
-//       <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
-//         Dedicated to creating unforgettable experiences through their craft
-//       </p>
-//     </div>
-
-//     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//       {teamMembers.map((member, idx) => (
-//         <div key={idx} className="group relative perspective">
-//           <div className="absolute inset-0 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700" />
-          
-//           <div className="relative bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm rounded-3xl overflow-hidden border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2">
-//             <div className="relative h-80 overflow-hidden">
-//               <img 
-//                 src={member.image} 
-//                 alt={member.name}
-//                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-//               />
-//               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
-              
-//               {/* Experience Badge */}
-//               <div className="absolute top-4 right-4 bg-gradient-to-r from-metallic-gold to-amber-600 px-4 py-2 rounded-full">
-//                 <span className="text-sm font-bold text-charcoal">{member.experience}</span>
-//               </div>
-//             </div>
-            
-//             <div className="p-6">
-//               <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
-//               <p className="text-metallic-gold text-sm mb-2">{member.role}</p>
-//               <p className="text-soft-cream/60 text-sm">{member.expertise}</p>
-//             </div>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 3: FREQUENTLY ASKED QUESTIONS ==================== */}
-// <section className="py-24 px-4 relative overflow-hidden bg-[#0a0a0a]">
-//   <div className="max-w-4xl mx-auto relative">
-//     <div className="text-center mb-16">
-//       <div className="relative inline-block mb-6">
-//         <div className="text-5xl">❓</div>
-//       </div>
-//       <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">COMMON QUERIES</span>
-//       <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-//         <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
-//           Frequently Asked
-//         </span>
-//       </h2>
-//     </div>
-
-//     <div className="space-y-4">
-//       {faqs.map((faq, idx) => (
-//         <div
-//           key={idx}
-//           className="group relative bg-white/5 backdrop-blur-sm rounded-2xl border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-300"
-//         >
-//           <button
-//             onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
-//             className="w-full px-6 py-5 flex items-center justify-between text-left"
-//           >
-//             <span className="text-white font-bold text-lg">{faq.question}</span>
-//             <ChevronRight className={`w-5 h-5 text-metallic-gold transition-transform duration-300 ${
-//               activeFaq === idx ? 'rotate-90' : ''
-//             }`} />
-//           </button>
-          
-//           {activeFaq === idx && (
-//             <div className="px-6 pb-5 animate-[slideDown_0.3s_ease-out]">
-//               <div className="h-px w-full bg-gradient-to-r from-transparent via-metallic-gold/50 to-transparent mb-4"></div>
-//               <p className="text-soft-cream/70 leading-relaxed">{faq.answer}</p>
-//             </div>
-//           )}
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 4: AWARDS & RECOGNITION ==================== */}
-// <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
-//   {/* Background Pattern */}
-//   <div className="absolute inset-0 opacity-10" style={{
-//     backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Ccircle cx="30" cy="30" r="15" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
-//     backgroundSize: '60px 60px'
-//   }} />
-
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="text-center mb-16">
-//       <Trophy className="w-16 h-16 text-metallic-gold mx-auto mb-6" />
-//       <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">ACCOLADES</span>
-//       <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-//         <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
-//           Awards & Recognition
-//         </span>
-//       </h2>
-//       <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
-//         Celebrated globally for our commitment to excellence
-//       </p>
-//     </div>
-
-//     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-//       {awards.map((award, idx) => (
-//         <div key={idx} className="group relative text-center">
-//           <div className="absolute inset-0 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700" />
-          
-//           <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2">
-//             <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-500">
-//               {award.icon}
-//             </div>
-//             <h3 className="text-2xl font-bold text-white mb-2">{award.title}</h3>
-//             <p className="text-metallic-gold text-lg mb-2">{award.year}</p>
-//             <p className="text-soft-cream/60 text-sm">{award.description}</p>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 5: NEWSLETTER & SOCIAL CONNECT ==================== */}
-// <section className="py-20 px-4 relative overflow-hidden">
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="grid lg:grid-cols-2 gap-12 items-center">
-//       {/* Left Side - Newsletter */}
-//       <div className="relative bg-gradient-to-br from-royal-maroon/30 to-[#0a0a0a] rounded-3xl p-10 border border-metallic-gold/30">
-//         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-metallic-gold to-amber-600 px-8 py-2 rounded-full">
-//           <span className="text-charcoal font-bold text-sm">EXCLUSIVE</span>
-//         </div>
-        
-//         <h3 className="text-3xl font-serif font-bold text-white mb-4 mt-6">Join the Inner Circle</h3>
-//         <p className="text-soft-cream/70 mb-8">
-//           Subscribe to receive exclusive offers, event invitations, and culinary inspiration directly in your inbox.
-//         </p>
-        
-//         <div className="space-y-4">
-//           <div className="flex flex-col sm:flex-row gap-3">
-//             <input
-//               type="email"
-//               placeholder="Your Email Address"
-//               className="flex-1 px-6 py-4 bg-white/5 border border-metallic-gold/30 rounded-xl text-white placeholder-soft-cream/50 focus:border-metallic-gold focus:outline-none transition-all"
-//             />
-//             <button className="px-8 py-4 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold hover:shadow-2xl transition-all whitespace-nowrap">
-//               Subscribe
-//             </button>
-//           </div>
-//           <p className="text-soft-cream/40 text-xs">
-//             By subscribing, you agree to our Privacy Policy and consent to receive updates
-//           </p>
-//         </div>
-//       </div>
-
-//       {/* Right Side - Social Connect */}
-//       <div className="space-y-8">
-//         <div className="text-center lg:text-left">
-//           <span className="text-metallic-gold text-sm tracking-wider mb-2 block">FOLLOW OUR JOURNEY</span>
-//           <h3 className="text-3xl font-serif font-bold text-white mb-4">Connect With Us</h3>
-//           <p className="text-soft-cream/70">Be part of our royal community</p>
-//         </div>
-
-//         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-//           {[
-//             { icon: <Instagram className="w-6 h-6" />, label: 'Instagram', count: '45K', color: 'from-pink-500 to-purple-500' },
-//             { icon: <Facebook className="w-6 h-6" />, label: 'Facebook', count: '28K', color: 'from-blue-500 to-blue-600' },
-//             { icon: <Twitter className="w-6 h-6" />, label: 'Twitter', count: '32K', color: 'from-sky-400 to-sky-500' },
-//             { icon: <Linkedin className="w-6 h-6" />, label: 'LinkedIn', count: '15K', color: 'from-blue-600 to-blue-700' }
-//           ].map((social, idx) => (
-//             <a
-//               key={idx}
-//               href="#"
-//               className="group relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2 text-center"
-//             >
-//               <div className={`absolute inset-0 bg-gradient-to-br ${social.color} rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-all`} />
-//               <div className="relative">
-//                 <div className="text-metallic-gold mb-3">{social.icon}</div>
-//                 <p className="text-white font-bold text-sm mb-1">{social.label}</p>
-//                 <p className="text-metallic-gold text-xs">{social.count} followers</p>
-//               </div>
-//             </a>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 6: LOCATION & HOURS ==================== */}
-// <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="grid lg:grid-cols-3 gap-8">
-//       {/* Location Card */}
-//       <div className="lg:col-span-2 relative h-[400px] rounded-3xl overflow-hidden group">
-//         <img 
-//           src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-//           alt="Location"
-//           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-//         />
-//         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
-        
-//         {/* Map Overlay */}
-//         <div className="absolute bottom-0 left-0 right-0 p-8">
-//           <div className="flex items-center gap-3 mb-4">
-//             <div className="w-12 h-12 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-xl flex items-center justify-center">
-//               <Navigation className="w-6 h-6 text-charcoal" />
-//             </div>
-//             <div>
-//               <span className="text-metallic-gold text-sm font-bold">VISIT US</span>
-//               <h4 className="text-2xl font-serif text-white">Royal Heritage Road</h4>
-//             </div>
-//           </div>
-//           <p className="text-soft-cream/80 text-lg">Tavisha Grand, Mumbai · 400001</p>
-//         </div>
-//       </div>
-
-//       {/* Hours Cards */}
-//       <div className="space-y-4">
-//         {[
-//           { days: 'Monday - Thursday', hours: '11:00 AM - 11:00 PM', status: 'Open' },
-//           { days: 'Friday - Saturday', hours: '11:00 AM - 12:00 AM', status: 'Extended Hours' },
-//           { days: 'Sunday', hours: '10:00 AM - 10:00 PM', status: 'Brunch Special' }
-//         ].map((schedule, idx) => (
-//           <div key={idx} className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-1">
-//             <div className="flex items-start gap-4">
-//               <Clock className="w-6 h-6 text-metallic-gold flex-shrink-0 mt-1" />
-//               <div>
-//                 <h4 className="text-white font-bold text-lg mb-1">{schedule.days}</h4>
-//                 <p className="text-soft-cream/70 text-sm mb-2">{schedule.hours}</p>
-//                 <span className="inline-block px-3 py-1 bg-metallic-gold/10 border border-metallic-gold/30 rounded-full text-metallic-gold text-xs">
-//                   {schedule.status}
-//                 </span>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 7: GUEST TESTIMONIALS ==================== */}
-// <section className="py-24 px-4 relative overflow-hidden">
-//   {/* Background Pattern */}
-//   <div className="absolute inset-0 opacity-5" style={{
-//     backgroundImage: 'url("data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M50 20L80 50L50 80L20 50L50 20" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
-//     backgroundSize: '100px 100px'
-//   }} />
-
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="text-center mb-16">
-//       <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">GUEST EXPERIENCES</span>
-//       <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-//         <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
-//           Royal Testimonials
-//         </span>
-//       </h2>
-//     </div>
-
-//     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-//       {[
-//         {
-//           name: 'Maharaja Yadvendra Singh',
-//           role: 'Royal Patron',
-//           text: 'The hospitality is truly fit for royalty. Every visit feels like a celebration.',
-//           rating: 5,
-//           image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-//         },
-//         {
-//           name: 'Mrs. Anita Singhania',
-//           role: 'Business Tycoon',
-//           text: 'An unparalleled experience where every detail is crafted to perfection.',
-//           rating: 5,
-//           image: 'https://images.unsplash.com/photo-1494790108777-383fd5c8a4b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-//         },
-//         {
-//           name: 'Mr. Vikram Rathore',
-//           role: 'Industrialist',
-//           text: 'The finest dining experience in the city. The staff anticipates your every need.',
-//           rating: 5,
-//           image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-//         }
-//       ].map((testimonial, idx) => (
-//         <div key={idx} className="group relative">
-//           <div className="absolute inset-0 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700" />
-          
-//           <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2">
-//             <div className="absolute -top-4 left-8 text-7xl text-metallic-gold/20 font-serif">"</div>
-            
-//             <div className="flex items-center gap-4 mb-6">
-//               <img 
-//                 src={testimonial.image} 
-//                 alt={testimonial.name}
-//                 className="w-16 h-16 rounded-full object-cover border-2 border-metallic-gold"
-//               />
-//               <div>
-//                 <h4 className="text-xl font-bold text-white">{testimonial.name}</h4>
-//                 <p className="text-metallic-gold text-sm">{testimonial.role}</p>
-//               </div>
-//             </div>
-            
-//             <p className="text-soft-cream/80 mb-6 italic">{testimonial.text}</p>
-            
-//             <div className="flex gap-1">
-//               {[...Array(5)].map((_, i) => (
-//                 <Star key={i} className="w-5 h-5 fill-metallic-gold text-metallic-gold" />
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 2: THE ARTISANS ==================== */}
-// <section className="py-32 px-4 relative overflow-hidden">
-//   {/* Opulent Background */}
-//   <div className="absolute inset-0">
-//     <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#1a0f1a] to-[#0a0a0a]"></div>
-    
-//     {/* Floating Gold Orbs */}
-//     <div className="absolute inset-0 overflow-hidden">
-//       {[...Array(20)].map((_, i) => (
-//         <div
-//           key={i}
-//           className="absolute rounded-full bg-gradient-to-br from-metallic-gold/20 to-transparent"
-//           style={{
-//             width: `${150 + i * 30}px`,
-//             height: `${150 + i * 30}px`,
-//             left: `${Math.random() * 100}%`,
-//             top: `${Math.random() * 100}%`,
-//             filter: 'blur(60px)',
-//             animation: `orbFloat ${20 + i}s ease-in-out infinite`,
-//             animationDelay: `${i * 2}s`
-//           }}
-//         />
-//       ))}
-//     </div>
-//   </div>
-
-//   <div className="max-w-7xl mx-auto relative">
-//     {/* Section Header with Crystal Design */}
-//     <div className="text-center mb-20">
-//       <div className="relative inline-block mb-8">
-//         <div className="relative w-32 h-32 mx-auto">
-//           <div className="absolute inset-0 border-4 border-metallic-gold rounded-full animate-[spin_20s_linear_infinite]"></div>
-//           <div className="absolute inset-4 border-2 border-metallic-gold/60 rounded-full animate-pulse"></div>
-//           <div className="absolute inset-8 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-full flex items-center justify-center">
-//             <Crown className="w-10 h-10 text-charcoal" />
-//           </div>
-          
-//           {/* Orbiting Stars */}
-//           {[...Array(6)].map((_, i) => (
-//             <div
-//               key={i}
-//               className="absolute w-2 h-2 bg-metallic-gold rounded-full"
-//               style={{
-//                 top: '50%',
-//                 left: '50%',
-//                 transform: `rotate(${i * 60}deg) translateX(50px)`,
-//                 animation: `orbitStar 4s ease-in-out infinite ${i * 0.3}s`
-//               }}
-//             />
-//           ))}
-//         </div>
-//       </div>
-      
-//       <span className="text-metallic-gold tracking-[0.5em] text-xs font-bold block mb-4">MASTERS OF THE CRAFT</span>
-      
-//       <h2 className="text-6xl md:text-7xl font-serif font-bold mb-6">
-//         <span className="bg-gradient-to-r from-amber-300 via-metallic-gold to-amber-300 bg-clip-text text-transparent">
-//           The Artisans
-//         </span>
-//       </h2>
-      
-//       <div className="w-32 h-1 bg-gradient-to-r from-transparent via-metallic-gold to-transparent mx-auto"></div>
-//     </div>
-
-//     {/* Team Grid - Luxury Cards */}
-//     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-//       {teamMembers.map((member, idx) => (
-//         <div key={idx} className="group relative">
-//           {/* Golden Frame */}
-//           <div className="absolute -inset-1 bg-gradient-to-r from-metallic-gold via-amber-500 to-metallic-gold rounded-3xl opacity-0 group-hover:opacity-100 blur-md transition-all duration-700"></div>
-          
-//           {/* Main Card */}
-//           <div className="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg rounded-3xl overflow-hidden border border-white/20 group-hover:border-metallic-gold/40 transition-all duration-500">
-//             {/* Image Container with Ornate Frame */}
-//             <div className="relative h-96 overflow-hidden">
-//               <img 
-//                 src={member.image} 
-//                 alt={member.name}
-//                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-//               />
-              
-//               {/* Overlay Gradient */}
-//               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
-              
-//               {/* Corner Decorations */}
-//               <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-metallic-gold/60 rounded-tl-2xl"></div>
-//               <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-metallic-gold/60 rounded-tr-2xl"></div>
-//               <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-metallic-gold/60 rounded-bl-2xl"></div>
-//               <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-metallic-gold/60 rounded-br-2xl"></div>
-              
-//               {/* Experience Badge */}
-//               <div className="absolute top-6 left-6 bg-gradient-to-r from-metallic-gold to-amber-600 px-6 py-3 rounded-full">
-//                 <span className="text-charcoal font-bold text-sm">{member.experience}</span>
-//               </div>
-//             </div>
-            
-//             {/* Content */}
-//             <div className="relative p-8 text-center">
-//               <h3 className="text-3xl font-serif font-bold text-white mb-2">{member.name}</h3>
-//               <p className="text-metallic-gold text-lg mb-3">{member.role}</p>
-//               <p className="text-soft-cream/60">{member.expertise}</p>
-              
-//               {/* Decorative Line */}
-//               <div className="w-12 h-px bg-gradient-to-r from-transparent via-metallic-gold to-transparent mx-auto mt-6"></div>
-//             </div>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 3: FREQUENTLY ASKED QUESTIONS ==================== */}
-// <section className="py-32 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a0f0a]">
-//   {/* Marble Texture Background */}
-//   <div className="absolute inset-0 opacity-10" style={{
-//     backgroundImage: 'url("https://images.unsplash.com/photo-1541701494587-cbb5857da9b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
-//     backgroundSize: 'cover',
-//     backgroundPosition: 'center'
-//   }}></div>
-
-//   <div className="max-w-4xl mx-auto relative">
-//     <div className="text-center mb-16">
-//       <div className="inline-block p-4 bg-gradient-to-br from-metallic-gold/20 to-amber-600/20 rounded-2xl mb-6 border border-metallic-gold/30">
-//         <span className="text-4xl">❓</span>
-//       </div>
-      
-//       <h2 className="text-5xl md:text-6xl font-serif font-bold mb-4">
-//         <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
-//           Frequently Asked
-//         </span>
-//       </h2>
-      
-//       <div className="w-24 h-px bg-gradient-to-r from-transparent via-metallic-gold to-transparent mx-auto"></div>
-//     </div>
-
-//     <div className="space-y-6">
-//       {faqs.map((faq, idx) => (
-//         <div
-//           key={idx}
-//           className="group relative"
-//         >
-//           {/* Golden Glow */}
-//           <div className="absolute inset-0 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500"></div>
-          
-//           <div className="relative bg-white/5 backdrop-blur-md rounded-2xl border border-white/20 hover:border-metallic-gold/40 transition-all duration-300 overflow-hidden">
-//             <button
-//               onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
-//               className="w-full px-8 py-6 flex items-center justify-between text-left"
-//             >
-//               <span className="text-white font-bold text-xl flex items-center gap-4">
-//                 <span className="w-8 h-8 bg-metallic-gold/20 rounded-full flex items-center justify-center text-metallic-gold text-sm">
-//                   {String(idx + 1).padStart(2, '0')}
-//                 </span>
-//                 {faq.question}
-//               </span>
-//               <ChevronRight className={`w-6 h-6 text-metallic-gold transition-all duration-500 ${
-//                 activeFaq === idx ? 'rotate-90' : ''
-//               }`} />
-//             </button>
-            
-//             {activeFaq === idx && (
-//               <div className="px-8 pb-6 pl-20 animate-[fadeIn_0.5s_ease-out]">
-//                 <div className="h-px w-full bg-gradient-to-r from-transparent via-metallic-gold/50 to-transparent mb-6"></div>
-//                 <p className="text-soft-cream/80 leading-relaxed">{faq.answer}</p>
-//               </div>
-//             )}
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 4: ACCLAIM & RECOGNITION ==================== */}
-// <section className="py-32 px-4 relative overflow-hidden">
-//   {/* Celestial Background */}
-//   <div className="absolute inset-0">
-//     <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#1a0a1a] to-[#0a0a0a]"></div>
-    
-//     {/* Stars */}
-//     {[...Array(100)].map((_, i) => (
-//       <div
-//         key={i}
-//         className="absolute rounded-full bg-white"
-//         style={{
-//           width: `${Math.random() * 2 + 1}px`,
-//           height: `${Math.random() * 2 + 1}px`,
-//           left: `${Math.random() * 100}%`,
-//           top: `${Math.random() * 100}%`,
-//           opacity: Math.random() * 0.5 + 0.3,
-//           animation: `twinkle ${Math.random() * 5 + 3}s ease-in-out infinite`
-//         }}
-//       />
-//     ))}
-//   </div>
-
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="text-center mb-20">
-//       <div className="relative inline-block mb-8">
-//         <div className="text-7xl animate-float">🏆</div>
-//       </div>
-      
-//       <span className="text-metallic-gold tracking-[0.4em] text-xs font-bold block mb-4">GLOBAL RECOGNITION</span>
-      
-//       <h2 className="text-6xl md:text-7xl font-serif font-bold mb-6">
-//         <span className="bg-gradient-to-r from-amber-300 via-metallic-gold to-amber-300 bg-clip-text text-transparent">
-//           Awards & Accolades
-//         </span>
-//       </h2>
-//     </div>
-
-//     {/* Award Cards */}
-//     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-//       {awards.map((award, idx) => (
-//         <div key={idx} className="group relative">
-//           {/* Rotating Ring */}
-//           <div className="absolute inset-0 border-2 border-metallic-gold/30 rounded-3xl rotate-0 group-hover:rotate-12 transition-all duration-700"></div>
-          
-//           <div className="relative bg-gradient-to-b from-white/10 to-transparent backdrop-blur-sm rounded-3xl p-8 text-center border border-white/20 group-hover:border-metallic-gold/40 transition-all duration-500 group-hover:-translate-y-4">
-//             {/* Icon with 3D Effect */}
-//             <div className="relative w-24 h-24 mx-auto mb-6">
-//               <div className="absolute inset-0 bg-metallic-gold/20 rounded-2xl rotate-12 group-hover:rotate-0 transition-all duration-500"></div>
-//               <div className="absolute inset-0 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-2xl -rotate-12 group-hover:rotate-0 transition-all duration-500 flex items-center justify-center">
-//                 <span className="text-5xl">{award.icon}</span>
-//               </div>
-//             </div>
-            
-//             <h3 className="text-2xl font-bold text-white mb-2">{award.title}</h3>
-//             <p className="text-metallic-gold text-xl mb-3">{award.year}</p>
-//             <p className="text-soft-cream/60 text-sm">{award.description}</p>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-
-//     {/* Recognition Counter */}
-//     <div className="mt-20 text-center">
-//       <div className="inline-block px-12 py-6 bg-gradient-to-r from-metallic-gold/20 to-amber-600/20 rounded-full border border-metallic-gold/30 backdrop-blur-md">
-//         <span className="text-5xl font-bold text-metallic-gold mr-4">47+</span>
-//         <span className="text-white text-xl">International Awards</span>
-//       </div>
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 5: CONNECT WITH ROYALTY ==================== */}
-// <section className="py-32 px-4 relative overflow-hidden">
-//   {/* Luxurious Gradient Background */}
-//   <div className="absolute inset-0 bg-gradient-to-br from-royal-maroon/40 via-[#1a0f0a] to-[#0a0a0a]"></div>
-  
-//   {/* Gold Filigree Pattern */}
-//   <div className="absolute inset-0 opacity-10" style={{
-//     backgroundImage: 'url("data:image/svg+xml,%3Csvg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M60 10 L110 60 L60 110 L10 60 L60 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3Ccircle cx="60" cy="60" r="20" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
-//     backgroundSize: '120px 120px'
-//   }} />
-
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="grid lg:grid-cols-2 gap-16 items-center">
-//       {/* Left Side - Newsletter with Royal Seal */}
-//       <div className="relative">
-//         <div className="absolute -top-12 -left-12 w-40 h-40">
-//           <div className="absolute inset-0 border-8 border-metallic-gold/20 rounded-full animate-ping"></div>
-//           <div className="absolute inset-4 border-4 border-metallic-gold/30 rounded-full animate-pulse"></div>
-//         </div>
-        
-//         <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
-//           <div className="flex items-center gap-4 mb-8">
-//             <div className="w-16 h-16 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-2xl flex items-center justify-center">
-//               <Crown className="w-8 h-8 text-charcoal" />
-//             </div>
-//             <div>
-//               <h3 className="text-4xl font-serif font-bold text-white">Royal Circle</h3>
-//               <p className="text-metallic-gold">Join the Inner Court</p>
-//             </div>
-//           </div>
-          
-//           <p className="text-soft-cream/80 text-lg mb-10 leading-relaxed">
-//             Subscribe to receive exclusive invitations, royal offers, and culinary inspirations fit for nobility.
-//           </p>
-          
-//           <div className="space-y-4">
-//             <div className="flex gap-3">
-//               <input
-//                 type="email"
-//                 placeholder="Your Royal Email"
-//                 className="flex-1 px-6 py-5 bg-white/5 border-2 border-metallic-gold/30 rounded-xl text-white placeholder-soft-cream/50 focus:border-metallic-gold focus:outline-none transition-all text-lg"
-//               />
-//               <button className="px-8 py-5 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold hover:shadow-2xl hover:shadow-metallic-gold/30 transition-all whitespace-nowrap">
-//                 Subscribe
-//               </button>
-//             </div>
-//             <p className="text-soft-cream/40 text-sm">
-//               By subscribing, you accept our Royal Terms and Privacy Policy
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Right Side - Social Media with Gemstones */}
-//       <div className="space-y-10">
-//         <div className="text-center lg:text-left">
-//           <span className="text-metallic-gold text-sm tracking-[0.3em] block mb-4">FOLLOW OUR JOURNEY</span>
-//           <h3 className="text-4xl font-serif font-bold text-white mb-4">Connect in Style</h3>
-//           <p className="text-soft-cream/70">Be part of our royal community across the globe</p>
-//         </div>
-
-//         <div className="grid grid-cols-2 gap-6">
-//           {[
-//             { icon: <Instagram className="w-7 h-7" />, name: 'Instagram', handle: '@tavisha', color: 'from-pink-500 to-purple-500' },
-//             { icon: <Facebook className="w-7 h-7" />, name: 'Facebook', handle: '/tavisha', color: 'from-blue-500 to-blue-600' },
-//             { icon: <Twitter className="w-7 h-7" />, name: 'Twitter', handle: '@tavisha', color: 'from-sky-400 to-sky-500' },
-//             { icon: <Linkedin className="w-7 h-7" />, name: 'LinkedIn', handle: 'company/tavisha', color: 'from-blue-600 to-blue-700' }
-//           ].map((social, idx) => (
-//             <a
-//               key={idx}
-//               href="#"
-//               className="group relative"
-//             >
-//               <div className={`absolute inset-0 bg-gradient-to-br ${social.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all`} />
-              
-//               <div className="relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2 flex items-center gap-4">
-//                 <div className={`p-4 bg-gradient-to-br ${social.color} rounded-xl`}>
-//                   <div className="text-white">{social.icon}</div>
-//                 </div>
-//                 <div>
-//                   <p className="text-white font-bold text-lg">{social.name}</p>
-//                   <p className="text-metallic-gold text-sm">{social.handle}</p>
-//                 </div>
-//               </div>
-//             </a>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 6: VISIT US IN GRANDEUR ==================== */}
-// <section className="py-32 px-4 relative overflow-hidden">
-//   {/* Background with Map Texture */}
-//   <div className="absolute inset-0">
-//     <img 
-//       src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-//       alt="Map"
-//       className="w-full h-full object-cover opacity-30"
-//     />
-//     <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]"></div>
-//   </div>
-
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="grid lg:grid-cols-2 gap-16 items-center">
-//       {/* Location Details */}
-//       <div className="space-y-8">
-//         <div className="inline-block p-4 bg-gradient-to-br from-metallic-gold/20 to-amber-600/20 rounded-2xl border border-metallic-gold/30">
-//           <MapPin className="w-8 h-8 text-metallic-gold" />
-//         </div>
-        
-//         <h2 className="text-5xl md:text-6xl font-serif font-bold text-white">
-//           Visit Our
-//           <br />
-//           <span className="bg-gradient-to-r from-metallic-gold to-amber-400 bg-clip-text text-transparent">Royal Palace</span>
-//         </h2>
-        
-//         <div className="space-y-6">
-//           <div className="flex items-start gap-4">
-//             <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-metallic-gold/30">
-//               <MapPin className="w-5 h-5 text-metallic-gold" />
-//             </div>
-//             <div>
-//               <p className="text-white font-bold text-xl">Royal Heritage Road</p>
-//               <p className="text-soft-cream/70">Tavisha Grand, Mumbai · 400001</p>
-//             </div>
-//           </div>
-          
-//           <div className="flex items-start gap-4">
-//             <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-metallic-gold/30">
-//               <Clock className="w-5 h-5 text-metallic-gold" />
-//             </div>
-//             <div>
-//               <p className="text-white font-bold text-xl">Opening Hours</p>
-//               <p className="text-soft-cream/70">Monday - Sunday · 11:00 AM - 11:30 PM</p>
-//             </div>
-//           </div>
-//         </div>
-
-//         <button className="group px-10 py-5 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-metallic-gold/30 transition-all inline-flex items-center gap-3">
-//           <Navigation className="w-5 h-5" />
-//           <span>Get Directions</span>
-//         </button>
-//       </div>
-
-//       {/* Opening Hours Cards */}
-//       <div className="grid grid-cols-1 gap-4">
-//         {[
-//           { day: 'Monday - Thursday', time: '11:00 AM - 11:00 PM', status: 'Open', highlight: false },
-//           { day: 'Friday - Saturday', time: '11:00 AM - 12:00 AM', status: 'Extended Hours', highlight: true },
-//           { day: 'Sunday', time: '10:00 AM - 10:00 PM', status: 'Brunch Special', highlight: false }
-//         ].map((schedule, idx) => (
-//           <div
-//             key={idx}
-//             className={`group relative p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 ${
-//               schedule.highlight 
-//                 ? 'bg-gradient-to-r from-metallic-gold/20 to-amber-600/20 border-2 border-metallic-gold' 
-//                 : 'bg-white/5 border border-white/20 hover:border-metallic-gold/40'
-//             }`}
-//           >
-//             <div className="flex items-center justify-between">
-//               <div>
-//                 <p className="text-white font-bold text-xl mb-1">{schedule.day}</p>
-//                 <p className="text-soft-cream/70">{schedule.time}</p>
-//               </div>
-//               <div className={`px-4 py-2 rounded-full ${
-//                 schedule.highlight 
-//                   ? 'bg-metallic-gold text-charcoal' 
-//                   : 'bg-metallic-gold/10 text-metallic-gold border border-metallic-gold/30'
-//               }`}>
-//                 {schedule.status}
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   </div>
-// </section>
-
-// {/* ==================== SECTION 7: VOICES OF ROYALTY ==================== */}
-// <section className="py-32 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a0f0a]">
-//   {/* Floating Gold Leaves */}
-//   <div className="absolute inset-0 overflow-hidden">
-//     {[...Array(15)].map((_, i) => (
-//       <div
-//         key={i}
-//         className="absolute text-metallic-gold/20 text-4xl"
-//         style={{
-//           left: `${Math.random() * 100}%`,
-//           top: `${Math.random() * 100}%`,
-//           animation: `leafFloat ${15 + i}s ease-in-out infinite`,
-//           animationDelay: `${i * 0.5}s`
-//         }}
-//       >
-//         ✦
-//       </div>
-//     ))}
-//   </div>
-
-//   <div className="max-w-7xl mx-auto relative">
-//     <div className="text-center mb-20">
-//       <div className="inline-block p-4 bg-gradient-to-br from-metallic-gold/20 to-amber-600/20 rounded-2xl mb-6 border border-metallic-gold/30">
-//         <span className="text-4xl">👑</span>
-//       </div>
-      
-//       <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-//         <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
-//           Voices of Royalty
-//         </span>
-//       </h2>
-//     </div>
-
-//     <div className="grid md:grid-cols-3 gap-8">
-//       {[
-//         {
-//           name: 'Maharaja Yadvendra Singh',
-//           title: 'Royal Patron',
-//           text: 'The hospitality is truly fit for royalty. Every visit feels like a celebration.',
-//           image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-//         },
-//         {
-//           name: 'Mrs. Anita Singhania',
-//           title: 'Business Tycoon',
-//           text: 'An unparalleled experience where every detail is crafted to perfection.',
-//           image: 'https://images.unsplash.com/photo-1494790108777-383fd5c8a4b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-//         },
-//         {
-//           name: 'Mr. Vikram Rathore',
-//           title: 'Industrialist',
-//           text: 'The finest dining experience in the city. The staff anticipates your every need.',
-//           image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
-//         }
-//       ].map((testimonial, idx) => (
-//         <div key={idx} className="group relative">
-//           <div className="absolute -inset-1 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700" />
-          
-//           <div className="relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:border-metallic-gold/40 transition-all duration-500">
-//             <div className="absolute -top-4 left-8 text-8xl text-metallic-gold/20 font-serif">"</div>
-            
-//             <div className="flex items-center gap-4 mb-6">
-//               <img 
-//                 src={testimonial.image} 
-//                 alt={testimonial.name}
-//                 className="w-20 h-20 rounded-full object-cover border-3 border-metallic-gold"
-//               />
-//               <div>
-//                 <h4 className="text-2xl font-bold text-white">{testimonial.name}</h4>
-//                 <p className="text-metallic-gold">{testimonial.title}</p>
-//               </div>
-//             </div>
-            
-//             <p className="text-soft-cream/80 text-lg italic mb-6">"{testimonial.text}"</p>
-            
-//             <div className="flex gap-2">
-//               {[...Array(5)].map((_, i) => (
-//                 <Star key={i} className="w-5 h-5 fill-metallic-gold text-metallic-gold" />
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
-
-// {/* Animation Keyframes */}
-// <style jsx>{`
-//   @keyframes orbFloat {
-//     0%, 100% { transform: translate(0, 0) scale(1); }
-//     33% { transform: translate(30px, -30px) scale(1.1); }
-//     66% { transform: translate(-30px, 30px) scale(0.9); }
-//   }
-  
-//   @keyframes orbitStar {
-//     0%, 100% { transform: rotate(0deg) translateX(50px) rotate(0deg); opacity: 0.3; }
-//     50% { transform: rotate(180deg) translateX(60px) rotate(-180deg); opacity: 1; }
-//   }
-  
-//   @keyframes twinkle {
-//     0%, 100% { opacity: 0.3; }
-//     50% { opacity: 1; }
-//   }
-  
-//   @keyframes float {
-//     0%, 100% { transform: translateY(0); }
-//     50% { transform: translateY(-10px); }
-//   }
-  
-//   @keyframes leafFloat {
-//     0%, 100% { transform: translateY(0) rotate(0deg); }
-//     50% { transform: translateY(-50px) rotate(10deg); }
-//   }
-  
-//   @keyframes fadeIn {
-//     from { opacity: 0; transform: translateY(-10px); }
-//     to { opacity: 1; transform: translateY(0); }
-//   }
-  
-//   .animate-float {
-//     animation: float 4s ease-in-out infinite;
-//   }
-// `}</style>
-//     </div>
-//   );
-// };
-
-// export default Contact;
-
 import React, { useState, useEffect } from 'react';
 import { 
   Crown, MapPin, Phone, Mail, Clock, Send, 
   ChevronRight, Gem, Sparkles, Users,  Instagram, Facebook, 
   Twitter, Linkedin,  Navigation, Diamond, Trophy, 
-  Star, Wine, Coffee, Utensils, Camera, Calendar,
-  Award, Shield, Heart, Globe, Sun, Moon,
+  Star, Wine,  Utensils, Camera, Calendar,
+  Award,  Heart, Globe, Sun, 
   ChefHat, Bell, Key, Car, Wifi, Wind,Briefcase ,
 } from 'lucide-react';
 
@@ -1440,25 +190,7 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/20"></div>
         </div>
 
-        {/* Animated Gold Particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(30)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-gradient-to-br from-metallic-gold/40 to-transparent"
-              style={{
-                width: `${Math.random() * 6 + 2}px`,
-                height: `${Math.random() * 6 + 2}px`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `floatParticle ${Math.random() * 10 + 15}s linear infinite`,
-                animationDelay: `${Math.random() * 5}s`,
-                filter: 'blur(1px)'
-              }}
-            />
-          ))}
-        </div>
-
+  
         {/* Ornate Overlay Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
@@ -1479,45 +211,29 @@ const Contact = () => {
                 <div className="absolute inset-6 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-full flex items-center justify-center">
                   <Crown className="w-12 h-12 text-charcoal" />
                 </div>
-                
-                {/* Orbiting Gems */}
-                {[...Array(4)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-4 h-4"
-                    style={{
-                      top: '50%',
-                      left: '50%',
-                      transform: `rotate(${i * 90}deg) translateX(60px)`,
-                      animation: `orbitGem 6s ease-in-out infinite ${i * 1.5}s`
-                    }}
-                  >
-                    <Gem className="w-4 h-4 text-metallic-gold" />
-                  </div>
-                ))}
               </div>
             </div>
           </div>
 
           {/* Title with Gradient */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-2 leading-tight">
             <span className="bg-gradient-to-r from-amber-200 via-metallic-gold to-amber-200 bg-clip-text text-transparent">
               Get in Touch
             </span>
           </h1>
 
-          <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="flex items-center justify-center gap-4 mb-3">
             <div className="w-20 h-px bg-gradient-to-r from-transparent via-metallic-gold to-metallic-gold" />
             <Diamond className="w-6 h-6 text-metallic-gold animate-pulse" />
             <div className="w-20 h-px bg-gradient-to-l from-transparent via-metallic-gold to-metallic-gold" />
           </div>
 
-          <p className="text-xl md:text-2xl text-soft-cream/90 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+          <p className="text-lg md:text-xl text-soft-cream/90 max-w-3xl mx-auto font-light leading-relaxed mb-8">
             Where conversations begin and connections grow in an atmosphere of royal elegance
           </p>
 
           {/* Quick Contact Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {quickContacts.map((contact, idx) => (
               <div
                 key={idx}
@@ -1534,7 +250,7 @@ const Contact = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button
-              className="group relative px-10 py-5 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-full font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-metallic-gold/30 hover:scale-105"
+              className="group relative px-10 py-3 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-full font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-metallic-gold/30 hover:scale-105"
             >
               <span className="relative z-10 flex items-center gap-3">
                 Reserve Your Experience
@@ -1545,31 +261,23 @@ const Contact = () => {
             </button>
 
             <button
-              className="group px-10 py-5 border-2 border-metallic-gold text-metallic-gold rounded-full font-bold text-lg hover:bg-metallic-gold/10 transition-all duration-300 hover:scale-105 flex items-center gap-2"
+              className="group px-10 py-3 border-2 border-metallic-gold text-metallic-gold rounded-full font-bold text-lg hover:bg-metallic-gold/10 transition-all duration-300 hover:scale-105 flex items-center gap-2"
             >
               <Phone className="w-5 h-5" />
               <span>Call Concierge</span>
             </button>
           </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-metallic-gold/60 text-xs tracking-widest">DISCOVER MORE</span>
-              <div className="w-px h-12 bg-gradient-to-b from-metallic-gold to-transparent"></div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* ==================== SECTION 1: AWARDS & ACCOLADES ==================== */}
-      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+      <section className="py-8 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.1),transparent_50%)]"></div>
         
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">RECOGNITION</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <div className="text-center mb-10">
+            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block">RECOGNITION</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
               <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
                 Awards & Accolades
               </span>
@@ -1586,7 +294,7 @@ const Contact = () => {
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-metallic-gold/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/30 hover:border-metallic-gold transition-all duration-500 hover:-translate-y-4">
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-metallic-gold/30 hover:border-metallic-gold transition-all duration-500 hover:-translate-y-4">
                   <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${award.color} opacity-10 rounded-bl-full`}></div>
                   
                   <div className="text-6xl mb-4 animate-pulse">{award.icon}</div>
@@ -1608,16 +316,16 @@ const Contact = () => {
       </section>
 
       {/* ==================== SECTION 2: RESERVATION & CONTACT FORM ==================== */}
-      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
+      <section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'url("data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M40 10 L70 40 L40 70 L10 40 L40 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
           backgroundSize: '80px 80px'
         }} />
 
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">ROYAL RESERVATIONS</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <div className="text-center mb-10">
+            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block ">ROYAL RESERVATIONS</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
               <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
                 Make an Inquiry
               </span>
@@ -1634,7 +342,7 @@ const Contact = () => {
                 {quickContacts.map((contact, index) => (
                   <div
                     key={index}
-                    className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2"
+                    className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-500 hover:-translate-y-2"
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br ${contact.gradient} rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-all duration-700`} />
                     <div className="relative">
@@ -1744,7 +452,7 @@ const Contact = () => {
       </section>
 
       {/* ==================== SECTION 3: ROYAL AMENITIES ==================== */}
-      <section className="py-24 px-4 relative overflow-hidden">
+      <section className="py-10 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
@@ -1755,9 +463,9 @@ const Contact = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">EXCLUSIVE OFFERINGS</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <div className="text-center mb-10">
+            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block ">EXCLUSIVE OFFERINGS</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
               <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
                 Royal Amenities
               </span>
@@ -1775,17 +483,17 @@ const Contact = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-metallic-gold/20 to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
                 
-                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/30 hover:border-metallic-gold transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-metallic-gold/30 hover:border-metallic-gold transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                   {/* Decorative Corner */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-metallic-gold/10 to-transparent rounded-bl-full"></div>
                   
                   {/* Icon with Animated Gradient */}
-                  <div className={`inline-flex p-4 bg-gradient-to-br ${amenity.gradient} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                  <div className={`inline-flex p-4 bg-gradient-to-br ${amenity.gradient} rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-500`}>
                     <amenity.icon className="w-8 h-8 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-serif font-bold text-white mb-2">{amenity.name}</h3>
-                  <p className="text-soft-cream/70 mb-4">{amenity.description}</p>
+                  <h3 className="text-2xl font-serif font-bold text-white mb-1">{amenity.name}</h3>
+                  <p className="text-soft-cream/70 mb-3">{amenity.description}</p>
                   
                   {/* Animated Line */}
                   <div className="w-12 h-0.5 bg-gradient-to-r from-metallic-gold to-transparent group-hover:w-24 transition-all duration-500"></div>
@@ -1800,15 +508,15 @@ const Contact = () => {
       </section>
 
       {/* ==================== SECTION 4: CURATED EXPERIENCES ==================== */}
-      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+      <section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.15),transparent_50%)]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">SIGNATURE EXPERIENCES</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <div className="text-center mb-10">
+            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block ">SIGNATURE EXPERIENCES</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
               <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
                 Curated Journeys
               </span>
@@ -1837,7 +545,7 @@ const Contact = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
                     
                     {/* Price Tag */}
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal font-bold py-2 px-4 rounded-full">
+                    <div className="absolute top-4 right-4 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal font-bold py-1 px-4 rounded-full">
                       {exp.price}
                     </div>
                   </div>
@@ -1865,7 +573,7 @@ const Contact = () => {
       </section>
 
       {/* ==================== SECTION 5: ROYAL TESTIMONIALS ==================== */}
-      <section className="py-24 px-4 relative overflow-hidden">
+      <section className="py-10 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
@@ -1876,9 +584,9 @@ const Contact = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">GUEST EXPERIENCES</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <div className="text-center mb-10">
+            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block ">GUEST EXPERIENCES</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
               <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
                 Royal Testimonials
               </span>
@@ -1931,16 +639,16 @@ const Contact = () => {
       </section>
 
       {/* ==================== SECTION 6: MEET THE TEAM ==================== */}
-      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
+      <section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M30 5 L55 30 L30 55 L5 30 L30 5" stroke="%23D4AF37" fill="none" stroke-width="0.5"/%3E%3C/svg%3E")',
           backgroundSize: '60px 60px'
         }} />
 
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">ROYAL CULINARY TEAM</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <div className="text-center mb-8">
+            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block ">ROYAL CULINARY TEAM</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
               <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
                 Masters of Craft
               </span>
@@ -1989,11 +697,11 @@ const Contact = () => {
       </section>
 
       {/* ==================== SECTION 7: GALLERY ==================== */}
-      <section className="py-24 px-4 relative overflow-hidden">
+      <section className="py-10 px-4 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">VISUAL JOURNEY</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <div className="text-center mb-8">
+            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block">VISUAL JOURNEY</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
               <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
                 Royal Gallery
               </span>
@@ -2032,75 +740,60 @@ const Contact = () => {
       </section>
 
       {/* ==================== SECTION 8: FAQ ==================== */}
-      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.1),transparent_50%)]"></div>
-        </div>
+      <section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.1),transparent_50%)]"></div>
+  </div>
 
-        <div className="max-w-4xl mx-auto relative">
-          <div className="text-center mb-16">
-            <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">QUESTIONS & ANSWERS</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-              <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
-                Frequently Asked
-              </span>
-            </h2>
-            <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
-              Everything you need to know about your royal experience
-            </p>
+  <div className="max-w-7xl mx-auto relative">
+    <div className="text-center mb-10">
+      <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block ">
+        QUESTIONS & ANSWERS
+      </span>
+
+      <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
+        <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
+          Frequently Asked
+        </span>
+      </h2>
+
+      <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
+        Everything you need to know about your royal experience
+      </p>
+    </div>
+
+    <div className="space-y-4">
+      {faqs.map((faq, index) => (
+        <div
+          key={index}
+          className="group bg-white/5 backdrop-blur-sm rounded-xl border border-metallic-gold/30 hover:border-metallic-gold transition-all duration-500 overflow-hidden"
+        >
+          <button
+            onClick={() => setActiveFaq(activeFaq === index ? null : index)}
+            className="w-full px-6 py-4 text-left flex items-center justify-between"
+          >
+            <span className="text-white font-bold text-lg">
+              {faq.question}
+            </span>
+
+            {/* + / - Icon */}
+            <span className="text-metallic-gold text-2xl font-bold transition-all duration-300">
+              {activeFaq === index ? "−" : "+"}
+            </span>
+          </button>
+
+          <div
+            className={`px-6 overflow-hidden transition-all duration-500 ${
+              activeFaq === index ? "pb-6 max-h-40" : "max-h-0"
+            }`}
+          >
+            <p className="text-soft-cream/70">{faq.answer}</p>
           </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="group bg-white/5 backdrop-blur-sm rounded-xl border border-metallic-gold/30 hover:border-metallic-gold transition-all duration-500 overflow-hidden"
-              >
-                <button
-                  onClick={() => setActiveFaq(activeFaq === index ? null : index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between"
-                >
-                  <span className="text-white font-bold text-lg">{faq.question}</span>
-                  <ChevronRight 
-                    className={`w-5 h-5 text-metallic-gold transition-transform duration-500 ${
-                      activeFaq === index ? 'rotate-90' : ''
-                    }`}
-                  />
-                </button>
-                
-                <div 
-                  className={`px-6 overflow-hidden transition-all duration-500 ${
-                    activeFaq === index ? 'pb-6 max-h-40' : 'max-h-0'
-                  }`}
-                >
-                  <p className="text-soft-cream/70">{faq.answer}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
-
-
-
-  
-  
- 
- 
-    
-   
-        
-    
-    
-      
-          
-          
-
-      
-    
- 
- 
- 
+      ))}
+    </div>
+  </div>
+</section>
 
 {/* ==================== SECTION 9: VIRTUAL PALACE EXPERIENCE ==================== */}
 <section className="py-12 px-4 relative overflow-hidden">
@@ -2160,7 +853,7 @@ const Contact = () => {
     {/* Main Virtual Tour Showcase - Enhanced */}
     <div className="grid lg:grid-cols-2 gap-12 items-stretch mb-14">
       {/* Left Side - Main Tour Preview with 3D Effect */}
-      <div className="relative group perspective-2500">
+      <div className="relative group ">
  
  
         <div className="relative h-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-2xl rounded-3xl overflow-hidden border-4 border-metallic-gold/40 group-hover:border-metallic-gold shadow-2xl transform group-hover:scale-[1.02] group-hover:rotate-1 transition-all duration-700">
@@ -2239,7 +932,7 @@ const Contact = () => {
       </div>
 
       {/* Right Side - Enhanced Tour Gallery */}
-      <div className="space-y-8">
+      <div className="space-y-4">
         {/* Gallery Grid with Hover Effects - Enhanced */}
         <div className="grid grid-cols-2 gap-5">
           {[
@@ -2318,11 +1011,10 @@ const Contact = () => {
         </div>
 
         {/* Enhanced Virtual Experience Features */}
-        <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl p-8 border-2 border-metallic-gold/30 shadow-2xl hover:border-metallic-gold/50 transition-all duration-500">
-          <div className="flex items-center gap-4 mb-8">
+        <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl p-6 border-2 border-metallic-gold/30 shadow-2xl hover:border-metallic-gold/50 transition-all duration-500">
+          <div className="flex items-center gap-4 mb-4">
             <div className="relative">
-              <div className="absolute inset-0 bg-metallic-gold rounded-full animate-ping opacity-30"></div>
-              <div className="absolute inset-0 bg-metallic-gold rounded-full animate-ping opacity-20 animation-delay-300"></div>
+           
               <div className="relative w-16 h-16 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-xl flex items-center justify-center shadow-2xl">
                 <Sparkles className="w-8 h-8 text-charcoal" />
               </div>
@@ -2333,14 +1025,14 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-4 mb-8">
+          <div className="grid grid-cols-2 gap-4 ">
             {[
               { icon: "⟳", text: "360° Panoramic Views", desc: "Full rotation" },
               { icon: "🔍", text: "Zoom Architecture", desc: "4x digital zoom" },
               { icon: "🌓", text: "Day/Night Mode", desc: "Real-time switch" },
               { icon: "🎥", text: "Guided Tours", desc: "Expert narration" }
             ].map((feature, idx) => (
-              <div key={idx} className="flex items-start gap-3 bg-black/40 backdrop-blur-sm rounded-xl p-4 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-300">
+              <div key={idx} className="flex items-start gap-3 bg-black/40 backdrop-blur-sm rounded-xl p-3 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-300">
                 <span className="text-metallic-gold text-2xl">{feature.icon}</span>
                 <div>
                   <p className="text-white font-medium text-sm">{feature.text}</p>
@@ -2350,27 +1042,14 @@ const Contact = () => {
             ))}
           </div>
           
-          {/* Interactive Progress Bar - Enhanced */}
-          <div className="mb-8">
-            <div className="flex justify-between items-center mb-3">
-              <span className="text-soft-cream/80 text-sm">Tour Progress</span>
-              <div className="flex items-center gap-2">
-                <span className="text-metallic-gold font-bold">8/12</span>
-                <span className="text-soft-cream/40 text-xs">venues explored</span>
-              </div>
-            </div>
-            <div className="h-3 bg-white/10 rounded-full overflow-hidden p-0.5">
-              <div className="h-full w-2/3 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-full relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer"></div>
-              </div>
-            </div>
-          </div>
+        
+        
           
-          <button className="group relative w-full overflow-hidden">
+          <button className=" mt-4 group relative w-full overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-xl"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-full group-hover:-translate-x-full transition-transform duration-1000"></div>
-            <div className="relative px-8 py-5 flex items-center justify-center gap-3">
+            <div className="relative px-8 py-3 flex items-center justify-center gap-3">
               <span className="text-charcoal font-bold text-lg tracking-wide">BEGIN VIRTUAL JOURNEY</span>
               <ChevronRight className="w-5 h-5 text-charcoal group-hover:translate-x-2 transition-transform" />
             </div>
@@ -2379,31 +1058,10 @@ const Contact = () => {
       </div>
     </div>
 
-    {/* Venue Stats with Gold Accents - Enhanced */}
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
-      {[
-        { number: "12", label: "Virtual Venues", icon: "🏛️", desc: "Fully explorable" },
-        { number: "360°", label: "Panoramic Views", icon: "⟳", desc: "Every angle" },
-        { number: "24/7", label: "Virtual Access", icon: "🌐", desc: "Anytime, anywhere" },
-        { number: "4K", label: "Ultra HD Quality", icon: "🎥", desc: "Crystal clear" }
-      ].map((stat, idx) => (
-        <div key={idx} className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-metallic-gold/20 to-amber-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-          
-          <div className="relative bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-metallic-gold/30 group-hover:border-metallic-gold transition-all duration-500 text-center">
-            <span className="text-4xl mb-2 block group-hover:scale-110 transition-transform duration-500">{stat.icon}</span>
-            <div className="text-3xl font-serif font-bold text-metallic-gold mb-1">{stat.number}</div>
-            <div className="text-white font-medium text-sm mb-1">{stat.label}</div>
-            <div className="text-soft-cream/40 text-xs">{stat.desc}</div>
-          </div>
-        </div>
-      ))}
-    </div>
 
     {/* Call to Action - Enhanced */}
     <div className="text-center">
       <div className="relative inline-block">
-  
         <button className="relative px-10 py-3 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-full font-bold text-2xl hover:shadow-xl transition-all duration-500 transform  border-2 border-white/20">
           <span className="flex items-center gap-4">
             <Camera className="w-8 h-8 animate-pulse" />
@@ -2420,7 +1078,7 @@ const Contact = () => {
 </section>
 
 {/* ==================== SECTION 10: ROYAL CONCIERGE SERVICES ==================== */}
-<section className="py-32 px-4 relative overflow-hidden">
+<section className="py-10 px-4 relative overflow-hidden">
   {/* Premium Background with Gold Texture */}
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-royal-maroon/20 to-[#1a0f0a]"></div>
@@ -2434,20 +1092,11 @@ const Contact = () => {
 
   <div className="max-w-7xl mx-auto relative">
     {/* Section Header with Royal Crest */}
-    <div className="text-center mb-20">
-      <div className="relative inline-block mb-8">
-        <div className="relative w-32 h-32 mx-auto">
-          <div className="absolute inset-0 border-8 border-metallic-gold/20 rounded-full"></div>
-          <div className="absolute inset-4 border-4 border-metallic-gold/30 rounded-full animate-pulse"></div>
-          <div className="absolute inset-8 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-full flex items-center justify-center">
-            <Shield className="w-12 h-12 text-charcoal" />
-          </div>
-        </div>
-      </div>
+    <div className="text-center mb-10">
+  
+      <span className="text-metallic-gold tracking-[0.4em] text-sm font-bold block ">PERSONALIZED ATTENTION</span>
       
-      <span className="text-metallic-gold tracking-[0.4em] text-sm font-bold block mb-4">PERSONALIZED ATTENTION</span>
-      
-      <h2 className="text-6xl md:text-7xl font-serif font-bold mb-6">
+      <h2 className="text-3xl md:text-6xl font-serif font-bold mb-2">
         <span className="bg-gradient-to-r from-amber-300 via-metallic-gold to-amber-300 bg-clip-text text-transparent">
           Royal Concierge
         </span>
@@ -2524,16 +1173,16 @@ const Contact = () => {
     </div>
 
     {/* Personal Butler Section */}
-    <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-12 border border-metallic-gold/30">
-      <div className="absolute -top-6 left-12 bg-gradient-to-r from-metallic-gold to-amber-600 px-8 py-3 rounded-full">
+    <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-metallic-gold/30">
+      <div className="absolute -top-6 left-12 bg-gradient-to-r from-metallic-gold to-amber-600 px-8 py-2 rounded-full">
         <span className="text-charcoal font-bold text-sm">24/7 DEDICATED SERVICE</span>
       </div>
       
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Butler Info */}
         <div>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-2xl flex items-center justify-center">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-2xl flex items-center justify-center">
               <Bell className="w-10 h-10 text-charcoal" />
             </div>
             <div>
@@ -2598,7 +1247,7 @@ const Contact = () => {
 </section>
 
 {/* ==================== SECTION 11: PRIVATE EVENTS & CELEBRATIONS ==================== */}
-<section className="py-32 px-4 relative overflow-hidden">
+<section className="py-10 px-4 relative overflow-hidden">
   {/* Background with Event Venue */}
   <div className="absolute inset-0">
     <img 
@@ -2611,26 +1260,25 @@ const Contact = () => {
 
   <div className="max-w-7xl mx-auto relative">
     {/* Section Header */}
-    <div className="text-center mb-20">
-      <div className="inline-block p-4 bg-gradient-to-br from-metallic-gold/20 to-amber-600/20 rounded-2xl mb-6 border border-metallic-gold/30">
-        <Trophy className="w-10 h-10 text-metallic-gold" />
-      </div>
+    <div className="text-center mb-10">
+     
+     
       
-      <span className="text-metallic-gold tracking-[0.4em] text-sm font-bold block mb-4">EXCLUSIVE GATHERINGS</span>
+      <span className="text-metallic-gold tracking-[0.4em] text-sm font-bold block ">EXCLUSIVE GATHERINGS</span>
       
-      <h2 className="text-6xl md:text-7xl font-serif font-bold mb-6">
+      <h2 className="text-3xl md:text-6xl font-serif font-bold mb-2">
         <span className="bg-gradient-to-r from-amber-300 via-metallic-gold to-amber-300 bg-clip-text text-transparent">
           Private Events
         </span>
       </h2>
       
-      <p className="text-xl text-soft-cream/80 max-w-3xl mx-auto">
+      <p className="text-lg text-soft-cream/80 max-w-3xl mx-auto">
         Host your most memorable celebrations in royal splendor
       </p>
     </div>
 
     {/* Event Spaces Grid */}
-    <div className="grid lg:grid-cols-3 gap-8 mb-16">
+    <div className="grid lg:grid-cols-3 gap-8 mb-10">
       {[
         {
           title: "The Grand Ballroom",
@@ -2784,7 +1432,7 @@ const Contact = () => {
 
 
 {/* ==================== SECTION 10: THE CULINARY ATELIER ==================== */}
-<section className="py-32 px-4 relative overflow-hidden">
+<section className="py-10 px-4 relative overflow-hidden">
   {/* Sophisticated Background */}
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.12),transparent_60%)]"></div>
@@ -2798,11 +1446,11 @@ const Contact = () => {
 
   <div className="max-w-7xl mx-auto relative">
     {/* Section Header */}
-    <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+    <div className="flex flex-col md:flex-row justify-between items-end mb-10">
       <div>
-        <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">MASTERS AT WORK</span>
-        <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-4">
-          The Culinary<br />
+        <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block ">MASTERS AT WORK</span>
+        <h2 className="text-3xl md:text-6xl font-serif font-bold text-white mb-2">
+          The Culinary {" "}
           <span className="text-metallic-gold">Atelier</span>
         </h2>
         <p className="text-soft-cream/70 max-w-xl">
@@ -2916,7 +1564,7 @@ const Contact = () => {
     </div>
 
     {/* Culinary Philosophy */}
-    <div className="mt-16 grid md:grid-cols-3 gap-8">
+    <div className="mt-8 grid md:grid-cols-3 gap-8">
       {[
         {
           icon: Utensils,
@@ -2947,7 +1595,7 @@ const Contact = () => {
 </section>
 
 {/* ==================== SECTION 11: PRIVATE DINING EXPERIENCES ==================== */}
-<section className="py-32 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
+<section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
   {/* Atmospheric Background */}
   <div className="absolute inset-0">
     <img 
@@ -2960,14 +1608,14 @@ const Contact = () => {
 
   <div className="max-w-7xl mx-auto relative">
     {/* Section Header */}
-    <div className="text-center mb-20">
-      <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block mb-4">INTIMATE GATHERINGS</span>
-      <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+    <div className="text-center mb-8">
+      <span className="text-metallic-gold tracking-[0.3em] text-sm font-bold block ">INTIMATE GATHERINGS</span>
+      <h2 className="text-5xl md:text-6xl font-serif font-bold mb-2">
         <span className="bg-gradient-to-r from-metallic-gold via-white to-metallic-gold bg-clip-text text-transparent">
           Private Dining
         </span>
       </h2>
-      <p className="text-xl text-soft-cream/70 max-w-3xl mx-auto">
+      <p className="text-lg text-soft-cream/70 max-w-3xl mx-auto">
         Exquisite spaces for your most cherished moments
       </p>
     </div>
@@ -3088,7 +1736,7 @@ const Contact = () => {
 
 
 {/* ==================== SECTION 12: THE SECRET GARDEN ==================== */}
-<section className="py-32 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
+<section className="py-4 pb-20 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
   {/* Natural Elements Background */}
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-gradient-to-br from-green-950/30 via-transparent to-emerald-950/30"></div>
@@ -3097,21 +1745,21 @@ const Contact = () => {
 
   <div className="max-w-7xl mx-auto relative">
     {/* Secret Garden Header */}
-    <div className="relative mb-20">
-      <div className="absolute left-0 top-0 w-64 h-64">
+    <div className="relative mb-10">
+      <div className="absolute left-0 top-0 w-52 h-52">
         <div className="absolute inset-0 border-2 border-metallic-gold/20 rounded-full"></div>
         <div className="absolute inset-8 border border-metallic-gold/40 rounded-full"></div>
         <div className="absolute inset-16 bg-gradient-to-br from-metallic-gold/10 to-transparent rounded-full"></div>
       </div>
       
       <div className="text-center">
-        <div className="inline-block p-4 bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-3xl border border-metallic-gold/30 mb-6 backdrop-blur-sm">
+        <div className="inline-block p-4 bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-3xl border border-metallic-gold/30 mb-4 backdrop-blur-sm">
           <span className="text-4xl">🌺</span>
         </div>
         
-        <span className="text-metallic-gold text-xs tracking-[0.5em] font-light block mb-4">HIDDEN PARADISE</span>
-        <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6">
-          The Secret<br />
+        <span className="text-metallic-gold text-xs tracking-[0.5em] font-light block ">HIDDEN PARADISE</span>
+        <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-2">
+          The Secret {" "}
           <span className="bg-gradient-to-r from-green-300 via-metallic-gold to-emerald-300 bg-clip-text text-transparent">
             Garden
           </span>
@@ -3121,7 +1769,7 @@ const Contact = () => {
         </p>
       </div>
       
-      <div className="absolute right-0 bottom-0 w-64 h-64">
+      <div className="absolute right-0 bottom-0 w-52 h-52">
         <div className="absolute inset-0 border-2 border-metallic-gold/20 rounded-full"></div>
         <div className="absolute inset-8 border border-metallic-gold/40 rounded-full"></div>
         <div className="absolute inset-16 bg-gradient-to-br from-metallic-gold/10 to-transparent rounded-full"></div>
@@ -3129,7 +1777,7 @@ const Contact = () => {
     </div>
 
     {/* Garden Features */}
-    <div className="grid lg:grid-cols-2 gap-8 mb-16">
+    <div className="grid lg:grid-cols-2 gap-8 mb-6">
       {/* Left Side - Garden Image with Overlay */}
       <div className="relative h-[500px] rounded-3xl overflow-hidden group">
         <img 
@@ -3234,7 +1882,7 @@ const Contact = () => {
       ].map((event, idx) => (
         <div
           key={idx}
-          className="relative bg-gradient-to-br from-emerald-950/30 to-transparent rounded-xl p-6 border border-metallic-gold/30 text-center group hover:border-metallic-gold transition-all duration-500"
+          className="relative bg-gradient-to-br from-emerald-950/30 to-transparent rounded-xl p-4 border border-metallic-gold/30 text-center group hover:border-metallic-gold transition-all duration-500"
         >
           <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{event.icon}</div>
           <h4 className="text-white font-bold mb-1">{event.event}</h4>
