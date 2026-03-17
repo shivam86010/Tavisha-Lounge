@@ -21,6 +21,7 @@ import PrivateViewingPage from '../PrivateViewingPage';
 import CelebrationPlanningPage from '../CelebrationPlanningPage';
 import PrivateDiningPage from '../PrivateDiningPage';
 import WineTastingPage from '../WineTastingPage';
+import DishDetails from '../../Component/DishDetails';
 
 function index() {
   return (
@@ -34,6 +35,8 @@ function index() {
         <Route path="/wine-tasting" element={<WineTastingPage />} />
           <Route path="/venue/:venueId" element={<VenueDetailPage />} />
           <Route path='/about-us' element={<AboutUsPage/>} />
+                  <Route path="/dish/:dishName" element={<DishDetails />} />
+
           <Route path='/menu' element={<MenuPage />} />
            <Route path="/menu/:dishId" element={<RoyalDishDetail />} />
         

@@ -1004,9 +1004,23 @@ const RoyalReservations = () => {
               </div>
               
               {/* Order Button */}
-              <button className="w-full py-3 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all">
+              {/* <button className="w-full py-3 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all">
                 EXPERIENCE THIS DISH
-              </button>
+              </button> */}
+
+              <button 
+  className="w-full py-3 bg-gradient-to-r from-metallic-gold to-amber-600 text-charcoal rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all"
+  onClick={() => {
+    // Navigate to dish details page
+    window.location.href = `/dish/${encodeURIComponent(dish.title)}`;
+    // Or if using React Router:
+    // navigate(`/dish/${encodeURIComponent(dish.title)}`);
+  }}
+>
+  EXPERIENCE THIS DISH
+</button>
+
+
             </div>
           </div>
         </div>
