@@ -1,7 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
-// Lazy imports
+const Loader = lazy(() => import('../Common/Loader'))
 const Layout = lazy(() => import('../Layout/Main'));
 const HomePage = lazy(() => import('../../Page/HomePage/index'));
 const MenuPage = lazy(() => import('../../Page/MenuPage/MenuMainPage'));
@@ -27,7 +26,7 @@ function Index() {
   return (
     <div>
       {/* Suspense Wrapper */}
-      <Suspense fallback={<div style={{ textAlign: 'center', marginTop: '50px' }}>Loading...</div>}>
+      <Suspense fallback={<div style={{ textAlign: 'center', marginTop: '50px' }}><Loader/></div>}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
