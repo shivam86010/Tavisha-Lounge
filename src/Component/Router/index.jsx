@@ -21,6 +21,7 @@ const CelebrationPlanningPage = lazy(() => import('../CelebrationPlanningPage'))
 const PrivateDiningPage = lazy(() => import('../PrivateDiningPage'));
 const WineTastingPage = lazy(() => import('../WineTastingPage'));
 const DishDetails = lazy(() => import('../../Component/DishDetails'));
+const VirtualSpace = lazy(() => import('../../Page/VirtualSpace'))
 
 function Index() {
   return (
@@ -35,6 +36,9 @@ function Index() {
             <Route path="/celebration-planning" element={<CelebrationPlanningPage />} />
             <Route path="/private-dining" element={<PrivateDiningPage />} />
             <Route path="/wine-tasting" element={<WineTastingPage />} />
+
+                    <Route path="/virtual-space" element={<VirtualSpace />} />
+
 
             <Route path="/venue/:venueId" element={<VenueDetailPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />
