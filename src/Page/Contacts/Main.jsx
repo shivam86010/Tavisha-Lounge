@@ -177,7 +177,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
-      {/* ==================== ENHANCED HERO SECTION ==================== */}
+      {/* ==================== HERO SECTION ==================== */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background with Parallax */}
         <div className="absolute inset-0">
@@ -270,7 +270,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ==================== SECTION 1: AWARDS & ACCOLADES ==================== */}
+      {/* ==================== AWARDS & ACCOLADES ==================== */}
       <section className="py-8 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.1),transparent_50%)]"></div>
         
