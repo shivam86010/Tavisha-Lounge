@@ -315,7 +315,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ==================== SECTION 2: RESERVATION & CONTACT FORM ==================== */}
+      {/* ====================  RESERVATION & CONTACT FORM ==================== */}
       <section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'url("data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M40 10 L70 40 L40 70 L10 40 L40 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
@@ -451,7 +451,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ==================== SECTION 3: ROYAL AMENITIES ==================== */}
+      {/* ====================  ROYAL AMENITIES ==================== */}
       <section className="py-10 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
@@ -507,7 +507,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ==================== SECTION 4: CURATED EXPERIENCES ==================== */}
+      {/* ====================  CURATED EXPERIENCES ==================== */}
       <section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.15),transparent_50%)]"></div>
@@ -572,7 +572,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ==================== SECTION 5: ROYAL TESTIMONIALS ==================== */}
+      {/* ====================  ROYAL TESTIMONIALS ==================== */}
       <section className="py-10 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
@@ -638,7 +638,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ==================== SECTION 6: MEET THE TEAM ==================== */}
+      {/* ==================== MEET THE TEAM ==================== */}
       <section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M30 5 L55 30 L30 55 L5 30 L30 5" stroke="%23D4AF37" fill="none" stroke-width="0.5"/%3E%3C/svg%3E")',
@@ -696,7 +696,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ==================== SECTION 7: GALLERY ==================== */}
+      {/* ====================  GALLERY ==================== */}
       <section className="py-10 px-4 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-8">
@@ -739,7 +739,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ==================== SECTION 8: FAQ ==================== */}
+      {/* ====================  FAQ ==================== */}
       <section className="py-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.1),transparent_50%)]"></div>
@@ -776,7 +776,7 @@ const Contact = () => {
               {faq.question}
             </span>
 
-            {/* + / - Icon */}
+          
             <span className="text-metallic-gold text-2xl font-bold transition-all duration-300">
               {activeFaq === index ? "−" : "+"}
             </span>
@@ -795,7 +795,7 @@ const Contact = () => {
   </div>
 </section>
 
-{/* ==================== SECTION 9: VIRTUAL PALACE EXPERIENCE ==================== */}
+{/* ====================  VIRTUAL PALACE EXPERIENCE ==================== */}
 <section className="py-12 px-4 relative overflow-hidden">
   {/* Opulent Background with Depth */}
   <div className="absolute inset-0">
@@ -1077,13 +1077,13 @@ const Contact = () => {
 
 </section>
 
-{/* ==================== SECTION 10: ROYAL CONCIERGE SERVICES ==================== */}
+{/* ====================  ROYAL CONCIERGE SERVICES ==================== */}
 <section className="py-10 px-4 relative overflow-hidden">
-  {/* Premium Background with Gold Texture */}
+
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-royal-maroon/20 to-[#1a0f0a]"></div>
     
-    {/* Gold Filigree Pattern */}
+  
     <div className="absolute inset-0 opacity-20" style={{
       backgroundImage: 'url("data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M50 10L90 50L50 90L10 50L50 10" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3Ccircle cx="50" cy="50" r="15" stroke="%23D4AF37" fill="none" stroke-width="1"/%3E%3C/svg%3E")',
       backgroundSize: '100px 100px'
@@ -1091,7 +1091,7 @@ const Contact = () => {
   </div>
 
   <div className="max-w-7xl mx-auto relative">
-    {/* Section Header with Royal Crest */}
+    
     <div className="text-center mb-10">
   
       <span className="text-metallic-gold tracking-[0.4em] text-sm font-bold block ">PERSONALIZED ATTENTION</span>
@@ -1107,7 +1107,7 @@ const Contact = () => {
       </p>
     </div>
 
-    {/* Concierge Cards */}
+
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
       {[
         {
@@ -1146,7 +1146,7 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-metallic-gold/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
           
           <div className="relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-metallic-gold/30 hover:border-metallic-gold transition-all duration-500 hover:-translate-y-4">
-            {/* Icon with Gradient */}
+          
             <div className={`inline-flex p-4 bg-gradient-to-br ${service.gradient} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-500`}>
               <service.icon className="w-8 h-8 text-white" />
             </div>
@@ -1154,7 +1154,7 @@ const Contact = () => {
             <h3 className="text-2xl font-serif font-bold text-white mb-2">{service.title}</h3>
             <p className="text-soft-cream/70 text-sm mb-4">{service.description}</p>
             
-            {/* Features List */}
+          
             <div className="space-y-2 mb-6">
               {service.features.map((feature, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm">
@@ -1172,14 +1172,14 @@ const Contact = () => {
       ))}
     </div>
 
-    {/* Personal Butler Section */}
+    
     <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-metallic-gold/30">
       <div className="absolute -top-6 left-12 bg-gradient-to-r from-metallic-gold to-amber-600 px-8 py-2 rounded-full">
         <span className="text-charcoal font-bold text-sm">24/7 DEDICATED SERVICE</span>
       </div>
       
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Butler Info */}
+      
         <div>
           <div className="flex items-center gap-4 mb-4">
             <div className="w-16 h-16 bg-gradient-to-br from-metallic-gold to-amber-600 rounded-2xl flex items-center justify-center">
@@ -1214,7 +1214,7 @@ const Contact = () => {
           </div>
         </div>
         
-        {/* Right Side - Butler Image */}
+      
         <div className="relative">
           <div className="absolute -inset-4 bg-gradient-to-r from-metallic-gold to-amber-600 rounded-3xl opacity-30 blur-xl"></div>
           
@@ -1225,10 +1225,10 @@ const Contact = () => {
               className="w-full h-full object-cover"
             />
             
-            {/* Overlay Gradient */}
+            
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
             
-            {/* Contact Info */}
+            
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <div className="flex items-center gap-3 text-white">
                 <Phone className="w-5 h-5 text-metallic-gold" />
@@ -1246,7 +1246,7 @@ const Contact = () => {
   </div>
 </section>
 
-{/* ==================== SECTION 11: PRIVATE EVENTS & CELEBRATIONS ==================== */}
+{/* ====================  PRIVATE EVENTS & CELEBRATIONS ==================== */}
 <section className="py-10 px-4 relative overflow-hidden">
   {/* Background with Event Venue */}
   <div className="absolute inset-0">
@@ -1259,7 +1259,7 @@ const Contact = () => {
   </div>
 
   <div className="max-w-7xl mx-auto relative">
-    {/* Section Header */}
+    
     <div className="text-center mb-10">
      
      
@@ -1277,7 +1277,7 @@ const Contact = () => {
       </p>
     </div>
 
-    {/* Event Spaces Grid */}
+
     <div className="grid lg:grid-cols-3 gap-8 mb-10">
       {[
         {
@@ -1352,7 +1352,7 @@ const Contact = () => {
       ))}
     </div>
 
-    {/* Event Packages */}
+  
     <div className="grid lg:grid-cols-2 gap-8">
       {[
         {
@@ -1431,7 +1431,7 @@ const Contact = () => {
 
 
 
-{/* ==================== SECTION 10: THE CULINARY ATELIER ==================== */}
+{/* ====================  THE CULINARY ATELIER ==================== */}
 <section className="py-10 px-4 relative overflow-hidden">
   {/* Sophisticated Background */}
   <div className="absolute inset-0">
