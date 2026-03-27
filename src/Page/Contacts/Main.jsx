@@ -1778,7 +1778,7 @@ const Contact = () => {
 
     {/* Garden Features */}
     <div className="grid lg:grid-cols-2 gap-8 mb-6">
-      {/* Left Side - Garden Image with Overlay */}
+    
       <div className="relative h-[500px] rounded-3xl overflow-hidden group">
         <img 
           src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
