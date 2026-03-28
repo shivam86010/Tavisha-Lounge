@@ -2794,7 +2794,6 @@ const GrandMenu = () => {
 
             {/* Timeline Journey */}
             <div className="relative mb-20">
-              {/* Timeline Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-transparent via-amber-500 to-transparent" />
               
               <div className="space-y-16">
@@ -2819,7 +2818,7 @@ const GrandMenu = () => {
                   </div>
                 </div>
 
-                {/* 2005 - First Michelin Star */}
+            
                 <div className="relative flex items-center flex-row-reverse">
                   <div className="w-1/2 pl-12">
                     <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 group">
@@ -2844,7 +2843,6 @@ const GrandMenu = () => {
                   </div>
                 </div>
 
-                {/* 2015 - Expansion to Mumbai */}
                 <div className="relative flex items-center">
                   <div className="w-1/2 pr-12 text-right">
                     <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 group">
@@ -2865,7 +2863,7 @@ const GrandMenu = () => {
                   </div>
                 </div>
 
-                {/* 2024 - Present Day */}
+                {/* Present Day */}
                 <div className="relative flex items-center flex-row-reverse">
                   <div className="w-1/2 pl-12">
                     <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 group">
@@ -2901,7 +2899,6 @@ const GrandMenu = () => {
               </div>
             </div>
 
-            {/* Heritage Numbers */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
               {[
                 { number: '28', label: 'Years of Excellence', icon: Crown },
@@ -2927,10 +2924,9 @@ const GrandMenu = () => {
 
         
         {/* ==================== ROYAL CONCIERGE SERVICES ==================== */}
-        <section className="mb-20">
+        <section className="mb-10">
           {/* Background with Gold Overlay */}
           <div className="relative rounded-3xl overflow-hidden">
-            {/* Background Image */}
             <div className="absolute inset-0">
               <img 
                 src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -2941,10 +2937,8 @@ const GrandMenu = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 via-transparent to-transparent" />
             </div>
 
-            {/* Content */}
             <div className="relative p-16">
-              {/* Header */}
-              <div className="text-center mb-16">
+              <div className="text-center mb-10">
                 <div className="inline-flex items-center gap-3 px-6 py-3 bg-amber-500/10 backdrop-blur-sm rounded-full border border-amber-500/30 mb-6">
                   <Sparkles className="w-5 h-5 text-amber-500" />
                   <span className="text-amber-500 font-semibold">BEYOND DINING</span>
@@ -2962,7 +2956,6 @@ const GrandMenu = () => {
 
               {/* Services Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                {/* Private Jet Catering */}
                 <div className="group relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-rose-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
                   <div className="relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
