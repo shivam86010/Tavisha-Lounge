@@ -1,4 +1,3 @@
-// src/components/NutritionFacts.js
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiInfo, FiHeart, FiActivity, FiDroplet, FiZap } from 'react-icons/fi';
@@ -75,7 +74,6 @@ const NutritionFacts = () => {
     { icon: FiDroplet, label: "Carbs", unit: "g", color: "text-green-500" },
     { icon: FiHeart, label: "Fat", unit: "g", color: "text-red-500" },
     { icon: FiInfo, label: "Fiber", unit: "g", color: "text-purple-500" },
-    { icon: FiInfo, label: "Sodium", unit: "mg", color: "text-cyan-500" }
   ];
 
   return (
