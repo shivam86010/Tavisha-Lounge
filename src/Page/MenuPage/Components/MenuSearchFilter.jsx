@@ -1,5 +1,3 @@
-// src/components/MenuSearchFilter.js
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FiSearch, FiFilter } from 'react-icons/fi';
 
@@ -13,7 +11,6 @@ const MenuSearchFilter = ({ searchQuery, setSearchQuery, filters, setFilters, so
     >
       <div className="bg-white rounded-2xl shadow-lg p-6">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-          {/* Search Input */}
           <div className="lg:col-span-2 relative">
             <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
@@ -25,7 +22,6 @@ const MenuSearchFilter = ({ searchQuery, setSearchQuery, filters, setFilters, so
             />
           </div>
 
-          {/* Sort Dropdown */}
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
@@ -37,14 +33,12 @@ const MenuSearchFilter = ({ searchQuery, setSearchQuery, filters, setFilters, so
             <option value="rating">Highest Rated</option>
           </select>
 
-          {/* Filter Toggle */}
           <div className="flex items-center space-x-2">
             <FiFilter className="text-royal-maroon" />
             <span className="font-semibold text-charcoal">Filters:</span>
           </div>
         </div>
 
-        {/* Filter Options */}
         <div className="flex flex-wrap gap-4 mt-4">
           <label className="flex items-center space-x-2 cursor-pointer">
             <input
