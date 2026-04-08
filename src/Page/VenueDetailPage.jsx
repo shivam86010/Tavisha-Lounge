@@ -419,7 +419,7 @@ const VenueDetailPage = () => {
                 {venue.tagline}
               </p>
 
-              {/* Description */}
+          
               <p className="text-xl text-gray-300 mb-12 max-w-2xl leading-relaxed animate-slideUp" style={{ animationDelay: '200ms' }}>
                 {venue.description}
               </p>
